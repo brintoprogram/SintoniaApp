@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sintonia — Onde a Intimidade se Conecta</title>
+<meta name="description" content="Jogos, desafios e métricas que transformam a conexão do casal em uma aventura diária."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── TOKENS ──────────────────────────────────────────── */
+:root{
+  --bg:#070008;
+  --bg2:#0C000A;
+  --bg-card:#120010;
+  --red:#E01535;
+  --red-glow:#FF1744;
+  --red-deep:#8B0020;
+  --red-mid:#C00028;
+  --violet:#9B59B6;
+  --violet-lt:#C39BD3;
+  --text:#F5E6E8;
+  --muted:#9E7A84;
+  --border:rgba(224,21,53,.22);
+  --glow:rgba(255,23,68,.4);
+  --font-s:'Cormorant Garamond',Georgia,serif;
+  --font-b:'Hanken Grotesk',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 15% 10%,rgba(100,0,20,.13) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 45% at 85% 85%,rgba(60,0,90,.09) 0%,transparent 50%);
+  color:var(--text);
+  font-family:var(--font-b);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* ── LANG SYSTEM ─────────────────────────────────────── */
+[data-lang="pt"] .en{display:none}
+[data-lang="en"] .pt{display:none}
+
+/* ── HELPERS ─────────────────────────────────────────── */
+.container{max-width:1180px;margin:0 auto;padding:0 2.25rem}
+.eyebrow{
+  font-family:var(--font-b);font-size:.625rem;font-weight:600;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--red);
+  display:block;margin-bottom:.875rem;
+}
+.s-title{
+  font-family:var(--font-s);
+  font-size:clamp(2rem,4vw,3.25rem);font-weight:700;line-height:1.08;
+  letter-spacing:-.01em;margin-bottom:1rem;
+}
+.s-body{font-size:.9375rem;color:var(--muted);line-height:1.75;max-width:460px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.125rem 2.5rem;
+  background:rgba(7,0,8,.9);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(224,21,53,.14);
+}
+.logo{display:flex;align-items:center;gap:.625rem;text-decoration:none;color:var(--text)}
+.logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:700;letter-spacing:.05em}
+.nav-r{display:flex;align-items:center;gap:1.25rem}
+.lang-toggle{
+  display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden;
+}
+.lang-btn{
+  padding:.3rem .75rem;background:transparent;color:var(--muted);
+  border:none;cursor:pointer;font-family:var(--font-b);
+  font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  transition:background .2s,color .2s;
+}
+.lang-btn.active{background:var(--red);color:#fff}
+.nav-dl{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.5625rem 1.375rem;background:var(--red);color:#fff;
+  font-family:var(--font-b);font-size:.8125rem;font-weight:700;
+  border-radius:100px;text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 0 18px rgba(224,21,53,.4);
+  transition:box-shadow .25s,transform .2s;
+}
+.nav-dl:hover{box-shadow:0 0 30px rgba(255,23,68,.6);transform:translateY(-1px)}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8rem 2rem 5rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:25%;left:50%;transform:translateX(-50%);
+  width:700px;height:450px;
+  background:radial-gradient(ellipse,rgba(200,0,40,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-eye{
+  display:inline-flex;align-items:center;gap:.75rem;
+  font-family:var(--font-b);font-size:.625rem;font-weight:600;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--red);
+  margin-bottom:1.75rem;position:relative;z-index:1;
+}
+.hero-eye::before,.hero-eye::after{content:'';width:32px;height:1px}
+.hero-eye::before{background:linear-gradient(90deg,transparent,var(--red))}
+.hero-eye::after{background:linear-gradient(90deg,var(--red),transparent)}
+h1{
+  font-family:var(--font-s);
+  font-size:clamp(3rem,8.5vw,6.5rem);font-weight:700;
+  line-height:.98;letter-spacing:-.025em;margin-bottom:1.5rem;
+  position:relative;z-index:1;
+}
+h1 .italic{font-style:italic;color:var(--red)}
+.hero-sub{
+  font-size:1.0625rem;color:var(--muted);
+  max-width:510px;margin:0 auto 2.75rem;line-height:1.75;
+  position:relative;z-index:1;
+}
+.hero-btns{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  margin-bottom:4.5rem;position:relative;z-index:1;
+}
+.btn-red{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9375rem 2.25rem;
+  background:linear-gradient(135deg,var(--red-glow) 0%,var(--red-mid) 100%);
+  color:#fff;font-family:var(--font-b);font-size:.9375rem;font-weight:700;
+  border-radius:100px;text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 4px 28px rgba(224,21,53,.45),0 0 0 1px rgba(255,23,68,.25);
+  transition:transform .2s,box-shadow .25s;
+}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(255,23,68,.55),0 0 0 1px rgba(255,23,68,.45)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.9375rem 2.25rem;background:transparent;color:var(--text);
+  font-family:var(--font-b);font-size:.9375rem;font-weight:600;
+  border-radius:100px;text-decoration:none;
+  border:1px solid rgba(224,21,53,.35);
+  transition:border-color .25s,background .25s;
+}
+.btn-outline:hover{border-color:var(--red);background:rgba(224,21,53,.07)}
+
+/* ── PHONES ──────────────────────────────────────────── */
+.phones{
+  display:flex;gap:1.25rem;justify-content:center;align-items:flex-end;
+  position:relative;z-index:1;
+}
+.ph{
+  width:210px;height:430px;
+  background:#0A000A;border-radius:32px;
+  border:1.5px solid rgba(224,21,53,.28);
+  padding:.9375rem .875rem .875rem;
+  box-shadow:0 40px 90px rgba(0,0,0,.75),0 0 35px rgba(180,0,30,.1),0 0 0 1px rgba(255,255,255,.035);
+  overflow:hidden;flex-shrink:0;
+}
+.ph.mid{
+  transform:translateY(-28px);
+  border-color:rgba(224,21,53,.55);
+  box-shadow:0 50px 100px rgba(0,0,0,.85),0 0 55px rgba(200,0,40,.18),0 0 0 1px rgba(255,23,68,.18);
+}
+.ph-pill{width:56px;height:4px;border-radius:10px;background:rgba(255,255,255,.07);margin:0 auto .875rem}
+
+/* Score screen content */
+.ph-red-card{
+  background:linear-gradient(135deg,#C00028 0%,#6B0018 100%);
+  border-radius:13px;padding:.75rem;margin-bottom:.625rem;position:relative;overflow:hidden;
+}
+.ph-red-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.07),transparent);
+}
+.ph-brand{font-family:var(--font-s);font-size:.875rem;font-weight:700}
+.ph-brand-sub{font-size:.45rem;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase}
+.ph-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:.4rem}
+.ph-level{font-size:.5rem;color:rgba(255,255,255,.65)}
+.ph-lvlnum{font-size:.475rem;color:rgba(255,255,255,.45)}
+.ph-score-label{
+  font-size:.5rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);text-align:center;margin:.5rem 0 .375rem;
+}
+.ph-gauge-wrap{position:relative;width:82px;height:82px;margin:0 auto .375rem}
+.ph-gauge-wrap svg{position:absolute;inset:0;width:100%;height:100%}
+.ph-gauge-inner{
+  position:absolute;inset:8px;border-radius:50%;
+  background:var(--bg);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.ph-score-n{font-family:var(--font-s);font-size:1.25rem;font-weight:700}
+.ph-score-s{font-size:.4rem;color:var(--muted)}
+.ph-phrase{font-family:var(--font-s);font-size:.6875rem;font-style:italic;text-align:center;margin-bottom:.5rem}
+.ph-mini-card{
+  background:rgba(255,255,255,.035);border:1px solid rgba(224,21,53,.18);
+  border-radius:9px;padding:.4375rem .5rem;
+}
+.ph-mini-label{font-size:.43rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.ph-mini-val{font-family:var(--font-s);font-size:.75rem;font-weight:600}
+.ph-week{display:flex;justify-content:space-between;margin-top:.5rem}
+.ph-day{
+  width:20px;height:20px;border-radius:50%;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.4rem;color:var(--muted);
+}
+.ph-day.today{background:var(--red);border-color:var(--red);color:#fff}
+
+/* Menu screen */
+.ph-menu-card{
+  background:linear-gradient(155deg,#900020 0%,#380010 60%,#180008 100%);
+  border:1.5px solid #C01030;border-radius:13px;
+  padding:.5625rem .75rem;margin-bottom:.4375rem;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 0 12px rgba(192,0,40,.28),inset 0 0 14px rgba(0,0,0,.35);
+  position:relative;overflow:hidden;
+}
+.ph-menu-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,100,120,.4),transparent);
+}
+.ph-menu-card:first-child{border-color:#E01535;box-shadow:0 0 20px rgba(224,21,53,.38),inset 0 0 14px rgba(0,0,0,.35)}
+.ph-menu-name{font-family:var(--font-s);font-size:.75rem;font-weight:700}
+.ph-menu-icon{font-size:1.1875rem;filter:drop-shadow(0 0 6px rgba(255,80,100,.5))}
+
+/* Roulette screen */
+.ph-top-bar{
+  display:flex;justify-content:space-around;margin-bottom:.625rem;
+}
+.ph-mode{
+  font-size:.45rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.25rem .5rem;border-radius:6px;
+  background:rgba(224,21,53,.12);border:1px solid rgba(224,21,53,.25);color:var(--muted);
+}
+.ph-mode.active{background:rgba(224,21,53,.2);border-color:var(--red);color:var(--text)}
+.ph-roulette{
+  width:110px;height:110px;border-radius:50%;
+  background:conic-gradient(
+    #8B1A2B 0deg 60deg,#C0392B 60deg 120deg,
+    #2E6B30 120deg 180deg,#8B1A2B 180deg 240deg,
+    #A04020 240deg 300deg,#C0392B 300deg 360deg
+  );
+  border:2px solid #E01535;
+  box-shadow:0 0 24px rgba(224,21,53,.5),0 0 0 4px rgba(224,21,53,.08);
+  margin:0 auto .625rem;position:relative;
+  animation:spin-slow 12s linear infinite;
+}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.ph-roulette::after{
+  content:'';position:absolute;inset:5px;border-radius:50%;
+  background:rgba(0,0,0,.2);
+}
+.ph-roulette-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:12px;height:12px;border-radius:50%;
+  background:#E01535;z-index:1;
+  box-shadow:0 0 8px rgba(224,21,53,.8);
+}
+.ph-turn{font-size:.5rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:center;margin-bottom:.5rem}
+.ph-spin-btn{
+  display:block;width:100%;padding:.4375rem;
+  background:linear-gradient(135deg,var(--red-glow),var(--red-mid));
+  border:none;border-radius:10px;text-align:center;
+  font-family:var(--font-s);font-size:.75rem;font-weight:700;color:#fff;
+  box-shadow:0 0 16px rgba(224,21,53,.45);margin-top:.625rem;
+}
+
+/* ── FEATURES ────────────────────────────────────────── */
+.features{padding:7rem 2rem;background:var(--bg2)}
+.features .container{text-align:center}
+.features-header{margin-bottom:3.5rem}
+.features-header .s-body{margin:0 auto}
+.feat-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:1.125rem;max-width:880px;margin:0 auto;
+}
+/* Signature card — red neon glow replicating app menu style */
+.feat-card{
+  background:linear-gradient(155deg,#8B0020 0%,#3A0010 55%,#180008 100%);
+  border:1.5px solid var(--red);border-radius:20px;
+  padding:2rem 1.875rem;position:relative;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(255,23,68,.1),0 0 24px rgba(224,21,53,.18),inset 0 0 32px rgba(0,0,0,.45);
+  transition:box-shadow .35s,transform .25s;text-align:left;
+}
+.feat-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 0 1.5px rgba(255,23,68,.35),0 0 48px rgba(255,23,68,.28),0 16px 48px rgba(0,0,0,.55),inset 0 0 32px rgba(0,0,0,.35);
+}
+.feat-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,120,140,.5),transparent);
+}
+.feat-icon{font-size:2.5rem;margin-bottom:1.125rem;display:block;filter:drop-shadow(0 0 10px rgba(255,80,100,.5))}
+.feat-name{font-family:var(--font-s);font-size:1.375rem;font-weight:700;margin-bottom:.625rem;color:#fff}
+.feat-desc{font-size:.875rem;color:rgba(255,220,225,.6);line-height:1.7}
+
+/* ── HOW IT WORKS ────────────────────────────────────── */
+.how{padding:7rem 2rem}
+.how-header{text-align:center;margin-bottom:3.75rem}
+.how-header .s-body{margin:0 auto}
+.how-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;
+  max-width:920px;margin:0 auto;position:relative;
+}
+.how-steps::before{
+  content:'';position:absolute;top:2.25rem;left:12%;right:12%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(224,21,53,.35) 30%,rgba(224,21,53,.35) 70%,transparent);
+  pointer-events:none;
+}
+.how-step{text-align:center;padding:.5rem}
+.how-num{
+  width:4rem;height:4rem;border-radius:50%;
+  border:1.5px solid var(--red);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.25rem;
+  background:rgba(224,21,53,.08);
+  box-shadow:0 0 18px rgba(224,21,53,.2);
+  font-family:var(--font-s);font-size:1.5rem;font-weight:700;color:var(--red);
+  position:relative;z-index:1;
+}
+.how-step-title{font-family:var(--font-s);font-size:1.0625rem;font-weight:600;margin-bottom:.5rem}
+.how-step-desc{font-size:.8125rem;color:var(--muted);line-height:1.65}
+
+/* ── TESTIMONIALS ────────────────────────────────────── */
+.testi{padding:7rem 2rem;background:var(--bg2)}
+.testi-header{text-align:center;margin-bottom:3rem}
+.testi-header .s-body{margin:0 auto}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:980px;margin:0 auto}
+.testi-card{
+  background:var(--bg-card);border:1px solid rgba(224,21,53,.16);
+  border-radius:18px;padding:1.75rem;
+  transition:border-color .3s,transform .25s;
+}
+.testi-card:hover{border-color:rgba(224,21,53,.38);transform:translateY(-3px)}
+.testi-q{
+  font-family:var(--font-s);font-size:1.0625rem;font-style:italic;
+  color:rgba(245,230,232,.88);line-height:1.65;margin-bottom:1.25rem;
+}
+.testi-q::before{
+  content:'\201C';font-size:2.5rem;color:var(--red);
+  line-height:0;vertical-align:-.4em;margin-right:.07em;
+}
+.testi-author{display:flex;align-items:center;gap:.625rem}
+.t-avatar{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;font-weight:700;color:#fff;
+}
+.t-name{font-size:.875rem;font-weight:600}
+.t-city{font-size:.6875rem;color:var(--muted)}
+
+/* ── DOWNLOAD ────────────────────────────────────────── */
+.download{padding:8rem 2rem;text-align:center;position:relative;overflow:hidden}
+.download::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:900px;height:500px;
+  background:radial-gradient(ellipse,rgba(180,0,30,.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.dl-title{
+  font-family:var(--font-s);
+  font-size:clamp(2.5rem,6vw,5rem);font-weight:700;
+  line-height:1.03;letter-spacing:-.025em;margin-bottom:1.125rem;
+  position:relative;z-index:1;
+}
+.dl-title em{font-style:italic;color:var(--red)}
+.dl-sub{color:var(--muted);font-size:1rem;margin-bottom:2.75rem;position:relative;z-index:1}
+.dl-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:.75rem;
+  padding:1rem 1.875rem;background:#0E000C;
+  border:1.5px solid var(--red);border-radius:16px;
+  text-decoration:none;color:var(--text);
+  box-shadow:0 0 22px rgba(224,21,53,.2);
+  transition:box-shadow .3s,transform .2s;
+}
+.dl-btn:hover{box-shadow:0 0 40px rgba(255,23,68,.35);transform:translateY(-2px)}
+.dl-sup{font-size:.5625rem;color:var(--muted);letter-spacing:.06em;display:block}
+.dl-name{font-family:var(--font-s);font-size:1rem;font-weight:700;display:block}
+
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq{padding:7rem 2rem;background:var(--bg2)}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:3rem}
+.faq-header .s-body{margin:0 auto}
+details{border-bottom:1px solid rgba(224,21,53,.14)}
+details:first-of-type{border-top:1px solid rgba(224,21,53,.14)}
+summary{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.375rem 0;cursor:pointer;list-style:none;
+  font-family:var(--font-s);font-size:1.0625rem;font-weight:600;
+  color:var(--text);transition:color .2s;gap:1rem;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--red)}
+.faq-plus{
+  width:22px;height:22px;flex-shrink:0;border-radius:50%;
+  border:1px solid rgba(224,21,53,.4);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--red);font-size:1.125rem;line-height:1;
+  transition:transform .25s,background .25s;
+}
+details[open] .faq-plus{transform:rotate(45deg);background:rgba(224,21,53,.12)}
+.faq-body{font-size:.9375rem;color:var(--muted);line-height:1.75;padding-bottom:1.375rem}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
+.foot-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem;max-width:1180px;margin:0 auto 2.5rem;
+}
+.foot-tagline{font-size:.875rem;color:var(--muted);line-height:1.65;max-width:260px;margin:.875rem 0 1.25rem}
+.social-row{display:flex;gap:.625rem}
+.soc{
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid rgba(224,21,53,.22);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;color:var(--muted);font-size:.75rem;
+  transition:border-color .2s,color .2s;
+}
+.soc:hover{border-color:var(--red);color:var(--red)}
+.foot-col-title{
+  font-size:.625rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:1.125rem;
+}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.foot-links a{font-size:.875rem;color:rgba(245,230,232,.45);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:var(--text)}
+.foot-legal{max-width:1180px;margin:0 auto;border-top:1px solid rgba(255,255,255,.045);padding-top:1.875rem}
+.legal-block{
+  background:rgba(224,21,53,.04);border:1px solid rgba(224,21,53,.1);
+  border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:.875rem;
+}
+.legal-title{font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.legal-text{font-size:.75rem;color:var(--muted);line-height:1.7}
+.foot-copy{margin-top:1.5rem;font-size:.6875rem;color:rgba(158,122,132,.45);letter-spacing:.06em;text-align:center}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:900px){
+  nav{padding:1rem 1.25rem}
+  .nav-r .nav-dl span{display:none}
+  .phones .ph:not(.mid){display:none}
+  .ph.mid{transform:none;width:240px;height:480px}
+  .feat-grid{grid-template-columns:1fr;max-width:480px}
+  .how-steps{grid-template-columns:1fr 1fr}
+  .how-steps::before{display:none}
+  .testi-grid{grid-template-columns:1fr;max-width:440px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:560px){
+  .hero-btns{flex-direction:column;align-items:center}
+  .how-steps{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .dl-btns{flex-direction:column;align-items:center}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important}
+  .ph-roulette{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────── -->
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-icon" width="30" height="27" viewBox="0 0 40 36" fill="none">
+      <defs>
+        <clipPath id="hc">
+          <path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z"/>
+        </clipPath>
+      </defs>
+      <g clip-path="url(#hc)">
+        <rect width="40" height="36" fill="#1A0008"/>
+        <line x1="0" y1="5"  x2="40" y2="5"  stroke="#9B59B6" stroke-width="1.6" opacity=".9"/>
+        <line x1="0" y1="9"  x2="40" y2="9"  stroke="#9B59B6" stroke-width="1.6" opacity=".85"/>
+        <line x1="0" y1="13" x2="40" y2="13" stroke="#9B59B6" stroke-width="1.6" opacity=".8"/>
+        <line x1="0" y1="17" x2="40" y2="17" stroke="#9B59B6" stroke-width="1.5" opacity=".7"/>
+        <line x1="0" y1="21" x2="40" y2="21" stroke="#C39BD3" stroke-width="1.4" opacity=".6"/>
+        <line x1="0" y1="25" x2="40" y2="25" stroke="#C39BD3" stroke-width="1.2" opacity=".45"/>
+        <line x1="0" y1="29" x2="40" y2="29" stroke="#C39BD3" stroke-width="1"   opacity=".28"/>
+        <line x1="0" y1="33" x2="40" y2="33" stroke="#C39BD3" stroke-width="1"   opacity=".14"/>
+      </g>
+      <path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z"
+            fill="none" stroke="#9B59B6" stroke-width="1.5" opacity=".55"/>
+    </svg>
+    <span class="logo-text">SINTONIA</span>
+  </a>
+
+  <div class="nav-r">
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#download" class="nav-dl">
+      <span class="pt">Baixar Agora</span>
+      <span class="en">Download Now</span>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-eye">
+    <span class="pt">Para casais que querem se redescobrir</span>
+    <span class="en">For couples who want to rediscover each other</span>
+  </div>
+
+  <h1>
+    <span class="pt">Onde a Intimidade<br><span class="italic">se Conecta</span></span>
+    <span class="en">Where Intimacy<br><span class="italic">Connects</span></span>
+  </h1>
+
+  <p class="hero-sub">
+    <span class="pt">Jogos, desafios e métricas que transformam a conexão do casal em uma aventura diária.</span>
+    <span class="en">Games, challenges and metrics that turn your couple connection into a daily adventure.</span>
+  </p>
+
+  <div class="hero-btns">
+    <a href="#download" class="btn-red">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16.5 5.5 10l1.4-1.4 4.1 4.1V3h2v9.7l4.1-4.1L18.5 10 12 16.5zM5 19v-2h14v2H5z"/></svg>
+      <span class="pt">Baixar Grátis</span>
+      <span class="en">Free Download</span>
+    </a>
+    <a href="#features" class="btn-outline">
+      <span class="pt">Ver Recursos →</span>
+      <span class="en">See Features →</span>
+    </a>
+  </div>
+
+  <!-- Phone mockups -->
+  <div class="phones">
+
+    <!-- Left: Menu screen -->
+    <div class="ph">
+      <div class="ph-pill"></div>
+      <div class="ph-menu-card" style="margin-bottom:.5rem">
+        <div>
+          <div class="ph-brand" style="font-size:.8rem">SINTONIA</div>
+          <div class="ph-brand-sub">Status e Métricas do Casal</div>
+        </div>
+        <svg width="28" height="25" viewBox="0 0 40 36" fill="none" style="opacity:.7">
+          <defs><clipPath id="hc2"><path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z"/></clipPath></defs>
+          <g clip-path="url(#hc2)"><rect width="40" height="36" fill="#1A0008"/>
+          <line x1="0" y1="7"  x2="40" y2="7"  stroke="#9B59B6" stroke-width="2"/>
+          <line x1="0" y1="13" x2="40" y2="13" stroke="#9B59B6" stroke-width="2"/>
+          <line x1="0" y1="19" x2="40" y2="19" stroke="#9B59B6" stroke-width="2"/>
+          <line x1="0" y1="25" x2="40" y2="25" stroke="#C39BD3" stroke-width="1.5"/>
+          <line x1="0" y1="31" x2="40" y2="31" stroke="#C39BD3" stroke-width="1"/></g>
+          <path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z" fill="none" stroke="#9B59B6" stroke-width="1.5" opacity=".5"/>
+        </svg>
+      </div>
+      <div class="ph-menu-card">
+        <div class="ph-menu-name">Roulette</div>
+        <div class="ph-menu-icon">🎡</div>
+      </div>
+      <div class="ph-menu-card">
+        <div class="ph-menu-name">Tension Game</div>
+        <div class="ph-menu-icon">∞</div>
+      </div>
+      <div class="ph-menu-card" style="margin-bottom:0">
+        <div class="ph-menu-name">Jogos em Casal</div>
+        <div class="ph-menu-icon">🎲</div>
+      </div>
+    </div>
+
+    <!-- Center: Score screen (elevated) -->
+    <div class="ph mid">
+      <div class="ph-pill"></div>
+      <div class="ph-red-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="ph-brand">Sintonia ♥</div>
+            <div class="ph-brand-sub">Status e Métricas do Casal</div>
+          </div>
+        </div>
+        <div class="ph-row">
+          <div class="ph-level">Casal Iniciante</div>
+          <div class="ph-lvlnum">Nível 1</div>
+        </div>
+      </div>
+
+      <div class="ph-score-label">SCORE DE SINTONIA</div>
+
+      <div class="ph-gauge-wrap">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,.07)" stroke-width="6"/>
+          <circle cx="50" cy="50" r="42" stroke="#E01535" stroke-width="6"
+                  stroke-dasharray="264" stroke-dashoffset="264"
+                  stroke-linecap="round" transform="rotate(-90 50 50)" opacity=".35"/>
+        </svg>
+        <div class="ph-gauge-inner">
+          <div class="ph-score-n">0</div>
+          <div class="ph-score-s">de 100</div>
+        </div>
+      </div>
+
+      <div class="ph-phrase">Hora de se reconectar</div>
+
+      <div class="ph-mini-card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="ph-mini-label">CHAMA DA INTIMIDADE</div>
+            <div class="ph-mini-val">0 dias</div>
+          </div>
+          <div style="font-size:.4rem;color:var(--muted);padding:.2rem .4rem;border:1px solid rgba(255,255,255,.1);border-radius:4px">Recorde 0d</div>
+        </div>
+      </div>
+
+      <div style="margin-top:.5rem">
+        <div style="font-size:.45rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.375rem">ESTA SEMANA</div>
+        <div class="ph-week">
+          <div class="ph-day">S</div><div class="ph-day">T</div>
+          <div class="ph-day">Q</div><div class="ph-day">Q</div>
+          <div class="ph-day">S</div><div class="ph-day today">S</div>
+          <div class="ph-day">D</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Roulette screen -->
+    <div class="ph">
+      <div class="ph-pill"></div>
+      <div class="ph-top-bar">
+        <div class="ph-mode active">Vestidos</div>
+        <div class="ph-mode">Semi-Nus</div>
+        <div class="ph-mode">Pelados</div>
+      </div>
+      <div class="ph-turn">VEZ DE · RODADA 1</div>
+      <div style="position:relative;width:110px;margin:0 auto .625rem">
+        <div class="ph-roulette"></div>
+        <div class="ph-roulette-center"></div>
+      </div>
+      <div class="ph-spin-btn">🎯 GIRAR</div>
+      <div style="margin-top:.5rem">
+        <div style="font-size:.45rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.375rem">PRÓXIMA AÇÃO</div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(224,21,53,.18);border-radius:8px;padding:.375rem .5rem">
+          <div style="font-size:.55rem;color:var(--text)">🔥 Desafio de contato</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /phones -->
+</section>
+
+
+<!-- ─── FEATURES ───────────────────────────────────────── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <span class="eyebrow pt">Recursos</span>
+      <span class="eyebrow en">Features</span>
+      <h2 class="s-title">
+        <span class="pt">Quatro formas de se<br>redescobrir juntos</span>
+        <span class="en">Four ways to<br>rediscover each other</span>
+      </h2>
+      <p class="s-body pt">Cada modo foi desenhado para um momento diferente — da tensão ao riso, do desafio à conexão profunda.</p>
+      <p class="s-body en">Each mode is designed for a different moment — from tension to laughter, from challenge to deep connection.</p>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-card reveal">
+        <span class="feat-icon">🎡</span>
+        <div class="feat-name pt">Roleta da Sintonia</div>
+        <div class="feat-name en">Sintonia Roulette</div>
+        <p class="feat-desc pt">Gire a roleta 3D e deixe o acaso decidir o próximo passo. Categorias pensadas pra acender a chama — do suave ao intenso.</p>
+        <p class="feat-desc en">Spin the 3D wheel and let chance decide what comes next. Categories from sweet to spicy, designed to ignite the spark.</p>
+      </div>
+
+      <div class="feat-card reveal">
+        <span class="feat-icon">🎲</span>
+        <div class="feat-name pt">Jogos em Casal</div>
+        <div class="feat-name en">Couple Games</div>
+        <p class="feat-desc pt">Baralhos e desafios estilo tabuleiro para duas pessoas. Compitam, riam e se conheçam de um jeito completamente novo.</p>
+        <p class="feat-desc en">Card decks and board-game-style challenges for two. Compete, laugh, and discover each other in a completely new way.</p>
+      </div>
+
+      <div class="feat-card reveal">
+        <span class="feat-icon">∞</span>
+        <div class="feat-name">Tension Game</div>
+        <p class="feat-desc pt">O jogo da tensão. O símbolo do infinito em corda que nunca para de render. Desafios progressivos que constroem a antecipação, rodada após rodada.</p>
+        <p class="feat-desc en">The tension game. An infinity rope symbol that never runs dry. Progressive challenges that build anticipation, round after round.</p>
+      </div>
+
+      <div class="feat-card reveal">
+        <span class="feat-icon">📊</span>
+        <div class="feat-name pt">Score de Sintonia</div>
+        <div class="feat-name en">Sintonia Score</div>
+        <p class="feat-desc pt">Acompanhe o nível do casal, a chama da intimidade e o mapa de exploração. Quanto mais jogam, mais crescem juntos.</p>
+        <p class="feat-desc en">Track your couple level, intimacy streak, and exploration map. The more you play, the more you grow together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── HOW IT WORKS ──────────────────────────────────── -->
+<section class="how" id="como">
+  <div class="how-header reveal">
+    <span class="eyebrow pt">Como Funciona</span>
+    <span class="eyebrow en">How It Works</span>
+    <h2 class="s-title">
+      <span class="pt">Sua jornada começa<br>em quatro passos</span>
+      <span class="en">Your journey starts<br>in four steps</span>
+    </h2>
+    <p class="s-body pt">Do primeiro login à primeira surpresa — tudo pensado pra vocês dois.</p>
+    <p class="s-body en">From first login to first surprise — everything designed for the two of you.</p>
+  </div>
+
+  <div class="how-steps">
+    <div class="how-step reveal">
+      <div class="how-num">1</div>
+      <div class="how-step-title pt">Criem o perfil</div>
+      <div class="how-step-title en">Create your profile</div>
+      <p class="how-step-desc pt">Cadastrem o casal juntos em menos de um minuto.</p>
+      <p class="how-step-desc en">Set up your couple profile together in under a minute.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">2</div>
+      <div class="how-step-title pt">Escolham o modo</div>
+      <div class="how-step-title en">Pick a mode</div>
+      <p class="how-step-desc pt">Roleta, jogos, tensão — o que a noite pede.</p>
+      <p class="how-step-desc en">Roulette, games, tension — whatever the night calls for.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">3</div>
+      <div class="how-step-title pt">Joguem e acumulem</div>
+      <div class="how-step-title en">Play and earn</div>
+      <p class="how-step-desc pt">Cada sessão soma pontos ao Score de Sintonia.</p>
+      <p class="how-step-desc en">Each session adds points to your Sintonia Score.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">4</div>
+      <div class="how-step-title pt">Vejam o Score crescer</div>
+      <div class="how-step-title en">Watch your score grow</div>
+      <p class="how-step-desc pt">Métricas, conquistas e novos desafios a cada semana.</p>
+      <p class="how-step-desc en">Metrics, achievements, and new challenges every week.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── TESTIMONIALS ──────────────────────────────────── -->
+<section class="testi" id="depoimentos">
+  <div class="container">
+    <div class="testi-header reveal">
+      <span class="eyebrow pt">Depoimentos</span>
+      <span class="eyebrow en">Testimonials</span>
+      <h2 class="s-title">
+        <span class="pt">O que os casais dizem</span>
+        <span class="en">What couples say</span>
+      </h2>
+      <p class="s-body pt">De novas conexões a relacionamentos de anos — a Sintonia transforma como vocês se veem.</p>
+      <p class="s-body en">From new connections to years-long relationships — Sintonia transforms how you see each other.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-q pt">Ficamos viciados na Roleta. A gente termina a noite rindo e muito mais próximos do que antes.</p>
+        <p class="testi-q en" style="display:none">We got hooked on the Roulette. We end every night laughing and way closer than before.</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#8B0020,#9B59B6)">AR</div>
+          <div>
+            <div class="t-name">Ana &amp; Rafael</div>
+            <div class="t-city">São Paulo, SP</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-q pt">O Score virou nossa métrica favorita. Tem semana que competimos pra ver quem contribui mais pra intimidade.</p>
+        <p class="testi-q en" style="display:none">The Score became our favorite metric. Some weeks we compete to see who contributes more to our intimacy streak.</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#C00028,#6B21A8)">CL</div>
+          <div>
+            <div class="t-name">Camila &amp; Lucas</div>
+            <div class="t-city">Rio de Janeiro, RJ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-q pt">O Tension Game escala do jeito certo. A antecipação é tão boa quanto o jogo em si.</p>
+        <p class="testi-q en" style="display:none">The Tension Game escalates perfectly. The anticipation is just as good as the game itself.</p>
+        <div class="testi-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#7B0018,#C39BD3)">JM</div>
+          <div>
+            <div class="t-name">Juliana &amp; Marcos</div>
+            <div class="t-city">Belo Horizonte, MG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── DOWNLOAD ──────────────────────────────────────── -->
+<section class="download" id="download">
+  <h2 class="dl-title">
+    <span class="pt">Sua próxima noite<br>começa <em>agora</em></span>
+    <span class="en">Your next night<br>starts <em>right now</em></span>
+  </h2>
+  <p class="dl-sub">
+    <span class="pt">Grátis no plano básico. Sem cartão de crédito. Só vocês dois.</span>
+    <span class="en">Free on the basic plan. No credit card. Just the two of you.</span>
+  </p>
+  <div class="dl-btns">
+    <a href="#" class="dl-btn">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text)">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+      </svg>
+      <div>
+        <span class="dl-sup pt">Baixar na</span>
+        <span class="dl-sup en">Download on the</span>
+        <span class="dl-name">App Store</span>
+      </div>
+    </a>
+    <a href="#" class="dl-btn">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="color:var(--text)">
+        <path d="M3.18 23.76c.3.17.65.19.98.08l.06-.04L15.42 12 4.22.2l-.06-.04c-.33-.11-.68-.09-.98.08C2.87.42 2.68.75 2.68 1.1v21.78c0 .36.19.69.5.87zm16.2-9.37-2.67-1.55-2.44 2.44 2.73 2.73 2.38-1.38c.5-.29.5-.97 0-1.26l-.3-.17.3-.81zM3.04.44l11.96 11.55-2.35 2.35L3.04.44zm0 23.12 9.56-9.26-2.35-2.35L3.04 23.56z"/>
+      </svg>
+      <div>
+        <span class="dl-sup pt">Disponível no</span>
+        <span class="dl-sup en">Get it on</span>
+        <span class="dl-name">Google Play</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<!-- ─── FAQ ───────────────────────────────────────────── -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="eyebrow pt">Dúvidas Frequentes</span>
+      <span class="eyebrow en">FAQ</span>
+      <h2 class="s-title">
+        <span class="pt">Perguntas que todo<br>casal faz</span>
+        <span class="en">Questions every<br>couple asks</span>
+      </h2>
+    </div>
+
+    <details class="reveal">
+      <summary>
+        <span class="pt">O Sintonia é para qualquer tipo de casal?</span>
+        <span class="en">Is Sintonia for all couples?</span>
+        <div class="faq-plus">+</div>
+      </summary>
+      <div class="faq-body">
+        <span class="pt">Sim. O app foi pensado para casais em qualquer fase do relacionamento — desde os que estão começando até os que já se conhecem há anos e querem reavivar a chama. Cada modo tem intensidades ajustáveis.</span>
+        <span class="en">Yes. The app was designed for couples at any stage — from those just starting out to long-term partners looking to rekindle the spark. Each mode has adjustable intensity levels.</span>
+      </div>
+    </details>
+
+    <details class="reveal">
+      <summary>
+        <span class="pt">Preciso criar conta para usar?</span>
+        <span class="en">Do I need an account to use it?</span>
+        <div class="faq-plus">+</div>
+      </summary>
+      <div class="faq-body">
+        <span class="pt">Sim, mas o cadastro é rápido e gratuito. Você convida seu parceiro(a) e criam o perfil do casal juntos — isso permite que o Score e o histórico sejam compartilhados entre os dois.</span>
+        <span class="en">Yes, but sign-up is quick and free. You invite your partner and create your couple profile together — this allows the Score and history to be shared between both of you.</span>
+      </div>
+    </details>
+
+    <details class="reveal">
+      <summary>
+        <span class="pt">O app tem versão gratuita?</span>
+        <span class="en">Is there a free version?</span>
+        <div class="faq-plus">+</div>
+      </summary>
+      <div class="faq-body">
+        <span class="pt">Sim. O plano gratuito inclui acesso a jogos e desafios essenciais. O plano Premium desbloqueia o catálogo completo, histórico detalhado, modos exclusivos e atualizações semanais de conteúdo.</span>
+        <span class="en">Yes. The free plan includes access to essential games and challenges. Premium unlocks the full catalog, detailed history, exclusive modes, and weekly content updates.</span>
+      </div>
+    </details>
+
+    <details class="reveal">
+      <summary>
+        <span class="pt">Nossos dados são privados?</span>
+        <span class="en">Is our data private?</span>
+        <div class="faq-plus">+</div>
+      </summary>
+      <div class="faq-body">
+        <span class="pt">Absolutamente. Todo o conteúdo dentro do app é privado entre o casal. Nunca compartilhamos dados pessoais ou de jogo com terceiros, anunciantes ou parceiros.</span>
+        <span class="en">Absolutely. All in-app content is private between the couple. We never share personal or gameplay data with third parties, advertisers, or partners.</span>
+      </div>
+    </details>
+
+    <details class="reveal">
+      <summary>
+        <span class="pt">O conteúdo é adequado para adultos?</span>
+        <span class="en">Is the content adult-appropriate?</span>
+        <div class="faq-plus">+</div>
+      </summary>
+      <div class="faq-body">
+        <span class="pt">O Sintonia é um aplicativo voltado para adultos maiores de 18 anos em relacionamentos consensuais. Todos os modos têm configurações de intensidade — vocês controlam até onde querem ir.</span>
+        <span class="en">Sintonia is designed for adults 18+ in consensual relationships. All modes have intensity settings — you control how far you want to go.</span>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="#" class="logo">
+        <svg width="26" height="23" viewBox="0 0 40 36" fill="none">
+          <defs><clipPath id="hc3"><path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z"/></clipPath></defs>
+          <g clip-path="url(#hc3)"><rect width="40" height="36" fill="#1A0008"/>
+          <line x1="0" y1="7"  x2="40" y2="7"  stroke="#9B59B6" stroke-width="2" opacity=".8"/>
+          <line x1="0" y1="13" x2="40" y2="13" stroke="#9B59B6" stroke-width="2" opacity=".7"/>
+          <line x1="0" y1="19" x2="40" y2="19" stroke="#9B59B6" stroke-width="1.8" opacity=".55"/>
+          <line x1="0" y1="25" x2="40" y2="25" stroke="#C39BD3" stroke-width="1.5" opacity=".4"/>
+          <line x1="0" y1="31" x2="40" y2="31" stroke="#C39BD3" stroke-width="1" opacity=".22"/></g>
+          <path d="M20 34C20 34 2 22 2 11.5C2 6.2 6.5 2 12 2C15.5 2 18.5 3.8 20 6.5C21.5 3.8 24.5 2 28 2C33.5 2 38 6.2 38 11.5C38 22 20 34 20 34Z" fill="none" stroke="#9B59B6" stroke-width="1.5" opacity=".45"/>
+        </svg>
+        <span class="logo-text" style="font-size:1.125rem">SINTONIA</span>
+      </a>
+      <p class="foot-tagline">
+        <span class="pt">Jogos, desafios e métricas que aproximam o casal. Feito no Brasil com 🤍</span>
+        <span class="en">Games, challenges and metrics that bring couples closer. Made in Brazil with 🤍</span>
+      </p>
+      <div class="social-row">
+        <a href="#" class="soc" aria-label="Instagram">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="soc" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.88a8.17 8.17 0 004.78 1.52V7a4.85 4.85 0 01-1.01-.31z"/></svg>
+        </a>
+        <a href="#" class="soc" aria-label="YouTube">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="foot-col-title pt">Produto</div>
+      <div class="foot-col-title en">Product</div>
+      <ul class="foot-links">
+        <li><a href="#features"><span class="pt">Recursos</span><span class="en">Features</span></a></li>
+        <li><a href="#como"><span class="pt">Como Funciona</span><span class="en">How It Works</span></a></li>
+        <li><a href="#download"><span class="pt">Download</span><span class="en">Download</span></a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="foot-col-title pt">Empresa</div>
+      <div class="foot-col-title en">Company</div>
+      <ul class="foot-links">
+        <li><a href="#"><span class="pt">Sobre Nós</span><span class="en">About Us</span></a></li>
+        <li><a href="#"><span class="pt">Blog</span><span class="en">Blog</span></a></li>
+        <li><a href="#"><span class="pt">Imprensa</span><span class="en">Press</span></a></li>
+        <li><a href="#"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="foot-col-title pt">Legal</div>
+      <div class="foot-col-title en">Legal</div>
+      <ul class="foot-links">
+        <li><a href="#privacidade"><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></a></li>
+        <li><a href="#termos"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a></li>
+        <li><a href="#"><span class="pt">Cookies</span><span class="en">Cookies</span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Legal blocks -->
+  <div class="foot-legal">
+    <div class="legal-block" id="privacidade">
+      <div class="legal-title pt">Política de Privacidade</div>
+      <div class="legal-title en">Privacy Policy</div>
+      <p class="legal-text pt">O Sintonia coleta apenas os dados necessários para o funcionamento do aplicativo: endereço de e-mail e informações do perfil do casal. Não vendemos, alugamos nem compartilhamos suas informações pessoais com anunciantes ou terceiros. Todo o histórico de jogo é armazenado de forma criptografada e é acessível exclusivamente pelo casal. Você pode solicitar a exclusão completa da conta e de todos os dados associados a qualquer momento pelo e-mail <strong>privacidade@sintoniaapp.com</strong>. Ao usar o app, você concorda com a coleta e uso de dados conforme descrito nesta política.</p>
+      <p class="legal-text en">Sintonia collects only the data necessary for the app to function: email address and couple profile information. We do not sell, rent, or share your personal information with advertisers or third parties. All gameplay history is stored in encrypted form and is accessible exclusively by the couple. You may request full account deletion and all associated data at any time by emailing <strong>privacy@sintoniaapp.com</strong>. By using the app, you agree to the collection and use of data as described in this policy.</p>
+    </div>
+
+    <div class="legal-block" id="termos">
+      <div class="legal-title pt">Termos de Uso</div>
+      <div class="legal-title en">Terms of Use</div>
+      <p class="legal-text pt">O Sintonia é um aplicativo voltado exclusivamente para adultos maiores de 18 anos em relacionamentos consensuais. O conteúdo do aplicativo destina-se ao uso privado entre parceiros e não deve ser compartilhado publicamente sem consentimento. É proibido o uso do app para qualquer finalidade ilícita, que viole a legislação brasileira ou que contrarie os princípios de consensualidade. O Sintonia reserva-se o direito de suspender contas que violem estes termos. O uso continuado do aplicativo implica aceitação integral destes Termos de Uso e de quaisquer atualizações subsequentes.</p>
+      <p class="legal-text en">Sintonia is an application designed exclusively for adults 18 and over in consensual relationships. The app's content is intended for private use between partners and must not be shared publicly without consent. Use of the app for any unlawful purpose or any purpose that violates applicable law or the principles of consent is strictly prohibited. Sintonia reserves the right to suspend accounts that violate these terms. Continued use of the application implies full acceptance of these Terms of Use and any subsequent updates.</p>
+    </div>
+  </div>
+
+  <p class="foot-copy">
+    <span class="pt">© 2024 SintoniaApp. Todos os direitos reservados. Feito com ♥ no Brasil.</span>
+    <span class="en">© 2024 SintoniaApp. All rights reserved. Made with ♥ in Brazil.</span>
+  </p>
+</footer>
+
+
+<script>
+/* ── LANGUAGE SWITCHER ─────────────────────────────── */
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  localStorage.setItem('sintonia-lang', lang);
+}
+
+// Restore saved language
+const saved = localStorage.getItem('sintonia-lang');
+if (saved && saved !== 'pt') setLang(saved);
+
+/* ── SCROLL REVEAL ─────────────────────────────────── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      // Stagger grid children
+      const delay = e.target.closest('.feat-grid, .testi-grid, .how-steps')
+        ? Array.from(e.target.parentElement.children).indexOf(e.target) * 80
+        : 0;
+      setTimeout(() => e.target.classList.add('on'), delay);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── NAV SHRINK ON SCROLL ──────────────────────────── */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.padding =
+    window.scrollY > 60 ? '.75rem 2.5rem' : '1.125rem 2.5rem';
+}, { passive: true });
+</script>
+</body>
+</html>
