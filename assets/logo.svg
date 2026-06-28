@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Left side: coral/salmon pink -->
+    <radialGradient id="lp-l" cx="38%" cy="42%" r="65%" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="155">
+      <stop offset="0%"   stop-color="#FF9DAB"/>
+      <stop offset="38%"  stop-color="#EE3565"/>
+      <stop offset="100%" stop-color="#C21045"/>
+    </radialGradient>
+    <!-- Right side: deep burgundy -->
+    <radialGradient id="lp-r" cx="62%" cy="58%" r="58%" gradientUnits="userSpaceOnUse" x1="100" y1="55" x2="185" y2="155">
+      <stop offset="0%"   stop-color="#8B1A40"/>
+      <stop offset="55%"  stop-color="#4A0820"/>
+      <stop offset="100%" stop-color="#200010"/>
+    </radialGradient>
+    <!-- Tongue: warm coral -->
+    <radialGradient id="lp-t" cx="35%" cy="28%" r="68%" gradientUnits="userSpaceOnUse" x1="30" y1="140" x2="72" y2="186">
+      <stop offset="0%"   stop-color="#FFA0B0"/>
+      <stop offset="100%" stop-color="#D02050"/>
+    </radialGradient>
+    <!-- Cherry: dark wine -->
+    <radialGradient id="lp-c" cx="32%" cy="28%" r="62%" gradientUnits="userSpaceOnUse" x1="130" y1="14" x2="186" y2="66">
+      <stop offset="0%"   stop-color="#8C1538"/>
+      <stop offset="100%" stop-color="#350015"/>
+    </radialGradient>
+    <!-- Clip halves -->
+    <clipPath id="cl"><rect x="0"   y="0" width="100" height="200"/></clipPath>
+    <clipPath id="cr"><rect x="100" y="0" width="100" height="200"/></clipPath>
+    <!-- Full lips clip -->
+    <clipPath id="ca">
+      <path d="M20,92 C24,72 38,50 65,56 C80,59 90,68 100,70 C110,68 120,59 135,56 C162,50 176,72 180,92 C174,118 154,142 130,150 C118,154 108,157 100,157 C92,157 82,154 70,150 C46,142 26,118 20,92Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── Tongue / drip (behind lips) ── -->
+  <ellipse cx="54" cy="160" rx="17" ry="24" fill="url(#lp-t)"/>
+  <ellipse cx="49" cy="180" rx="10"  ry="10" fill="url(#lp-t)"/>
+  <!-- tongue highlight -->
+  <ellipse cx="50" cy="155" rx="6"  ry="3.5" fill="rgba(255,210,220,.3)" transform="rotate(-8,50,155)"/>
+
+  <!-- ── Full lips shape ── -->
+  <!-- Left half (coral) -->
+  <g clip-path="url(#cl)">
+    <path d="M20,92 C24,72 38,50 65,56 C80,59 90,68 100,70 C110,68 120,59 135,56 C162,50 176,72 180,92 C174,118 154,142 130,150 C118,154 108,157 100,157 C92,157 82,154 70,150 C46,142 26,118 20,92Z"
+          fill="url(#lp-l)"/>
+  </g>
+  <!-- Right half (dark burgundy) -->
+  <g clip-path="url(#cr)">
+    <path d="M20,92 C24,72 38,50 65,56 C80,59 90,68 100,70 C110,68 120,59 135,56 C162,50 176,72 180,92 C174,118 154,142 130,150 C118,154 108,157 100,157 C92,157 82,154 70,150 C46,142 26,118 20,92Z"
+          fill="url(#lp-r)"/>
+  </g>
+
+  <!-- ── Mouth opening (shadow gap) ── -->
+  <path d="M34,92 C52,97 76,101 100,101 C124,101 148,97 166,92 C150,83 126,81 100,81 C74,81 50,83 34,92Z"
+        fill="#06000A" opacity=".94"/>
+
+  <!-- ── Glossy highlight upper lip (left) ── -->
+  <ellipse cx="63" cy="69" rx="26" ry="9" fill="white" opacity=".13" transform="rotate(-12,63,69)"/>
+  <!-- Subtle highlight upper right -->
+  <ellipse cx="140" cy="68" rx="14" ry="6" fill="white" opacity=".07" transform="rotate(10,140,68)"/>
+  <!-- Lower lip left shine -->
+  <ellipse cx="60" cy="132" rx="14" ry="5" fill="rgba(255,200,210,.12)" transform="rotate(-8,60,132)"/>
+
+  <!-- ── Cherry / sphere (upper right) ── -->
+  <circle cx="160" cy="40" r="26" fill="url(#lp-c)"/>
+  <!-- cherry highlight -->
+  <ellipse cx="151" cy="30" rx="10" ry="7" fill="white" opacity=".27" transform="rotate(-22,151,30)"/>
+  <!-- cherry rim -->
+  <circle cx="160" cy="40" r="26" fill="none" stroke="rgba(180,60,80,.35)" stroke-width="1.5"/>
+
+  <!-- ── Outer rim of lips ── -->
+  <path d="M20,92 C24,72 38,50 65,56 C80,59 90,68 100,70 C110,68 120,59 135,56 C162,50 176,72 180,92 C174,118 154,142 130,150 C118,154 108,157 100,157 C92,157 82,154 70,150 C46,142 26,118 20,92Z"
+        fill="none" stroke="rgba(255,150,170,.22)" stroke-width="1.5"/>
+</svg>
