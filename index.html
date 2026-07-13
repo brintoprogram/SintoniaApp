@@ -12,34 +12,33 @@
 <link rel="apple-touch-icon" href="assets/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
 /* ── TOKENS ─────────────────────────────────────────── */
 :root{
-  --bg:#070008;
-  --bg2:#0C000A;
-  --bg-card:#120010;
-  --red:#E01535;
-  --red-glow:#FF1744;
-  --red-deep:#8B0020;
-  --red-mid:#C00028;
-  --violet:#9B59B6;
-  --violet-lt:#C39BD3;
-  --text:#F5E6E8;
-  --muted:#9E7A84;
-  --border:rgba(224,21,53,.22);
-  --font-s:'Cormorant Garamond',Georgia,serif;
-  --font-b:'Hanken Grotesk',system-ui,sans-serif;
+  --bg:#0A0010;
+  --bg2:#0D0012;
+  --bg-card:#16001F;
+  --primary:#A600FF;
+  --primary-glow:#C13BFF;
+  --primary-deep:#3D0066;
+  --primary-mid:#7A00CC;
+  --text:#F3E8FF;
+  --muted:#B79ACC;
+  --border:rgba(166,0,255,.28);
+  --font-s:'Montserrat',sans-serif;
+  --font-b:'Montserrat',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   background-color:var(--bg);
   background-image:
-    radial-gradient(ellipse 80% 50% at 15% 10%,rgba(100,0,20,.13) 0%,transparent 55%),
-    radial-gradient(ellipse 60% 45% at 85% 85%,rgba(60,0,90,.09) 0%,transparent 50%);
+    radial-gradient(ellipse 80% 50% at 15% 10%,rgba(120,0,200,.16) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 45% at 85% 85%,rgba(90,0,160,.11) 0%,transparent 50%);
   color:var(--text);
   font-family:var(--font-b);
+  font-weight:500;
   font-size:16px;
   line-height:1.6;
   overflow-x:hidden;
@@ -52,16 +51,16 @@ body{
 /* ── SCROLL PROGRESS BAR ────────────────────────────── */
 #progress-bar{
   position:fixed;top:0;left:0;height:2px;width:0%;
-  background:linear-gradient(90deg,var(--red-deep),var(--red-glow));
+  background:linear-gradient(90deg,var(--primary-deep),var(--primary-glow));
   z-index:1000;transition:width .05s linear;
-  box-shadow:0 0 8px rgba(255,23,68,.6);
+  box-shadow:0 0 8px rgba(193,59,255,.6);
 }
 
 /* ── PARTICLES ──────────────────────────────────────── */
 .particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
 .p{
   position:absolute;border-radius:50%;
-  background:var(--red);opacity:0;
+  background:var(--primary);opacity:0;
   animation:rise var(--d,8s) var(--del,0s) ease-in infinite;
 }
 @keyframes rise{
@@ -73,8 +72,8 @@ body{
 
 /* ── HELPERS ────────────────────────────────────────── */
 .container{max-width:1180px;margin:0 auto;padding:0 2.25rem}
-.eyebrow{font-family:var(--font-b);font-size:.625rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.875rem}
-.s-title{font-family:var(--font-s);font-size:clamp(2rem,4vw,3.25rem);font-weight:700;line-height:1.08;letter-spacing:-.01em;margin-bottom:1rem}
+.eyebrow{font-family:var(--font-b);font-size:.625rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:.875rem}
+.s-title{font-family:var(--font-s);font-size:clamp(2rem,4vw,3.25rem);font-weight:800;line-height:1.08;letter-spacing:-.01em;margin-bottom:1rem}
 .s-body{font-size:.9375rem;color:var(--muted);line-height:1.75;max-width:460px}
 
 /* ── REVEAL ANIMATIONS ──────────────────────────────── */
@@ -92,32 +91,32 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
   padding:1.125rem 2.5rem;
-  background:rgba(7,0,8,.9);backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(224,21,53,.14);
+  background:rgba(9,0,14,.9);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(166,0,255,.14);
   transition:padding .3s ease;
 }
 nav.scrolled{padding:.75rem 2.5rem}
 .logo{display:flex;align-items:center;gap:.625rem;text-decoration:none;color:var(--text)}
-.logo-img{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(224,21,53,.4));transition:filter .3s}
-.logo:hover .logo-img{filter:drop-shadow(0 0 12px rgba(255,23,68,.6))}
-.logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:700;letter-spacing:.05em}
+.logo-img{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(166,0,255,.4));transition:filter .3s}
+.logo:hover .logo-img{filter:drop-shadow(0 0 12px rgba(193,59,255,.6))}
+.logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:800;letter-spacing:.05em}
 .nav-r{display:flex;align-items:center;gap:1.25rem}
 .lang-toggle{display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden}
 .lang-btn{
   padding:.3rem .75rem;background:transparent;color:var(--muted);
   border:none;cursor:pointer;font-family:var(--font-b);
-  font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   transition:background .2s,color .2s;
 }
-.lang-btn.active{background:var(--red);color:#fff}
+.lang-btn.active{background:var(--primary);color:#fff}
 .nav-dl{
   display:inline-flex;align-items:center;gap:.4rem;
-  padding:.5625rem 1.375rem;background:var(--red);color:#fff;
-  font-family:var(--font-b);font-size:.8125rem;font-weight:700;
+  padding:.5625rem 1.375rem;background:var(--primary);color:#fff;
+  font-family:var(--font-b);font-size:.8125rem;font-weight:800;
   border-radius:100px;text-decoration:none;border:none;cursor:pointer;
-  box-shadow:0 0 18px rgba(224,21,53,.4);transition:box-shadow .25s,transform .2s;
+  box-shadow:0 0 18px rgba(166,0,255,.4);transition:box-shadow .25s,transform .2s;
 }
-.nav-dl:hover{box-shadow:0 0 32px rgba(255,23,68,.6);transform:translateY(-1px)}
+.nav-dl:hover{box-shadow:0 0 32px rgba(193,59,255,.6);transform:translateY(-1px)}
 
 /* ── HERO ───────────────────────────────────────────── */
 .hero{
@@ -129,14 +128,14 @@ nav.scrolled{padding:.75rem 2.5rem}
 .hero::before{
   content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);
   width:700px;height:450px;
-  background:radial-gradient(ellipse,rgba(200,0,40,.1) 0%,transparent 65%);
+  background:radial-gradient(ellipse,rgba(150,0,220,.14) 0%,transparent 65%);
   pointer-events:none;
 }
 .hero-logo{
   width:90px;height:90px;
   margin:0 auto 1.5rem;
   position:relative;z-index:1;
-  filter:drop-shadow(0 0 20px rgba(224,21,53,.45));
+  filter:drop-shadow(0 0 20px rgba(166,0,255,.45));
   animation:logo-float 4s ease-in-out infinite;
 }
 @keyframes logo-float{
@@ -145,20 +144,20 @@ nav.scrolled{padding:.75rem 2.5rem}
 }
 .hero-eye{
   display:inline-flex;align-items:center;gap:.75rem;
-  font-family:var(--font-b);font-size:.625rem;font-weight:600;
-  letter-spacing:.25em;text-transform:uppercase;color:var(--red);
+  font-family:var(--font-b);font-size:.625rem;font-weight:700;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--primary);
   margin-bottom:1.5rem;position:relative;z-index:1;
 }
 .hero-eye::before,.hero-eye::after{content:'';width:32px;height:1px}
-.hero-eye::before{background:linear-gradient(90deg,transparent,var(--red))}
-.hero-eye::after{background:linear-gradient(90deg,var(--red),transparent)}
+.hero-eye::before{background:linear-gradient(90deg,transparent,var(--primary))}
+.hero-eye::after{background:linear-gradient(90deg,var(--primary),transparent)}
 h1{
   font-family:var(--font-s);
-  font-size:clamp(2.75rem,8vw,6rem);font-weight:700;
+  font-size:clamp(2.75rem,8vw,6rem);font-weight:800;
   line-height:.98;letter-spacing:-.025em;margin-bottom:1.25rem;
   position:relative;z-index:1;
 }
-h1 .italic{font-style:italic;color:var(--red)}
+h1 .accent{font-weight:900;color:var(--primary-glow)}
 .hero-sub{
   font-size:1.0625rem;color:var(--muted);
   max-width:500px;margin:0 auto 2.5rem;line-height:1.75;
@@ -172,59 +171,59 @@ h1 .italic{font-style:italic;color:var(--red)}
 /* Magnetic button wrapper */
 .magnetic{display:inline-block;position:relative}
 
-.btn-red{
+.btn-primary{
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.9375rem 2.25rem;
-  background:linear-gradient(135deg,var(--red-glow) 0%,var(--red-mid) 100%);
-  color:#fff;font-family:var(--font-b);font-size:.9375rem;font-weight:700;
+  background:linear-gradient(135deg,var(--primary-glow) 0%,var(--primary-mid) 100%);
+  color:#fff;font-family:var(--font-b);font-size:.9375rem;font-weight:800;
   border-radius:100px;text-decoration:none;border:none;cursor:pointer;
-  box-shadow:0 4px 28px rgba(224,21,53,.45),0 0 0 1px rgba(255,23,68,.25);
+  box-shadow:0 4px 28px rgba(166,0,255,.45),0 0 0 1px rgba(193,59,255,.25);
   transition:transform .2s,box-shadow .25s;
   position:relative;overflow:hidden;
 }
-.btn-red::after{
+.btn-primary::after{
   content:'';position:absolute;inset:0;border-radius:inherit;
   background:linear-gradient(135deg,rgba(255,255,255,.15),transparent 60%);
   opacity:0;transition:opacity .3s;
 }
-.btn-red:hover::after{opacity:1}
-.btn-red:hover{box-shadow:0 8px 40px rgba(255,23,68,.55),0 0 0 1px rgba(255,23,68,.45)}
+.btn-primary:hover::after{opacity:1}
+.btn-primary:hover{box-shadow:0 8px 40px rgba(193,59,255,.55),0 0 0 1px rgba(193,59,255,.45)}
 .btn-outline{
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.9375rem 2.25rem;background:transparent;color:var(--text);
-  font-family:var(--font-b);font-size:.9375rem;font-weight:600;
-  border-radius:100px;text-decoration:none;border:1px solid rgba(224,21,53,.35);
+  font-family:var(--font-b);font-size:.9375rem;font-weight:700;
+  border-radius:100px;text-decoration:none;border:1px solid rgba(166,0,255,.35);
   transition:border-color .25s,background .25s;
 }
-.btn-outline:hover{border-color:var(--red);background:rgba(224,21,53,.07)}
+.btn-outline:hover{border-color:var(--primary);background:rgba(166,0,255,.07)}
 
 /* ──────────────────────────────────────────────────────
    MINES GAME
 ────────────────────────────────────────────────────── */
 .mines-wrap{
   position:relative;z-index:1;
-  background:rgba(12,0,10,.7);
-  border:1.5px solid rgba(224,21,53,.3);
+  background:rgba(15,0,22,.7);
+  border:1.5px solid rgba(166,0,255,.3);
   border-radius:24px;
   padding:1.75rem 2rem 2rem;
   max-width:580px;width:100%;
-  box-shadow:0 0 0 1px rgba(255,23,68,.07),0 0 40px rgba(224,21,53,.12),inset 0 0 40px rgba(0,0,0,.4);
+  box-shadow:0 0 0 1px rgba(193,59,255,.07),0 0 40px rgba(166,0,255,.12),inset 0 0 40px rgba(0,0,0,.4);
   backdrop-filter:blur(12px);
 }
 .mines-wrap::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;border-radius:24px 24px 0 0;
-  background:linear-gradient(90deg,transparent,rgba(255,80,120,.5),transparent);
+  background:linear-gradient(90deg,transparent,rgba(200,100,255,.5),transparent);
 }
 .mines-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.125rem;flex-wrap:wrap;gap:.75rem}
 .mines-badge{
   display:inline-flex;align-items:center;gap:.375rem;
-  background:rgba(224,21,53,.15);border:1px solid rgba(224,21,53,.3);
+  background:rgba(166,0,255,.15);border:1px solid rgba(166,0,255,.3);
   border-radius:100px;padding:.25rem .75rem;
-  font-size:.5625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);
+  font-size:.5625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);
 }
-.mines-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);animation:blink-dot 1.5s ease-in-out infinite}
+.mines-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--primary);animation:blink-dot 1.5s ease-in-out infinite}
 @keyframes blink-dot{0%,100%{opacity:1}50%{opacity:.2}}
-.mines-title-text{font-family:var(--font-s);font-size:1.25rem;font-weight:700}
+.mines-title-text{font-family:var(--font-s);font-size:1.25rem;font-weight:800}
 .mines-hint{font-size:.75rem;color:var(--muted);text-align:center;margin-bottom:1.25rem;line-height:1.5}
 
 /* Players bar */
@@ -241,16 +240,16 @@ h1 .italic{font-style:italic;color:var(--red)}
   flex:1;justify-content:center;max-width:180px;
 }
 .mines-player.active{
-  background:rgba(224,21,53,.12);
-  border-color:rgba(224,21,53,.45);
-  box-shadow:0 0 16px rgba(224,21,53,.2);
+  background:rgba(166,0,255,.12);
+  border-color:rgba(166,0,255,.45);
+  box-shadow:0 0 16px rgba(166,0,255,.2);
 }
 .p-icon{font-size:1.25rem;line-height:1}
 .p-info{text-align:left}
-.p-name{font-size:.75rem;font-weight:600;line-height:1.2}
+.p-name{font-size:.75rem;font-weight:700;line-height:1.2}
 .p-bombs{font-size:.5625rem;color:var(--muted)}
 .mines-vs{
-  font-family:var(--font-s);font-size:.875rem;font-weight:600;
+  font-family:var(--font-s);font-size:.875rem;font-weight:700;
   color:var(--muted);flex-shrink:0;
 }
 
@@ -262,7 +261,7 @@ h1 .italic{font-style:italic;color:var(--red)}
 .mine-cell{
   aspect-ratio:1;border-radius:10px;
   background:rgba(255,255,255,.04);
-  border:1px solid rgba(224,21,53,.2);
+  border:1px solid rgba(166,0,255,.2);
   cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   font-size:1.25rem;
@@ -276,23 +275,23 @@ h1 .italic{font-style:italic;color:var(--red)}
   opacity:0;transition:opacity .2s;
 }
 .mine-cell:hover:not(.revealed){
-  background:rgba(224,21,53,.1);
-  border-color:rgba(224,21,53,.5);
-  box-shadow:0 0 12px rgba(224,21,53,.25);
+  background:rgba(166,0,255,.1);
+  border-color:rgba(166,0,255,.5);
+  box-shadow:0 0 12px rgba(166,0,255,.25);
   transform:scale(1.04);
 }
 .mine-cell:hover:not(.revealed)::before{opacity:1}
 .mine-cell.revealed{cursor:default;pointer-events:none}
 .mine-cell.safe{
-  background:rgba(20,5,15,.9);
-  border-color:rgba(255,100,120,.3);
+  background:rgba(22,5,30,.9);
+  border-color:rgba(190,100,255,.35);
   animation:safe-reveal .35s cubic-bezier(.34,1.56,.64,1) forwards;
 }
 .mine-cell.bomb{
-  background:rgba(200,0,30,.2);
-  border-color:var(--red);
+  background:rgba(140,0,190,.25);
+  border-color:var(--primary);
   animation:bomb-reveal .4s ease forwards;
-  box-shadow:0 0 20px rgba(224,21,53,.5);
+  box-shadow:0 0 20px rgba(166,0,255,.5);
 }
 @keyframes safe-reveal{
   0%  {transform:scale(0.5) rotateY(90deg);opacity:0}
@@ -301,7 +300,7 @@ h1 .italic{font-style:italic;color:var(--red)}
 }
 @keyframes bomb-reveal{
   0%  {transform:scale(.5);opacity:0}
-  40% {transform:scale(1.3);opacity:1;box-shadow:0 0 30px rgba(255,23,68,.8)}
+  40% {transform:scale(1.3);opacity:1;box-shadow:0 0 30px rgba(193,59,255,.8)}
   70% {transform:scale(.95)}
   100%{transform:scale(1)}
 }
@@ -314,19 +313,19 @@ h1 .italic{font-style:italic;color:var(--red)}
 .mines-bombs-left{display:flex;align-items:center;gap:.375rem}
 .mines-bomb-icons{letter-spacing:.1em;font-size:.875rem}
 .mines-reset{
-  background:transparent;border:1px solid rgba(224,21,53,.3);
+  background:transparent;border:1px solid rgba(166,0,255,.3);
   border-radius:100px;padding:.3rem .875rem;
-  font-family:var(--font-b);font-size:.6875rem;font-weight:600;color:var(--muted);
+  font-family:var(--font-b);font-size:.6875rem;font-weight:700;color:var(--muted);
   cursor:pointer;transition:all .2s;
 }
-.mines-reset:hover{border-color:var(--red);color:var(--text);background:rgba(224,21,53,.08)}
+.mines-reset:hover{border-color:var(--primary);color:var(--text);background:rgba(166,0,255,.08)}
 
 /* Game over bar */
 .mines-gameover{
   text-align:center;padding:.75rem;
-  background:rgba(224,21,53,.08);border:1px solid rgba(224,21,53,.2);
+  background:rgba(166,0,255,.08);border:1px solid rgba(166,0,255,.2);
   border-radius:10px;margin-top:.75rem;
-  font-family:var(--font-s);font-size:.9375rem;font-style:italic;
+  font-family:var(--font-s);font-size:.9375rem;font-weight:700;
   color:var(--text);display:none;
 }
 
@@ -335,7 +334,7 @@ h1 .italic{font-style:italic;color:var(--red)}
 ────────────────────────────────────────────────────── */
 .challenge-overlay{
   position:fixed;inset:0;z-index:9999;
-  background:rgba(7,0,8,.88);
+  background:rgba(9,0,14,.88);
   backdrop-filter:blur(12px);
   display:flex;align-items:center;justify-content:center;
   padding:1.5rem;
@@ -343,46 +342,46 @@ h1 .italic{font-style:italic;color:var(--red)}
 }
 .challenge-overlay.open{opacity:1;pointer-events:all}
 .challenge-modal{
-  background:linear-gradient(160deg,#1A0010 0%,#0C0008 100%);
-  border:1.5px solid var(--red);
+  background:linear-gradient(160deg,#2A0040 0%,#0C0010 100%);
+  border:1.5px solid var(--primary);
   border-radius:24px;padding:2.5rem 2rem;
   max-width:420px;width:100%;text-align:center;
-  box-shadow:0 0 60px rgba(224,21,53,.3),inset 0 0 40px rgba(0,0,0,.5);
+  box-shadow:0 0 60px rgba(166,0,255,.3),inset 0 0 40px rgba(0,0,0,.5);
   transform:scale(.9) translateY(20px);transition:transform .3s cubic-bezier(.34,1.56,.64,1);
   position:relative;overflow:hidden;
 }
 .challenge-overlay.open .challenge-modal{transform:none}
 .challenge-modal::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,80,120,.6),transparent);
+  background:linear-gradient(90deg,transparent,rgba(200,100,255,.6),transparent);
 }
-.ch-logo{width:70px;height:70px;margin:0 auto .875rem;filter:drop-shadow(0 0 14px rgba(224,21,53,.5))}
+.ch-logo{width:70px;height:70px;margin:0 auto .875rem;filter:drop-shadow(0 0 14px rgba(166,0,255,.5))}
 .ch-who{
-  font-size:.625rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);margin-bottom:1rem;
 }
-.ch-who span{color:var(--red)}
+.ch-who span{color:var(--primary-glow)}
 .ch-label{
-  font-size:.5625rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--red);margin-bottom:.875rem;
+  font-size:.5625rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--primary-glow);margin-bottom:.875rem;
 }
 .ch-text{
-  font-family:var(--font-s);font-size:1.5rem;font-style:italic;font-weight:600;
+  font-family:var(--font-s);font-size:1.5rem;font-weight:700;
   color:var(--text);line-height:1.35;margin-bottom:1.75rem;
 }
 .ch-accept{
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.875rem 2rem;
-  background:linear-gradient(135deg,var(--red-glow),var(--red-mid));
-  color:#fff;font-family:var(--font-b);font-size:.9375rem;font-weight:700;
+  background:linear-gradient(135deg,var(--primary-glow),var(--primary-mid));
+  color:#fff;font-family:var(--font-b);font-size:.9375rem;font-weight:800;
   border-radius:100px;border:none;cursor:pointer;
-  box-shadow:0 4px 24px rgba(224,21,53,.4);
+  box-shadow:0 4px 24px rgba(166,0,255,.4);
   transition:transform .2s,box-shadow .2s;width:100%;justify-content:center;
 }
-.ch-accept:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(255,23,68,.5)}
+.ch-accept:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(193,59,255,.5)}
 
 /* ── TICKER ─────────────────────────────────────────── */
-.ticker{overflow:hidden;background:var(--red);padding:.625rem 0}
+.ticker{overflow:hidden;background:var(--primary);padding:.625rem 0}
 .ticker-track{display:flex;gap:3rem;white-space:nowrap;animation:tick 28s linear infinite}
 .ticker-item{
   font-family:var(--font-b);font-size:.625rem;font-weight:700;
@@ -399,17 +398,17 @@ h1 .italic{font-style:italic;color:var(--red)}
 .features-header .s-body{margin:0 auto}
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.125rem;max-width:880px;margin:0 auto}
 .feat-card{
-  background:linear-gradient(155deg,#8B0020 0%,#3A0010 55%,#180008 100%);
-  border:1.5px solid var(--red);border-radius:20px;
+  background:linear-gradient(155deg,#A600FF 0%,#4B0080 55%,#180024 100%);
+  border:1.5px solid var(--primary);border-radius:20px;
   padding:2rem 1.875rem;position:relative;overflow:hidden;
-  box-shadow:0 0 0 1px rgba(255,23,68,.08),0 0 24px rgba(224,21,53,.16),inset 0 0 32px rgba(0,0,0,.45);
+  box-shadow:0 0 0 1px rgba(193,59,255,.08),0 0 24px rgba(166,0,255,.16),inset 0 0 32px rgba(0,0,0,.45);
   transition:box-shadow .35s,transform .25s;text-align:left;
 }
 .feat-card:hover{
   transform:translateY(-4px);
-  box-shadow:0 0 0 1.5px rgba(255,23,68,.35),0 0 50px rgba(255,23,68,.28),0 16px 48px rgba(0,0,0,.55);
+  box-shadow:0 0 0 1.5px rgba(193,59,255,.35),0 0 50px rgba(193,59,255,.28),0 16px 48px rgba(0,0,0,.55);
 }
-.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,120,140,.5),transparent)}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(210,120,255,.55),transparent)}
 /* shimmer on hover */
 .feat-card::after{
   content:'';position:absolute;top:0;left:-100%;bottom:0;width:60%;
@@ -417,26 +416,9 @@ h1 .italic{font-style:italic;color:var(--red)}
   transition:left .6s ease;
 }
 .feat-card:hover::after{left:150%}
-.feat-icon{font-size:2.5rem;margin-bottom:1.125rem;display:block;filter:drop-shadow(0 0 10px rgba(255,80,100,.5))}
-.feat-name{font-family:var(--font-s);font-size:1.375rem;font-weight:700;margin-bottom:.625rem;color:#fff}
-.feat-desc{font-size:.875rem;color:rgba(255,220,225,.6);line-height:1.7}
-
-/* ── STATS ──────────────────────────────────────────── */
-.stats{padding:5rem 2rem;background:var(--bg)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:960px;margin:0 auto;text-align:center}
-.stat-n{
-  font-family:var(--font-s);
-  font-size:clamp(2.25rem,5vw,3.75rem);font-weight:700;
-  color:var(--red-glow);letter-spacing:-.03em;line-height:1;margin-bottom:.5rem;
-  display:block;
-}
-.stat-l{font-family:var(--font-b);font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-/* Divider between stat blocks */
-.stats-grid > div{position:relative}
-.stats-grid > div:not(:last-child)::after{
-  content:'';position:absolute;top:20%;right:0;bottom:20%;width:1px;
-  background:linear-gradient(180deg,transparent,rgba(224,21,53,.2),transparent);
-}
+.feat-icon{font-size:2.5rem;margin-bottom:1.125rem;display:block;filter:drop-shadow(0 0 10px rgba(200,100,255,.5))}
+.feat-name{font-family:var(--font-s);font-size:1.375rem;font-weight:800;margin-bottom:.625rem;color:#fff}
+.feat-desc{font-size:.875rem;color:rgba(225,205,255,.65);line-height:1.7}
 
 /* ── HOW IT WORKS ───────────────────────────────────── */
 .how{padding:7rem 2rem}
@@ -445,115 +427,91 @@ h1 .italic{font-style:italic;color:var(--red)}
 .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;max-width:920px;margin:0 auto;position:relative}
 .how-steps::before{
   content:'';position:absolute;top:2.25rem;left:12%;right:12%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(224,21,53,.3) 30%,rgba(224,21,53,.3) 70%,transparent);
+  background:linear-gradient(90deg,transparent,rgba(166,0,255,.3) 30%,rgba(166,0,255,.3) 70%,transparent);
 }
 .how-step{text-align:center;padding:.5rem}
 .how-num{
   width:4rem;height:4rem;border-radius:50%;
-  border:1.5px solid var(--red);
+  border:1.5px solid var(--primary);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 1.25rem;
-  background:rgba(224,21,53,.08);
-  box-shadow:0 0 18px rgba(224,21,53,.2);
-  font-family:var(--font-s);font-size:1.5rem;font-weight:700;color:var(--red);
+  background:rgba(166,0,255,.08);
+  box-shadow:0 0 18px rgba(166,0,255,.2);
+  font-family:var(--font-s);font-size:1.5rem;font-weight:800;color:var(--primary);
   position:relative;z-index:1;transition:box-shadow .3s,background .3s;
 }
-.how-step:hover .how-num{background:rgba(224,21,53,.18);box-shadow:0 0 28px rgba(224,21,53,.4)}
-.how-step-title{font-family:var(--font-s);font-size:1.0625rem;font-weight:600;margin-bottom:.5rem;transition:color .3s}
-.how-step:hover .how-step-title{color:var(--red)}
+.how-step:hover .how-num{background:rgba(166,0,255,.18);box-shadow:0 0 28px rgba(166,0,255,.4)}
+.how-step-title{font-family:var(--font-s);font-size:1.0625rem;font-weight:700;margin-bottom:.5rem;transition:color .3s}
+.how-step:hover .how-step-title{color:var(--primary)}
 .how-step-desc{font-size:.8125rem;color:var(--muted);line-height:1.65}
-
-/* ── TESTIMONIALS ───────────────────────────────────── */
-.testi{padding:7rem 2rem;background:var(--bg2)}
-.testi-header{text-align:center;margin-bottom:3rem}
-.testi-header .s-body{margin:0 auto}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:980px;margin:0 auto}
-.testi-card{
-  background:var(--bg-card);border:1px solid rgba(224,21,53,.15);
-  border-radius:18px;padding:1.75rem;
-  transition:border-color .3s,transform .25s,box-shadow .3s;
-}
-.testi-card:hover{border-color:rgba(224,21,53,.38);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
-.testi-q{
-  font-family:var(--font-s);font-size:1.0625rem;font-style:italic;
-  color:rgba(245,230,232,.88);line-height:1.65;margin-bottom:1.25rem;
-}
-.testi-q::before{content:'\201C';font-size:2.5rem;color:var(--red);line-height:0;vertical-align:-.4em;margin-right:.07em}
-.testi-author{display:flex;align-items:center;gap:.625rem}
-.t-avatar{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff}
-.t-name{font-size:.875rem;font-weight:600}
-.t-city{font-size:.6875rem;color:var(--muted)}
 
 /* ── DOWNLOAD ───────────────────────────────────────── */
 .download{padding:8rem 2rem;text-align:center;position:relative;overflow:hidden}
-.download::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(180,0,30,.1) 0%,transparent 65%);pointer-events:none}
-.dl-logo{width:80px;height:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 0 18px rgba(224,21,53,.5));animation:logo-float 4s 1s ease-in-out infinite;position:relative;z-index:1}
-.dl-title{font-family:var(--font-s);font-size:clamp(2.5rem,6vw,5rem);font-weight:700;line-height:1.03;letter-spacing:-.025em;margin-bottom:1.125rem;position:relative;z-index:1}
-.dl-title em{font-style:italic;color:var(--red)}
+.download::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(140,0,210,.14) 0%,transparent 65%);pointer-events:none}
+.dl-logo{width:80px;height:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 0 18px rgba(166,0,255,.5));animation:logo-float 4s 1s ease-in-out infinite;position:relative;z-index:1}
+.dl-title{font-family:var(--font-s);font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-.025em;margin-bottom:1.125rem;position:relative;z-index:1}
+.dl-title em{font-style:normal;font-weight:900;color:var(--primary-glow)}
 .dl-sub{color:var(--muted);font-size:1rem;margin-bottom:2.75rem;position:relative;z-index:1}
 .dl-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
 .dl-btn{
   display:inline-flex;align-items:center;gap:.75rem;
-  padding:1rem 1.875rem;background:#0E000C;
-  border:1.5px solid var(--red);border-radius:16px;text-decoration:none;color:var(--text);
-  box-shadow:0 0 22px rgba(224,21,53,.2);transition:box-shadow .3s,transform .2s;
+  padding:1rem 1.875rem;background:#12001A;
+  border:1.5px solid var(--primary);border-radius:16px;text-decoration:none;color:var(--text);
+  box-shadow:0 0 22px rgba(166,0,255,.2);transition:box-shadow .3s,transform .2s;
 }
-.dl-btn:hover{box-shadow:0 0 40px rgba(255,23,68,.35);transform:translateY(-2px)}
+.dl-btn:hover{box-shadow:0 0 40px rgba(193,59,255,.35);transform:translateY(-2px)}
 .dl-sup{font-size:.5625rem;color:var(--muted);letter-spacing:.06em;display:block}
-.dl-name{font-family:var(--font-s);font-size:1rem;font-weight:700;display:block}
+.dl-name{font-family:var(--font-s);font-size:1rem;font-weight:800;display:block}
 
 /* ── FAQ ────────────────────────────────────────────── */
 .faq{padding:7rem 2rem;background:var(--bg2)}
 .faq-inner{max-width:720px;margin:0 auto}
 .faq-header{text-align:center;margin-bottom:3rem}
 .faq-header .s-body{margin:0 auto}
-details{border-bottom:1px solid rgba(224,21,53,.14)}
-details:first-of-type{border-top:1px solid rgba(224,21,53,.14)}
+details{border-bottom:1px solid rgba(166,0,255,.14)}
+details:first-of-type{border-top:1px solid rgba(166,0,255,.14)}
 summary{
   display:flex;align-items:center;justify-content:space-between;
   padding:1.375rem 0;cursor:pointer;list-style:none;
-  font-family:var(--font-s);font-size:1.0625rem;font-weight:600;
+  font-family:var(--font-s);font-size:1.0625rem;font-weight:700;
   color:var(--text);transition:color .2s;gap:1rem;
 }
 summary::-webkit-details-marker{display:none}
-summary:hover{color:var(--red)}
+summary:hover{color:var(--primary)}
 .faq-plus{
   width:22px;height:22px;flex-shrink:0;border-radius:50%;
-  border:1px solid rgba(224,21,53,.4);
+  border:1px solid rgba(166,0,255,.4);
   display:flex;align-items:center;justify-content:center;
-  color:var(--red);font-size:1.125rem;line-height:1;
+  color:var(--primary);font-size:1.125rem;line-height:1;
   transition:transform .25s,background .25s;
 }
-details[open] .faq-plus{transform:rotate(45deg);background:rgba(224,21,53,.12)}
+details[open] .faq-plus{transform:rotate(45deg);background:rgba(166,0,255,.12)}
 .faq-body{font-size:.9375rem;color:var(--muted);line-height:1.75;padding-bottom:1.375rem}
 
 /* ── FOOTER ─────────────────────────────────────────── */
-footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
-.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1180px;margin:0 auto 2.5rem}
-.foot-logo-img{width:40px;height:40px;margin-bottom:.625rem;filter:drop-shadow(0 0 6px rgba(224,21,53,.3))}
+footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1180px;margin:0 auto 2.5rem}
+.foot-logo-img{width:40px;height:40px;margin-bottom:.625rem;filter:drop-shadow(0 0 6px rgba(166,0,255,.3))}
 .foot-tagline{font-size:.875rem;color:var(--muted);line-height:1.65;max-width:260px;margin:.875rem 0 1.25rem}
 .social-row{display:flex;gap:.625rem}
-.soc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(224,21,53,.22);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);font-size:.75rem;transition:border-color .2s,color .2s}
-.soc:hover{border-color:var(--red);color:var(--red)}
+.soc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(166,0,255,.22);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);font-size:.75rem;transition:border-color .2s,color .2s}
+.soc:hover{border-color:var(--primary);color:var(--primary)}
 .foot-col-title{font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.125rem}
 .foot-links{list-style:none;display:flex;flex-direction:column;gap:.625rem}
-.foot-links a{font-size:.875rem;color:rgba(245,230,232,.45);text-decoration:none;transition:color .2s}
+.foot-links a{font-size:.875rem;color:rgba(230,210,255,.5);text-decoration:none;transition:color .2s}
 .foot-links a:hover{color:var(--text)}
 .foot-legal{max-width:1180px;margin:0 auto;border-top:1px solid rgba(255,255,255,.045);padding-top:1.875rem}
-.legal-block{background:rgba(224,21,53,.04);border:1px solid rgba(224,21,53,.1);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:.875rem}
-.legal-title{font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.legal-block{background:rgba(166,0,255,.04);border:1px solid rgba(166,0,255,.1);border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:.875rem}
+.legal-title{font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:.5rem}
 .legal-text{font-size:.75rem;color:var(--muted);line-height:1.7}
-.foot-copy{margin-top:1.5rem;font-size:.6875rem;color:rgba(158,122,132,.45);letter-spacing:.06em;text-align:center}
+.foot-copy{margin-top:1.5rem;font-size:.6875rem;color:rgba(183,154,204,.55);letter-spacing:.06em;text-align:center}
 
 /* ── RESPONSIVE ─────────────────────────────────────── */
 @media(max-width:900px){
   nav{padding:1rem 1.25rem}
   .feat-grid{grid-template-columns:1fr;max-width:480px}
-  .stats-grid{grid-template-columns:1fr 1fr}
-  .stats-grid > div::after{display:none}
   .how-steps{grid-template-columns:1fr 1fr}
   .how-steps::before{display:none}
-  .testi-grid{grid-template-columns:1fr;max-width:440px}
   .foot-top{grid-template-columns:1fr 1fr;gap:2rem}
   .mines-grid{grid-template-columns:repeat(5,1fr)}
 }
@@ -628,8 +586,8 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
   </div>
 
   <h1>
-    <span class="pt">Onde a Intimidade<br><span class="italic">se Conecta</span></span>
-    <span class="en">Where Intimacy<br><span class="italic">Connects</span></span>
+    <span class="pt">Onde a Intimidade<br><span class="accent">se Conecta</span></span>
+    <span class="en">Where Intimacy<br><span class="accent">Connects</span></span>
   </h1>
 
   <p class="hero-sub">
@@ -639,7 +597,7 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
 
   <div class="hero-btns">
     <div class="magnetic">
-      <a href="#download" class="btn-red">
+      <a href="#download" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16.5 5.5 10l1.4-1.4 4.1 4.1V3h2v9.7l4.1-4.1L18.5 10 12 16.5zM5 19v-2h14v2H5z"/></svg>
         <span class="pt">Baixar Grátis</span>
         <span class="en">Free Download</span>
@@ -711,18 +669,24 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
 <!-- ─── TICKER ────────────────────────────────────────── -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item">+ 2 milhões de faixas de desafios <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Mines do Casal <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Mines do Casal <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Couple Mines <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Sintonia Roulette <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Tension Game ∞ <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Score de Intimidade <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Modo offline <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">+ 2 milhões de faixas de desafios <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Mines do Casal <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Score de Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Sintonia Score <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Modo offline <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Offline mode <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Mines do Casal <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Couple Mines <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Sintonia Roulette <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Tension Game ∞ <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Score de Intimidade <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Modo offline <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Score de Sintonia <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Sintonia Score <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Modo offline <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Offline mode <span class="ticker-sep">◆</span></span>
   </div>
 </div>
 
@@ -773,33 +737,6 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
 </section>
 
 
-<!-- ─── STATS ─────────────────────────────────────────── -->
-<section class="stats" id="stats">
-  <div class="stats-grid">
-    <div class="reveal">
-      <span class="stat-n" data-target="2100000" data-display="2,1M">0</span>
-      <span class="stat-l pt">Desafios disponíveis</span>
-      <span class="stat-l en">Available challenges</span>
-    </div>
-    <div class="reveal">
-      <span class="stat-n" data-target="87" data-display="87K">0</span>
-      <span class="stat-l pt">Casais ativos</span>
-      <span class="stat-l en">Active couples</span>
-    </div>
-    <div class="reveal">
-      <span class="stat-n" data-target="340" data-display="340K">0</span>
-      <span class="stat-l pt">Partidas jogadas</span>
-      <span class="stat-l en">Games played</span>
-    </div>
-    <div class="reveal">
-      <span class="stat-n" data-target="49" data-display="4.9★">0</span>
-      <span class="stat-l pt">Avaliação na App Store</span>
-      <span class="stat-l en">App Store rating</span>
-    </div>
-  </div>
-</section>
-
-
 <!-- ─── HOW IT WORKS ──────────────────────────────────── -->
 <section class="how" id="como">
   <div class="how-header reveal">
@@ -840,49 +777,6 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
       <div class="how-step-title en">Watch your score grow</div>
       <p class="how-step-desc pt">Métricas, conquistas e novos desafios a cada semana.</p>
       <p class="how-step-desc en">Metrics, achievements, and new challenges every week.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── TESTIMONIALS ──────────────────────────────────── -->
-<section class="testi" id="depoimentos">
-  <div class="container">
-    <div class="testi-header reveal">
-      <span class="eyebrow pt">Depoimentos</span>
-      <span class="eyebrow en">Testimonials</span>
-      <h2 class="s-title">
-        <span class="pt">O que os casais dizem</span>
-        <span class="en">What couples say</span>
-      </h2>
-      <p class="s-body pt">De novas conexões a relacionamentos de anos — a Sintonia transforma como vocês se veem.</p>
-      <p class="s-body en">From new connections to years-long relationships — Sintonia transforms how you see each other.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal-scale">
-        <p class="testi-q pt">Ficamos viciados no Mines. A gente termina a noite rindo e muito mais próximos. Cada bomba é uma surpresa.</p>
-        <p class="testi-q en">We got hooked on Mines. We end every night laughing and way closer. Every bomb is a surprise.</p>
-        <div class="testi-author">
-          <div class="t-avatar" style="background:linear-gradient(135deg,#8B0020,#9B59B6)">AR</div>
-          <div><div class="t-name">Ana &amp; Rafael</div><div class="t-city">São Paulo, SP</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal-scale">
-        <p class="testi-q pt">O Score virou nossa métrica favorita. Tem semana que competimos pra ver quem contribui mais pra intimidade.</p>
-        <p class="testi-q en">The Score became our favorite metric. Some weeks we compete to see who contributes more to our intimacy streak.</p>
-        <div class="testi-author">
-          <div class="t-avatar" style="background:linear-gradient(135deg,#C00028,#6B21A8)">CL</div>
-          <div><div class="t-name">Camila &amp; Lucas</div><div class="t-city">Rio de Janeiro, RJ</div></div>
-        </div>
-      </div>
-      <div class="testi-card reveal-scale">
-        <p class="testi-q pt">O Tension Game escala do jeito certo. A antecipação é tão boa quanto o jogo em si. Nunca fica entediante.</p>
-        <p class="testi-q en">The Tension Game escalates perfectly. The anticipation is just as good as the game itself. It never gets boring.</p>
-        <div class="testi-author">
-          <div class="t-avatar" style="background:linear-gradient(135deg,#7B0018,#C39BD3)">JM</div>
-          <div><div class="t-name">Juliana &amp; Marcos</div><div class="t-city">Belo Horizonte, MG</div></div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -967,42 +861,33 @@ footer{border-top:1px solid rgba(224,21,53,.12);padding:3.5rem 2.25rem 2rem}
       </ul>
     </div>
     <div>
-      <div class="foot-col-title pt">Empresa</div><div class="foot-col-title en">Company</div>
-      <ul class="foot-links">
-        <li><a href="#"><span class="pt">Sobre Nós</span><span class="en">About Us</span></a></li>
-        <li><a href="#"><span class="pt">Blog</span><span class="en">Blog</span></a></li>
-        <li><a href="#"><span class="pt">Imprensa</span><span class="en">Press</span></a></li>
-        <li><a href="#"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
-      </ul>
-    </div>
-    <div>
       <div class="foot-col-title">Legal</div>
       <ul class="foot-links">
-        <li><a href="#privacidade"><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></a></li>
-        <li><a href="#termos"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a></li>
-        <li><a href="#">Cookies</a></li>
+        <li><a href="privacidade.html"><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></a></li>
+        <li><a href="termos.html"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a></li>
+        <li><a href="mailto:contato@sintoniaapp.com"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
       </ul>
     </div>
   </div>
 
   <div class="foot-legal">
-    <div class="legal-block" id="privacidade">
+    <div class="legal-block">
       <div class="legal-title pt">Política de Privacidade</div>
       <div class="legal-title en">Privacy Policy</div>
-      <p class="legal-text pt">O Sintonia coleta apenas os dados necessários para o funcionamento do app: e-mail e perfil do casal. Não vendemos, alugamos nem compartilhamos suas informações com anunciantes ou terceiros. Todo o histórico de jogo é armazenado de forma criptografada e acessível exclusivamente pelo casal. Solicite a exclusão da conta e dados a qualquer momento pelo e-mail <strong>privacidade@sintoniaapp.com</strong>.</p>
-      <p class="legal-text en">Sintonia collects only the data necessary for the app to function: email and couple profile. We do not sell, rent, or share your information with advertisers or third parties. All gameplay history is encrypted and accessible exclusively by the couple. Request full account and data deletion at any time at <strong>privacy@sintoniaapp.com</strong>.</p>
+      <p class="legal-text pt">O Sintonia coleta apenas os dados necessários para o funcionamento do app e nunca vende ou compartilha suas informações com anunciantes. <a href="privacidade.html" style="color:var(--primary)">Leia a política completa →</a></p>
+      <p class="legal-text en">Sintonia only collects the data necessary for the app to work and never sells or shares your information with advertisers. <a href="privacidade.html" style="color:var(--primary)">Read the full policy →</a></p>
     </div>
-    <div class="legal-block" id="termos">
+    <div class="legal-block">
       <div class="legal-title pt">Termos de Uso</div>
       <div class="legal-title en">Terms of Use</div>
-      <p class="legal-text pt">O Sintonia é exclusivamente para adultos maiores de 18 anos em relacionamentos consensuais. O conteúdo destina-se ao uso privado entre parceiros e não deve ser compartilhado publicamente sem consentimento. É proibido o uso para qualquer finalidade ilícita ou que contrarie os princípios de consensualidade. O Sintonia reserva-se o direito de suspender contas que violem estes termos.</p>
-      <p class="legal-text en">Sintonia is exclusively for adults 18+ in consensual relationships. Content is intended for private use between partners and must not be shared publicly without consent. Use for any unlawful purpose or against principles of consent is strictly prohibited. Sintonia reserves the right to suspend accounts violating these terms.</p>
+      <p class="legal-text pt">O Sintonia é exclusivamente para adultos maiores de 18 anos em relacionamentos consensuais. <a href="termos.html" style="color:var(--primary)">Leia os termos completos →</a></p>
+      <p class="legal-text en">Sintonia is exclusively for adults 18+ in consensual relationships. <a href="termos.html" style="color:var(--primary)">Read the full terms →</a></p>
     </div>
   </div>
 
   <p class="foot-copy">
-    <span class="pt">© 2024 SintoniaApp. Todos os direitos reservados. Feito com ♥ no Brasil.</span>
-    <span class="en">© 2024 SintoniaApp. All rights reserved. Made with ♥ in Brazil.</span>
+    <span class="pt">© 2026 SintoniaApp. Todos os direitos reservados. Feito com ♥ no Brasil.</span>
+    <span class="en">© 2026 SintoniaApp. All rights reserved. Made with ♥ in Brazil.</span>
   </p>
 </footer>
 
@@ -1073,7 +958,7 @@ const revealObs = new IntersectionObserver(entries => {
       : [];
     const idx = siblings.indexOf(e.target);
     const gridParent = e.target.closest(
-      '.feat-grid,.testi-grid,.how-steps,.stats-grid');
+      '.feat-grid,.how-steps');
     const delay = gridParent ? idx * 90 : 0;
     setTimeout(() => e.target.classList.add('on'), delay);
     revealObs.unobserve(e.target);
@@ -1083,46 +968,6 @@ const revealObs = new IntersectionObserver(entries => {
 document.querySelectorAll(
   '.reveal,.reveal-scale,.reveal-left,.reveal-right'
 ).forEach(el => revealObs.observe(el));
-
-/* ══════════════════════════════════════════════════════
-   STAT COUNTER ANIMATION
-══════════════════════════════════════════════════════ */
-function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
-function animateCounter(el) {
-  const display = el.dataset.display;
-  const duration = 1800;
-  const start = performance.now();
-  function tick(now) {
-    const t = Math.min((now - start) / duration, 1);
-    const ease = easeOut(t);
-    // Show animated number or final display string
-    if (t < 1) {
-      const target = parseFloat(el.dataset.target);
-      const val = Math.round(ease * target);
-      // Format with K/M suffix
-      if (target >= 1000000) el.textContent = (val / 1000000).toFixed(1) + 'M';
-      else if (target >= 1000) el.textContent = Math.round(val / 1000) + 'K';
-      else if (target === 49) el.textContent = (val / 10).toFixed(1) + '★';
-      else el.textContent = val + 'K';
-      requestAnimationFrame(tick);
-    } else {
-      el.textContent = display;
-    }
-  }
-  requestAnimationFrame(tick);
-}
-
-const statsObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.querySelectorAll('.stat-n[data-target]').forEach(animateCounter);
-    statsObs.unobserve(e.target);
-  });
-}, { threshold: 0.3 });
-
-const statsSection = document.getElementById('stats');
-if (statsSection) statsObs.observe(statsSection);
 
 /* ══════════════════════════════════════════════════════
    MAGNETIC BUTTON

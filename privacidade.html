@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Política de Privacidade — Sintonia</title>
+<meta name="description" content="Política de Privacidade do app Sintonia: quais dados coletamos, como usamos, com quem compartilhamos e como exercer seus direitos."/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0A0010;
+  --bg2:#0D0012;
+  --bg-card:#16001F;
+  --primary:#A600FF;
+  --primary-glow:#C13BFF;
+  --primary-deep:#3D0066;
+  --primary-mid:#7A00CC;
+  --text:#F3E8FF;
+  --muted:#B79ACC;
+  --border:rgba(166,0,255,.28);
+  --font-s:'Montserrat',sans-serif;
+  --font-b:'Montserrat',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--bg);
+  background-image:radial-gradient(ellipse 80% 50% at 15% 0%,rgba(120,0,200,.15) 0%,transparent 55%);
+  color:var(--text);font-family:var(--font-b);font-weight:500;font-size:16px;line-height:1.65;
+}
+[data-lang="pt"] .en{display:none}
+[data-lang="en"] .pt{display:none}
+.container{max-width:760px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.125rem 2.5rem;
+  background:rgba(7,0,8,.9);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(166,0,255,.14);
+}
+.logo{display:flex;align-items:center;gap:.625rem;text-decoration:none;color:var(--text)}
+.logo-img{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(166,0,255,.4))}
+.logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:800;letter-spacing:.05em}
+.nav-r{display:flex;align-items:center;gap:1.25rem}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden}
+.lang-btn{padding:.3rem .75rem;background:transparent;color:var(--muted);border:none;cursor:pointer;font-family:var(--font-b);font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.lang-btn.active{background:var(--primary);color:#fff}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);text-decoration:none;font-size:.8125rem;font-weight:700;transition:color .2s}
+.back-link:hover{color:var(--primary)}
+
+/* HEADER */
+header.page-head{padding:9rem 0 3rem;text-align:center}
+.eyebrow{font-family:var(--font-b);font-size:.625rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:.875rem}
+h1{font-family:var(--font-s);font-size:clamp(2.25rem,5vw,3.25rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+.updated{font-size:.8125rem;color:var(--muted)}
+
+/* TOC */
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.75rem;margin-bottom:3rem}
+.toc-title{font-size:.625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:.875rem}
+.toc ol{list-style:none;display:grid;gap:.5rem}
+.toc a{color:var(--text);text-decoration:none;font-size:.875rem;opacity:.85;transition:opacity .2s,color .2s}
+.toc a:hover{color:var(--primary);opacity:1}
+
+/* CONTENT */
+main{padding-bottom:6rem}
+section.legal-sec{margin-bottom:2.75rem;scroll-margin-top:6rem}
+h2{font-family:var(--font-s);font-size:1.5rem;font-weight:800;color:var(--primary-glow);margin-bottom:.875rem;letter-spacing:-.01em}
+h2 .num{color:var(--muted);font-weight:400;margin-right:.5rem}
+p{color:rgba(245,230,232,.85);margin-bottom:.875rem;font-size:.9375rem;line-height:1.75}
+ul{margin:0 0 .875rem 1.25rem;color:rgba(245,230,232,.85);font-size:.9375rem;line-height:1.75}
+li{margin-bottom:.4rem}
+strong{color:var(--text)}
+a.inline{color:var(--primary-glow)}
+.callout{background:rgba(166,0,255,.06);border:1px solid rgba(166,0,255,.18);border-radius:12px;padding:1.125rem 1.375rem;margin-bottom:.875rem}
+.callout p{margin-bottom:0}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align:center}
+.foot-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap}
+.foot-links a{color:var(--muted);text-decoration:none;font-size:.8125rem}
+.foot-links a:hover{color:var(--primary)}
+.foot-copy{font-size:.6875rem;color:rgba(158,122,132,.55);letter-spacing:.05em}
+
+@media(max-width:560px){
+  nav{padding:1rem 1.25rem}
+  header.page-head{padding:8rem 0 2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="assets/logo.svg" class="logo-img" alt="Sintonia logo"/>
+    <span class="logo-text">SINTONIA</span>
+  </a>
+  <div class="nav-r">
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html" class="back-link">
+      <span class="pt">← Voltar</span>
+      <span class="en">← Back</span>
+    </a>
+  </div>
+</nav>
+
+<header class="page-head container">
+  <span class="eyebrow pt">Legal</span>
+  <span class="eyebrow en">Legal</span>
+  <h1><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></h1>
+  <p class="updated"><span class="pt">Última atualização: 12 de julho de 2026</span><span class="en">Last updated: July 12, 2026</span></p>
+</header>
+
+<main class="container">
+  <nav class="toc" aria-label="Sumário">
+    <div class="toc-title pt">Nesta política</div>
+    <div class="toc-title en">On this page</div>
+    <ol>
+      <li><a href="#quem-somos"><span class="pt">1. Quem somos</span><span class="en">1. Who we are</span></a></li>
+      <li><a href="#dados-coletados"><span class="pt">2. Dados que coletamos</span><span class="en">2. Data we collect</span></a></li>
+      <li><a href="#uso-dados"><span class="pt">3. Como usamos seus dados</span><span class="en">3. How we use your data</span></a></li>
+      <li><a href="#base-legal"><span class="pt">4. Base legal (LGPD)</span><span class="en">4. Legal basis</span></a></li>
+      <li><a href="#compartilhamento"><span class="pt">5. Compartilhamento com terceiros</span><span class="en">5. Sharing with third parties</span></a></li>
+      <li><a href="#seguranca"><span class="pt">6. Armazenamento, segurança e retenção</span><span class="en">6. Storage, security and retention</span></a></li>
+      <li><a href="#direitos"><span class="pt">7. Seus direitos</span><span class="en">7. Your rights</span></a></li>
+      <li><a href="#menores"><span class="pt">8. Menores de idade</span><span class="en">8. Minors</span></a></li>
+      <li><a href="#cookies"><span class="pt">9. Cookies no site</span><span class="en">9. Cookies on this site</span></a></li>
+      <li><a href="#transferencia"><span class="pt">10. Transferência internacional</span><span class="en">10. International transfer</span></a></li>
+      <li><a href="#alteracoes"><span class="pt">11. Alterações nesta política</span><span class="en">11. Changes to this policy</span></a></li>
+      <li><a href="#contato"><span class="pt">12. Contato e encarregado</span><span class="en">12. Contact and data officer</span></a></li>
+    </ol>
+  </nav>
+
+  <section class="legal-sec" id="quem-somos">
+    <h2><span class="num">1.</span><span class="pt">Quem somos</span><span class="en">Who we are</span></h2>
+    <p class="pt">O Sintonia ("nós", "app") é um aplicativo de jogos, desafios e métricas voltado a casais adultos. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos os dados pessoais de quem usa o app e este site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+    <p class="en">Sintonia ("we", "the app") is a games, challenges and metrics app for adult couples. This Privacy Policy describes how we collect, use, store and protect the personal data of people who use the app and this website, in accordance with Brazil's General Data Protection Law (LGPD) and, where applicable, other privacy laws.</p>
+  </section>
+
+  <section class="legal-sec" id="dados-coletados">
+    <h2><span class="num">2.</span><span class="pt">Dados que coletamos</span><span class="en">Data we collect</span></h2>
+    <p class="pt">Coletamos apenas os dados necessários para o funcionamento do app:</p>
+    <p class="en">We only collect the data necessary for the app to work:</p>
+    <ul>
+      <li><span class="pt"><strong>Dados de conta:</strong> nome, e-mail e foto de perfil (quando você usa login com Google ou Apple).</span><span class="en"><strong>Account data:</strong> name, email and profile photo (when you sign in with Google or Apple).</span></li>
+      <li><span class="pt"><strong>Dados do casal:</strong> vínculo entre parceiros (código de convite), perfil compartilhado do casal.</span><span class="en"><strong>Couple data:</strong> the link between partners (invite code), shared couple profile.</span></li>
+      <li><span class="pt"><strong>Dados de uso do app:</strong> jogos jogados, desafios concluídos, Score de Sintonia e histórico de atividade dentro do casal.</span><span class="en"><strong>App usage data:</strong> games played, challenges completed, Sintonia Score and activity history within the couple.</span></li>
+      <li><span class="pt"><strong>Dados técnicos:</strong> identificador do dispositivo, versão do app/sistema operacional e métricas de desempenho e estabilidade (coletadas via Firebase Performance), usadas apenas para diagnosticar falhas.</span><span class="en"><strong>Technical data:</strong> device identifier, app/OS version, and performance/stability metrics (collected via Firebase Performance), used only to diagnose issues.</span></li>
+      <li><span class="pt"><strong>Dados de pagamento:</strong> se você assinar o plano Premium, o processamento é feito pela App Store ou Google Play — nós não recebemos nem armazenamos dados do seu cartão.</span><span class="en"><strong>Payment data:</strong> if you subscribe to Premium, billing is processed by the App Store or Google Play — we never receive or store your card details.</span></li>
+    </ul>
+    <div class="callout">
+      <p class="pt">Não coletamos, e nunca pediremos, detalhes íntimos do que vocês conversam ou fazem fora do app. O conteúdo dos desafios exibidos é genérico e pré-definido — não monitoramos o que o casal faz em resposta a eles.</p>
+      <p class="en">We do not collect, and will never ask for, intimate details of what you discuss or do outside the app. Challenge content shown in-app is generic and pre-defined — we do not monitor what the couple does in response to it.</p>
+    </div>
+  </section>
+
+  <section class="legal-sec" id="uso-dados">
+    <h2><span class="num">3.</span><span class="pt">Como usamos seus dados</span><span class="en">How we use your data</span></h2>
+    <ul>
+      <li><span class="pt">Para criar e manter sua conta e o vínculo do casal;</span><span class="en">To create and maintain your account and the couple link;</span></li>
+      <li><span class="pt">Para operar os jogos, desafios e o Score de Sintonia;</span><span class="en">To operate the games, challenges and Sintonia Score;</span></li>
+      <li><span class="pt">Para diagnosticar erros e melhorar a estabilidade e o desempenho do app;</span><span class="en">To diagnose errors and improve app stability and performance;</span></li>
+      <li><span class="pt">Para processar sua assinatura Premium, quando aplicável;</span><span class="en">To process your Premium subscription, where applicable;</span></li>
+      <li><span class="pt">Para cumprir obrigações legais e responder a solicitações das autoridades competentes.</span><span class="en">To comply with legal obligations and respond to requests from competent authorities.</span></li>
+    </ul>
+    <p class="pt">Não usamos seus dados para publicidade direcionada e não os vendemos a terceiros.</p>
+    <p class="en">We do not use your data for targeted advertising and we do not sell it to third parties.</p>
+  </section>
+
+  <section class="legal-sec" id="base-legal">
+    <h2><span class="num">4.</span><span class="pt">Base legal (LGPD, art. 7º)</span><span class="en">Legal basis</span></h2>
+    <ul>
+      <li><span class="pt"><strong>Execução de contrato:</strong> para fornecer as funcionalidades do app que você contratou ao criar uma conta;</span><span class="en"><strong>Contract performance:</strong> to provide the app features you signed up for;</span></li>
+      <li><span class="pt"><strong>Consentimento:</strong> para login social (Google/Apple) e comunicações opcionais;</span><span class="en"><strong>Consent:</strong> for social login (Google/Apple) and optional communications;</span></li>
+      <li><span class="pt"><strong>Legítimo interesse:</strong> para diagnóstico técnico e prevenção de fraude/abuso, sempre de forma proporcional e sem prejudicar seus direitos;</span><span class="en"><strong>Legitimate interest:</strong> for technical diagnostics and fraud/abuse prevention, always proportionate and without harming your rights;</span></li>
+      <li><span class="pt"><strong>Cumprimento de obrigação legal:</strong> quando exigido por lei ou ordem judicial.</span><span class="en"><strong>Legal obligation:</strong> when required by law or court order.</span></li>
+    </ul>
+  </section>
+
+  <section class="legal-sec" id="compartilhamento">
+    <h2><span class="num">5.</span><span class="pt">Compartilhamento com terceiros</span><span class="en">Sharing with third parties</span></h2>
+    <p class="pt">Não vendemos, alugamos nem compartilhamos seus dados com anunciantes. Usamos os seguintes prestadores de serviço (operadores de dados, nos termos da LGPD) estritamente para operar o app:</p>
+    <p class="en">We do not sell, rent or share your data with advertisers. We use the following service providers (data processors under LGPD) strictly to operate the app:</p>
+    <ul>
+      <li><span class="pt"><strong>Firebase / Google Cloud</strong> (Google LLC) — autenticação, banco de dados e monitoramento de desempenho;</span><span class="en"><strong>Firebase / Google Cloud</strong> (Google LLC) — authentication, database and performance monitoring;</span></li>
+      <li><span class="pt"><strong>Supabase</strong> — infraestrutura de backend, autenticação e armazenamento;</span><span class="en"><strong>Supabase</strong> — backend infrastructure, authentication and storage;</span></li>
+      <li><span class="pt"><strong>Google Sign-In e Sign in with Apple</strong> — login social, apenas se você optar por usá-los;</span><span class="en"><strong>Google Sign-In and Sign in with Apple</strong> — social login, only if you choose to use them;</span></li>
+      <li><span class="pt"><strong>Apple App Store / Google Play</strong> — processamento de pagamento das assinaturas Premium.</span><span class="en"><strong>Apple App Store / Google Play</strong> — Premium subscription payment processing.</span></li>
+    </ul>
+    <p class="pt">Esses prestadores só têm acesso ao necessário para prestar o serviço e estão contratualmente obrigados a proteger seus dados. Podemos também divulgar dados quando exigido por lei, ordem judicial ou para proteger direitos, segurança e integridade da Sintonia e de seus usuários.</p>
+    <p class="en">These providers only have access to what's necessary to deliver the service and are contractually bound to protect your data. We may also disclose data when required by law, court order, or to protect the rights, safety and integrity of Sintonia and its users.</p>
+  </section>
+
+  <section class="legal-sec" id="seguranca">
+    <h2><span class="num">6.</span><span class="pt">Armazenamento, segurança e retenção</span><span class="en">Storage, security and retention</span></h2>
+    <p class="pt">Seus dados são armazenados de forma criptografada em trânsito e em repouso, em infraestrutura da Firebase/Google Cloud e Supabase. O histórico de jogo é acessível exclusivamente pelo casal vinculado à conta. Mantemos seus dados enquanto sua conta estiver ativa; após a exclusão da conta, os dados pessoais são apagados ou anonimizados em até 30 dias, exceto quando a lei exigir prazo maior de retenção (por exemplo, registros fiscais).</p>
+    <p class="en">Your data is encrypted in transit and at rest, on Firebase/Google Cloud and Supabase infrastructure. Gameplay history is accessible exclusively by the couple linked to the account. We retain your data while your account is active; after account deletion, personal data is erased or anonymized within 30 days, except where the law requires a longer retention period (e.g. tax records).</p>
+  </section>
+
+  <section class="legal-sec" id="direitos">
+    <h2><span class="num">7.</span><span class="pt">Seus direitos</span><span class="en">Your rights</span></h2>
+    <p class="pt">Nos termos do art. 18 da LGPD, você pode, a qualquer momento e mediante solicitação por e-mail:</p>
+    <p class="en">Under LGPD art. 18, you may at any time, by emailing us:</p>
+    <ul>
+      <li><span class="pt">Confirmar a existência de tratamento e acessar seus dados;</span><span class="en">Confirm whether we process your data and access it;</span></li>
+      <li><span class="pt">Corrigir dados incompletos, inexatos ou desatualizados;</span><span class="en">Correct incomplete, inaccurate or outdated data;</span></li>
+      <li><span class="pt">Solicitar anonimização, bloqueio ou eliminação de dados desnecessários;</span><span class="en">Request anonymization, blocking or deletion of unnecessary data;</span></li>
+      <li><span class="pt">Solicitar a portabilidade dos seus dados a outro fornecedor;</span><span class="en">Request portability of your data to another provider;</span></li>
+      <li><span class="pt">Solicitar a exclusão completa da conta e de todos os dados associados;</span><span class="en">Request full deletion of your account and all associated data;</span></li>
+      <li><span class="pt">Revogar seu consentimento e obter informações sobre com quem compartilhamos seus dados;</span><span class="en">Withdraw your consent and get information on who we share your data with;</span></li>
+      <li><span class="pt">Peticionar perante a Autoridade Nacional de Proteção de Dados (ANPD).</span><span class="en">Lodge a complaint with Brazil's data protection authority (ANPD).</span></li>
+    </ul>
+    <p class="pt">Respondemos a todas as solicitações em até 15 dias úteis, pelo e-mail <strong>privacidade@sintoniaapp.com</strong>.</p>
+    <p class="en">We respond to all requests within 15 business days, at <strong>privacy@sintoniaapp.com</strong>.</p>
+  </section>
+
+  <section class="legal-sec" id="menores">
+    <h2><span class="num">8.</span><span class="pt">Menores de idade</span><span class="en">Minors</span></h2>
+    <p class="pt">O Sintonia é destinado exclusivamente a maiores de 18 anos. Não coletamos intencionalmente dados de menores. Se identificarmos uma conta de menor de idade, ela será suspensa e os dados excluídos imediatamente. Se você acredita que um menor nos forneceu dados, contate-nos em <strong>privacidade@sintoniaapp.com</strong>.</p>
+    <p class="en">Sintonia is exclusively intended for people 18 and older. We do not knowingly collect data from minors. If we identify a minor's account, it will be suspended and the data deleted immediately. If you believe a minor has provided us data, contact us at <strong>privacy@sintoniaapp.com</strong>.</p>
+  </section>
+
+  <section class="legal-sec" id="cookies">
+    <h2><span class="num">9.</span><span class="pt">Cookies neste site</span><span class="en">Cookies on this site</span></h2>
+    <p class="pt">Este site institucional usa apenas um armazenamento local (localStorage) para lembrar sua preferência de idioma (PT/EN). Não usamos cookies de rastreamento, publicidade ou análise de terceiros neste site.</p>
+    <p class="en">This institutional website only uses local storage (localStorage) to remember your language preference (PT/EN). We do not use tracking, advertising or third-party analytics cookies on this website.</p>
+  </section>
+
+  <section class="legal-sec" id="transferencia">
+    <h2><span class="num">10.</span><span class="pt">Transferência internacional de dados</span><span class="en">International data transfer</span></h2>
+    <p class="pt">Nossos prestadores de infraestrutura (Firebase/Google Cloud e Supabase) podem processar e armazenar dados em servidores localizados fora do Brasil. Nesses casos, exigimos que os prestadores adotem salvaguardas compatíveis com a LGPD para proteger seus dados.</p>
+    <p class="en">Our infrastructure providers (Firebase/Google Cloud and Supabase) may process and store data on servers located outside Brazil. In such cases, we require providers to adopt LGPD-compatible safeguards to protect your data.</p>
+  </section>
+
+  <section class="legal-sec" id="alteracoes">
+    <h2><span class="num">11.</span><span class="pt">Alterações nesta política</span><span class="en">Changes to this policy</span></h2>
+    <p class="pt">Podemos atualizar esta política periodicamente. Alterações relevantes serão comunicadas dentro do app ou por e-mail antes de entrarem em vigor. A data da última atualização está sempre indicada no topo desta página.</p>
+    <p class="en">We may update this policy from time to time. Material changes will be communicated in-app or by email before taking effect. The last-updated date is always shown at the top of this page.</p>
+  </section>
+
+  <section class="legal-sec" id="contato">
+    <h2><span class="num">12.</span><span class="pt">Contato e encarregado de dados</span><span class="en">Contact and data protection officer</span></h2>
+    <p class="pt">Para exercer seus direitos ou tirar dúvidas sobre esta política, fale com nosso encarregado de dados (DPO) pelo e-mail <strong>privacidade@sintoniaapp.com</strong>.</p>
+    <p class="en">To exercise your rights or ask questions about this policy, contact our data protection officer at <strong>privacy@sintoniaapp.com</strong>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="index.html"><span class="pt">Início</span><span class="en">Home</span></a>
+    <a href="termos.html"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a>
+    <a href="mailto:privacidade@sintoniaapp.com">privacidade@sintoniaapp.com</a>
+  </div>
+  <p class="foot-copy">
+    <span class="pt">© 2026 SintoniaApp. Todos os direitos reservados.</span>
+    <span class="en">© 2026 SintoniaApp. All rights reserved.</span>
+  </p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  localStorage.setItem('sintonia-lang', lang);
+}
+const _lang = localStorage.getItem('sintonia-lang');
+if (_lang && _lang !== 'pt') setLang(_lang);
+</script>
+</body>
+</html>
