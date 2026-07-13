@@ -100,6 +100,10 @@ nav.scrolled{padding:.75rem 2.5rem}
 .logo-img{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(166,0,255,.4));transition:filter .3s}
 .logo:hover .logo-img{filter:drop-shadow(0 0 12px rgba(193,59,255,.6))}
 .logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:800;letter-spacing:.05em}
+.nav-links{display:none;align-items:center;gap:1.75rem}
+.nav-links a{color:var(--text);text-decoration:none;font-size:.875rem;font-weight:700;opacity:.85;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--primary-glow)}
+@media(min-width:860px){.nav-links{display:flex}}
 .nav-r{display:flex;align-items:center;gap:1.25rem}
 .lang-toggle{display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden}
 .lang-btn{
@@ -560,6 +564,11 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <img src="assets/logo.svg" class="logo-img" alt="Sintonia logo"/>
     <span class="logo-text">SINTONIA</span>
   </a>
+  <div class="nav-links">
+    <a href="#features"><span class="pt">Recursos</span><span class="en">Features</span></a>
+    <a href="#faq"><span class="pt">Dúvidas</span><span class="en">FAQ</span></a>
+    <a href="suporte.html"><span class="pt">Suporte</span><span class="en">Support</span></a>
+  </div>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
       <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
@@ -865,6 +874,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
       <ul class="foot-links">
         <li><a href="privacidade.html"><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></a></li>
         <li><a href="termos.html"><span class="pt">Termos de Uso</span><span class="en">Terms of Use</span></a></li>
+        <li><a href="exclusao-de-conta.html"><span class="pt">Exclusão de Conta</span><span class="en">Account Deletion</span></a></li>
+        <li><a href="suporte.html"><span class="pt">Suporte</span><span class="en">Support</span></a></li>
         <li><a href="mailto:contato@sintoniaapp.com"><span class="pt">Contato</span><span class="en">Contact</span></a></li>
       </ul>
     </div>

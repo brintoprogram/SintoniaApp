@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suporte — Sintonia</title>
+<meta name="description" content="Central de suporte do app Sintonia: soluções para problemas comuns e como falar com a gente."/>
+<meta name="robots" content="index,follow"/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg"/>
+<link rel="apple-touch-icon" href="assets/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0A0010;
+  --bg2:#0D0012;
+  --bg-card:#16001F;
+  --primary:#A600FF;
+  --primary-glow:#C13BFF;
+  --primary-deep:#3D0066;
+  --primary-mid:#7A00CC;
+  --text:#F3E8FF;
+  --muted:#B79ACC;
+  --border:rgba(166,0,255,.28);
+  --font-s:'Montserrat',sans-serif;
+  --font-b:'Montserrat',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background-color:var(--bg);
+  background-image:radial-gradient(ellipse 80% 50% at 15% 0%,rgba(120,0,200,.15) 0%,transparent 55%);
+  color:var(--text);font-family:var(--font-b);font-weight:500;font-size:16px;line-height:1.65;
+}
+[data-lang="pt"] .en{display:none}
+[data-lang="en"] .pt{display:none}
+.container{max-width:760px;margin:0 auto;padding:0 1.5rem}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.125rem 2.5rem;
+  background:rgba(9,0,14,.9);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(166,0,255,.14);
+}
+.logo{display:flex;align-items:center;gap:.625rem;text-decoration:none;color:var(--text)}
+.logo-img{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(166,0,255,.4))}
+.logo-text{font-family:var(--font-s);font-size:1.375rem;font-weight:800;letter-spacing:.05em}
+.nav-r{display:flex;align-items:center;gap:1.25rem}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden}
+.lang-btn{padding:.3rem .75rem;background:transparent;color:var(--muted);border:none;cursor:pointer;font-family:var(--font-b);font-size:.6875rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.lang-btn.active{background:var(--primary);color:#fff}
+.back-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);text-decoration:none;font-size:.8125rem;font-weight:700;transition:color .2s}
+.back-link:hover{color:var(--primary)}
+
+header.page-head{padding:9rem 0 3rem;text-align:center}
+.eyebrow{font-family:var(--font-b);font-size:.625rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:.875rem}
+h1{font-family:var(--font-s);font-size:clamp(2rem,5vw,2.75rem);font-weight:800;letter-spacing:-.02em;margin-bottom:.75rem}
+.updated{font-size:.8125rem;color:var(--muted)}
+
+main{padding-bottom:6rem}
+section.sec{margin-bottom:2.75rem}
+h2{font-family:var(--font-s);font-size:1.375rem;font-weight:800;color:var(--primary-glow);margin-bottom:1.125rem;letter-spacing:-.01em}
+h3{font-family:var(--font-s);font-size:1.0625rem;font-weight:700;color:var(--text);margin-bottom:.625rem}
+p{color:rgba(243,232,255,.85);margin-bottom:.875rem;font-size:.9375rem;line-height:1.75}
+ul{margin:0 0 1.25rem 0;list-style:none;color:rgba(243,232,255,.85);font-size:.9375rem;line-height:1.75}
+li{margin-bottom:.75rem;padding-left:1.25rem;position:relative}
+li::before{content:'•';position:absolute;left:0;color:var(--primary)}
+strong{color:var(--text)}
+.email-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;text-align:center;margin-bottom:1rem}
+.email-card a{color:var(--primary-glow);font-weight:800;font-size:1.125rem;text-decoration:none}
+.email-card a:hover{text-decoration:underline}
+details{border-bottom:1px solid rgba(166,0,255,.14)}
+details:first-of-type{border-top:1px solid rgba(166,0,255,.14)}
+summary{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.125rem 0;cursor:pointer;list-style:none;
+  font-family:var(--font-s);font-size:.9375rem;font-weight:700;
+  color:var(--text);gap:1rem;
+}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--primary-glow)}
+.faq-plus{width:20px;height:20px;flex-shrink:0;border-radius:50%;border:1px solid rgba(166,0,255,.4);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1rem;line-height:1;transition:transform .25s}
+details[open] .faq-plus{transform:rotate(45deg)}
+.faq-body{font-size:.875rem;color:var(--muted);line-height:1.7;padding-bottom:1.125rem}
+
+footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align:center}
+.foot-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap}
+.foot-links a{color:var(--muted);text-decoration:none;font-size:.8125rem}
+.foot-links a:hover{color:var(--primary)}
+.foot-copy{font-size:.6875rem;color:rgba(183,154,204,.55);letter-spacing:.05em}
+
+@media(max-width:560px){
+  nav{padding:1rem 1.25rem}
+  header.page-head{padding:8rem 0 2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <img src="assets/logo.svg" class="logo-img" alt="Sintonia logo"/>
+    <span class="logo-text">SINTONIA</span>
+  </a>
+  <div class="nav-r">
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html" class="back-link">
+      <span class="pt">← Voltar</span>
+      <span class="en">← Back</span>
+    </a>
+  </div>
+</nav>
+
+<header class="page-head container">
+  <span class="eyebrow pt">Central de Ajuda</span>
+  <span class="eyebrow en">Help Center</span>
+  <h1><span class="pt">Suporte</span><span class="en">Support</span></h1>
+  <p class="updated"><span class="pt">Última atualização: 12 de julho de 2026</span><span class="en">Last updated: July 12, 2026</span></p>
+</header>
+
+<main class="container">
+  <section class="sec">
+    <p class="pt">Está com um problema ou tem uma dúvida sobre o <strong>Sintonia</strong>? Veja abaixo as soluções para os casos mais comuns ou fale direto com a gente.</p>
+    <p class="en">Having an issue or a question about <strong>Sintonia</strong>? Check the solutions below for the most common cases, or reach out to us directly.</p>
+  </section>
+
+  <section class="sec">
+    <h2><span class="pt">Problemas comuns</span><span class="en">Common issues</span></h2>
+
+    <h3><span class="pt">Login e conta</span><span class="en">Login and account</span></h3>
+    <ul>
+      <li><span class="pt"><strong>Erro ao entrar:</strong> confira sua conexão com a internet e se está usando a conta certa do Google ou Apple ao fazer login social.</span><span class="en"><strong>Login error:</strong> check your internet connection and make sure you're using the right Google or Apple account for social login.</span></li>
+      <li><span class="pt"><strong>Não consigo vincular meu parceiro(a):</strong> confirme que o código de convite foi digitado corretamente e que ambos aceitaram o vínculo dentro do app.</span><span class="en"><strong>Can't link my partner:</strong> confirm the invite code was typed correctly and that both of you accepted the link inside the app.</span></li>
+    </ul>
+
+    <h3><span class="pt">Jogos e desafios</span><span class="en">Games and challenges</span></h3>
+    <ul>
+      <li><span class="pt"><strong>Desempenho ruim ou travamentos:</strong> feche outros apps em segundo plano ou reinicie o dispositivo.</span><span class="en"><strong>Poor performance or crashes:</strong> close other background apps or restart your device.</span></li>
+      <li><span class="pt"><strong>Conteúdo não carrega:</strong> verifique se sua conexão está estável; alguns modos exigem internet mesmo com o modo offline ativado para outras telas.</span><span class="en"><strong>Content won't load:</strong> check that your connection is stable; some modes require internet even with offline mode enabled for other screens.</span></li>
+    </ul>
+
+    <h3><span class="pt">Assinatura Premium</span><span class="en">Premium subscription</span></h3>
+    <ul>
+      <li><span class="pt"><strong>Comprei o Premium e não desbloqueou:</strong> saia e entre novamente na conta; a compra é validada pela App Store/Google Play e pode levar alguns minutos para sincronizar.</span><span class="en"><strong>I bought Premium and it didn't unlock:</strong> sign out and back in; the purchase is validated by the App Store/Google Play and may take a few minutes to sync.</span></li>
+      <li><span class="pt"><strong>Quero cancelar a renovação automática:</strong> isso é feito direto nas configurações da sua conta da App Store ou Google Play, não dentro do Sintonia. Veja detalhes nos <a href="termos.html" style="color:var(--primary-glow)">Termos de Uso</a>.</span><span class="en"><strong>I want to cancel auto-renewal:</strong> this is done directly in your App Store or Google Play account settings, not inside Sintonia. See details in the <a href="termos.html" style="color:var(--primary-glow)">Terms of Use</a>.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <h2><span class="pt">Perguntas rápidas</span><span class="en">Quick questions</span></h2>
+    <details><summary><span class="pt">Como excluo minha conta?</span><span class="en">How do I delete my account?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Siga as instruções na página de <a href="exclusao-de-conta.html" style="color:var(--primary-glow)">Exclusão de Conta</a>.</span><span class="en">Follow the instructions on the <a href="exclusao-de-conta.html" style="color:var(--primary-glow)">Account Deletion</a> page.</span></div></details>
+    <details><summary><span class="pt">Meus dados são compartilhados com terceiros?</span><span class="en">Is my data shared with third parties?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Não. Veja o detalhamento completo na <a href="privacidade.html" style="color:var(--primary-glow)">Política de Privacidade</a>.</span><span class="en">No. See the full details in our <a href="privacidade.html" style="color:var(--primary-glow)">Privacy Policy</a>.</span></div></details>
+    <details><summary><span class="pt">Em quanto tempo recebo resposta do suporte?</span><span class="en">How long until I get a support reply?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Respondemos e-mails de suporte em até 3 dias úteis.</span><span class="en">We reply to support emails within 3 business days.</span></div></details>
+  </section>
+
+  <section class="sec">
+    <h2><span class="pt">Fale com a gente</span><span class="en">Contact us</span></h2>
+    <p class="pt">Não encontrou o que precisava? Manda um e-mail contando o que aconteceu (e, se puder, o modelo do seu celular e a versão do app):</p>
+    <p class="en">Didn't find what you needed? Send us an email describing what happened (and, if you can, your phone model and app version):</p>
+    <div class="email-card">
+      <a href="mailto:contato@sintoniaapp.com?subject=Suporte%20Sintonia">contato@sintoniaapp.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="index.html"><span class="pt">Início</span><span class="en">Home</span></a>
+    <a href="exclusao-de-conta.html"><span class="pt">Exclusão de Conta</span><span class="en">Account Deletion</span></a>
+    <a href="privacidade.html"><span class="pt">Privacidade</span><span class="en">Privacy</span></a>
+    <a href="termos.html"><span class="pt">Termos</span><span class="en">Terms</span></a>
+  </div>
+  <p class="foot-copy">
+    <span class="pt">© 2026 SintoniaApp. Todos os direitos reservados.</span>
+    <span class="en">© 2026 SintoniaApp. All rights reserved.</span>
+  </p>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  localStorage.setItem('sintonia-lang', lang);
+}
+const _lang = localStorage.getItem('sintonia-lang');
+if (_lang && _lang !== 'pt') setLang(_lang);
+</script>
+</body>
+</html>
