@@ -188,11 +188,16 @@ nav.scrolled{padding:.75rem 2.5rem}
 .hero-eye::after{background:linear-gradient(90deg,var(--primary),transparent)}
 h1{
   font-family:var(--font-s);
-  font-size:clamp(2.75rem,8vw,6rem);font-weight:800;
-  line-height:.98;letter-spacing:-.025em;margin-bottom:1.25rem;
+  font-size:clamp(1.9rem,6vw,3.5rem);font-weight:800;
+  max-width:800px;margin:0 auto 1.25rem;
+  line-height:1.08;letter-spacing:-.025em;
   position:relative;z-index:1;
 }
-h1 .accent{font-weight:900;color:var(--primary-glow)}
+.hero-purpose{
+  font-size:1.125rem;color:var(--text);font-weight:700;
+  max-width:560px;margin:0 auto 1.25rem;line-height:1.65;
+  position:relative;z-index:1;
+}
 .hero-sub{
   font-size:1.0625rem;color:var(--muted);
   max-width:500px;margin:0 auto 2.5rem;line-height:1.75;
@@ -668,10 +673,12 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <span class="en">For couples who want to rediscover each other</span>
   </div>
 
-  <h1>
-    <span class="pt">Onde a Intimidade<br><span class="accent">se Conecta</span></span>
-    <span class="en">Where Intimacy<br><span class="accent">Connects</span></span>
-  </h1>
+  <h1>Sintonia: Spicy Minigames</h1>
+
+  <p class="hero-purpose">
+    <span class="pt">Sintonia é uma coleção de minigames, desafios e interações criada especificamente para casais fortalecerem o relacionamento e fugirem da rotina.</span>
+    <span class="en">Sintonia is a collection of minigames, challenges, and interactions designed specifically for couples to strengthen their relationship and break the routine.</span>
+  </p>
 
   <p class="hero-sub">
     <span class="pt">Jogos, desafios e métricas que transformam a conexão do casal em uma aventura diária.</span>
