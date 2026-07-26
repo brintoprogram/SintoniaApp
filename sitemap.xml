@@ -6,22 +6,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/suporte.html</loc>
+    <loc>https://sintoniaapp.com/suporte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/privacidade.html</loc>
+    <loc>https://sintoniaapp.com/privacidade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/termos.html</loc>
+    <loc>https://sintoniaapp.com/termos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/exclusao-de-conta.html</loc>
+    <loc>https://sintoniaapp.com/exclusao-de-conta</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sintoniaapp.com/age-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
