@@ -33,9 +33,7 @@
 html{scroll-behavior:smooth}
 body{
   background-color:var(--bg);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 15% 10%,rgba(120,0,200,.16) 0%,transparent 55%),
-    radial-gradient(ellipse 60% 45% at 85% 85%,rgba(90,0,160,.11) 0%,transparent 50%);
+  background-image:radial-gradient(ellipse 70% 45% at 50% 0%,rgba(120,0,200,.14) 0%,transparent 55%);
   color:var(--text);
   font-family:var(--font-b);
   font-weight:500;
@@ -56,20 +54,6 @@ body{
   box-shadow:0 0 8px rgba(193,59,255,.6);
 }
 
-/* ── PARTICLES ──────────────────────────────────────── */
-.particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-.p{
-  position:absolute;border-radius:50%;
-  background:var(--primary);opacity:0;
-  animation:rise var(--d,8s) var(--del,0s) ease-in infinite;
-}
-@keyframes rise{
-  0%  {transform:translateY(0) scale(1);   opacity:0}
-  10% {opacity:var(--op,.12)}
-  90% {opacity:var(--op,.12)}
-  100%{transform:translateY(-110vh) scale(.4);opacity:0}
-}
-
 /* ── HELPERS ────────────────────────────────────────── */
 .container{max-width:1180px;margin:0 auto;padding:0 2.25rem}
 .eyebrow{font-family:var(--font-b);font-size:.625rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--primary);display:block;margin-bottom:.875rem}
@@ -79,12 +63,6 @@ body{
 /* ── REVEAL ANIMATIONS ──────────────────────────────── */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.on{opacity:1;transform:none}
-.reveal-scale{opacity:0;transform:scale(.96) translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal-scale.on{opacity:1;transform:none}
-.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
-.reveal-left.on{opacity:1;transform:none}
-.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease}
-.reveal-right.on{opacity:1;transform:none}
 
 /* ── NAV ────────────────────────────────────────────── */
 nav{
@@ -242,13 +220,12 @@ h1{
 ────────────────────────────────────────────────────── */
 .mines-wrap{
   position:relative;z-index:1;
-  background:rgba(15,0,22,.7);
+  background:var(--bg-card);
   border:1.5px solid rgba(166,0,255,.3);
   border-radius:24px;
   padding:1.75rem 2rem 2rem;
   max-width:580px;width:100%;
-  box-shadow:0 0 0 1px rgba(193,59,255,.07),0 0 40px rgba(166,0,255,.12),inset 0 0 40px rgba(0,0,0,.4);
-  backdrop-filter:blur(12px);
+  box-shadow:0 0 40px rgba(166,0,255,.1);
 }
 .mines-wrap::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;border-radius:24px 24px 0 0;
@@ -438,27 +415,23 @@ h1{
 .features-header .s-body{margin:0 auto}
 .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.125rem;max-width:880px;margin:0 auto}
 .feat-card{
-  background:linear-gradient(155deg,#A600FF 0%,#4B0080 55%,#180024 100%);
-  border:1.5px solid var(--primary);border-radius:20px;
-  padding:2rem 1.875rem;position:relative;overflow:hidden;
-  box-shadow:0 0 0 1px rgba(193,59,255,.08),0 0 24px rgba(166,0,255,.16),inset 0 0 32px rgba(0,0,0,.45);
-  transition:box-shadow .35s,transform .25s;text-align:left;
+  background:var(--bg-card);
+  border:1px solid rgba(166,0,255,.22);border-radius:18px;
+  padding:2rem 1.875rem;position:relative;
+  transition:border-color .3s,transform .25s;text-align:left;
 }
 .feat-card:hover{
   transform:translateY(-4px);
-  box-shadow:0 0 0 1.5px rgba(193,59,255,.35),0 0 50px rgba(193,59,255,.28),0 16px 48px rgba(0,0,0,.55);
+  border-color:rgba(166,0,255,.55);
 }
-.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(210,120,255,.55),transparent)}
-/* shimmer on hover */
-.feat-card::after{
-  content:'';position:absolute;top:0;left:-100%;bottom:0;width:60%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);
-  transition:left .6s ease;
+.feat-icon{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(166,0,255,.12);border:1px solid rgba(166,0,255,.3);
+  font-size:1.5rem;margin-bottom:1.125rem;
 }
-.feat-card:hover::after{left:150%}
-.feat-icon{font-size:2.5rem;margin-bottom:1.125rem;display:block;filter:drop-shadow(0 0 10px rgba(200,100,255,.5))}
-.feat-name{font-family:var(--font-s);font-size:1.375rem;font-weight:800;margin-bottom:.625rem;color:#fff}
-.feat-desc{font-size:.875rem;color:rgba(225,205,255,.65);line-height:1.7}
+.feat-name{font-family:var(--font-s);font-size:1.375rem;font-weight:800;margin-bottom:.625rem;color:var(--text)}
+.feat-desc{font-size:.875rem;color:var(--muted);line-height:1.7}
 
 /* ── HOW IT WORKS ───────────────────────────────────── */
 .how{padding:7rem 2rem}
@@ -487,7 +460,6 @@ h1{
 
 /* ── DOWNLOAD ───────────────────────────────────────── */
 .download{padding:8rem 2rem;text-align:center;position:relative;overflow:hidden}
-.download::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(140,0,210,.14) 0%,transparent 65%);pointer-events:none}
 .dl-logo{width:80px;height:80px;margin:0 auto 1.5rem;filter:drop-shadow(0 0 18px rgba(166,0,255,.5));animation:logo-float 4s 1s ease-in-out infinite;position:relative;z-index:1}
 .dl-title{font-family:var(--font-s);font-size:clamp(2.5rem,6vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-.025em;margin-bottom:1.125rem;position:relative;z-index:1}
 .dl-title em{font-style:normal;font-weight:900;color:var(--primary-glow)}
@@ -571,9 +543,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
   .mines-wrap{padding:1.25rem 1.25rem 1.5rem}
 }
 @media(prefers-reduced-motion:reduce){
-  .reveal,.reveal-scale,.reveal-left,.reveal-right{opacity:1!important;transform:none!important}
+  .reveal{opacity:1!important;transform:none!important}
   .hero-logo,.dl-logo{animation:none}
-  .p{animation:none}
 }
 </style>
 </head>
@@ -663,9 +634,6 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
 
 <!-- ─── HERO ─────────────────────────────────────────── -->
 <section class="hero" id="hero">
-  <!-- Particles -->
-  <div class="particles" id="particles" aria-hidden="true"></div>
-
   <img src="assets/kiss-logo.png" class="hero-logo" alt=""/>
 
   <div class="hero-eye">
@@ -795,28 +763,28 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
       <p class="s-body en">Each mode is designed for a different moment — from tension to laughter, from challenge to deep connection.</p>
     </div>
     <div class="feat-grid">
-      <div class="feat-card reveal-scale">
-        <span class="feat-icon">💣</span>
+      <div class="feat-card">
+        <div class="feat-icon">💣</div>
         <div class="feat-name pt">Mines do Casal</div>
         <div class="feat-name en">Couple Mines</div>
         <p class="feat-desc pt">Revelem células alternadamente. Quem encontrar a bomba enfrenta um desafio. Tensão, riso e surpresa a cada rodada.</p>
         <p class="feat-desc en">Reveal cells one by one. Whoever finds the bomb faces a challenge. Tension, laughter and surprise every round.</p>
       </div>
-      <div class="feat-card reveal-scale">
-        <span class="feat-icon">🎡</span>
+      <div class="feat-card">
+        <div class="feat-icon">🎡</div>
         <div class="feat-name pt">Roleta da Sintonia</div>
         <div class="feat-name en">Sintonia Roulette</div>
         <p class="feat-desc pt">Gire a roleta 3D e deixe o acaso decidir. Categorias pensadas pra acender a chama — do suave ao intenso.</p>
         <p class="feat-desc en">Spin the 3D wheel and let chance decide. Categories from sweet to spicy, designed to ignite the spark.</p>
       </div>
-      <div class="feat-card reveal-scale">
-        <span class="feat-icon">∞</span>
+      <div class="feat-card">
+        <div class="feat-icon">∞</div>
         <div class="feat-name">Tension Game</div>
         <p class="feat-desc pt">O jogo da tensão crescente. Desafios progressivos que constroem a antecipação, rodada após rodada, sem parar.</p>
         <p class="feat-desc en">The escalating tension game. Progressive challenges that build anticipation, round after round, endlessly.</p>
       </div>
-      <div class="feat-card reveal-scale">
-        <span class="feat-icon">📊</span>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
         <div class="feat-name pt">Score de Sintonia</div>
         <div class="feat-name en">Sintonia Score</div>
         <p class="feat-desc pt">Acompanhe o nível do casal, a chama da intimidade e o mapa de exploração. Quanto mais jogam, mais crescem.</p>
@@ -840,28 +808,28 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <p class="s-body en">From first login to first surprise — everything designed for the two of you.</p>
   </div>
   <div class="how-steps">
-    <div class="how-step reveal">
+    <div class="how-step">
       <div class="how-num">1</div>
       <div class="how-step-title pt">Criem o perfil</div>
       <div class="how-step-title en">Create your profile</div>
       <p class="how-step-desc pt">Cadastrem o casal juntos em menos de um minuto.</p>
       <p class="how-step-desc en">Set up your couple profile together in under a minute.</p>
     </div>
-    <div class="how-step reveal">
+    <div class="how-step">
       <div class="how-num">2</div>
       <div class="how-step-title pt">Escolham o modo</div>
       <div class="how-step-title en">Pick a mode</div>
       <p class="how-step-desc pt">Mines, roleta, tension — o que a noite pede.</p>
       <p class="how-step-desc en">Mines, roulette, tension — whatever the night calls for.</p>
     </div>
-    <div class="how-step reveal">
+    <div class="how-step">
       <div class="how-num">3</div>
       <div class="how-step-title pt">Joguem e acumulem</div>
       <div class="how-step-title en">Play and earn</div>
       <p class="how-step-desc pt">Cada sessão soma pontos ao Score de Sintonia.</p>
       <p class="how-step-desc en">Each session adds points to your Sintonia Score.</p>
     </div>
-    <div class="how-step reveal">
+    <div class="how-step">
       <div class="how-num">4</div>
       <div class="how-step-title pt">Vejam o Score crescer</div>
       <div class="how-step-title en">Watch your score grow</div>
@@ -879,11 +847,11 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <span class="pt">Sua próxima noite<br>começa <em>agora</em></span>
     <span class="en">Your next night<br>starts <em>right now</em></span>
   </h2>
-  <p class="dl-sub reveal">
+  <p class="dl-sub">
     <span class="pt">Grátis no plano básico. Sem cartão de crédito. Só vocês dois.</span>
     <span class="en">Free on the basic plan. No credit card. Just the two of you.</span>
   </p>
-  <div class="dl-btns reveal">
+  <div class="dl-btns">
     <a href="#" class="dl-btn">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -917,11 +885,11 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
         <span class="en">Questions every couple asks</span>
       </h2>
     </div>
-    <details class="reveal"><summary><span class="pt">O Sintonia é para qualquer tipo de casal?</span><span class="en">Is Sintonia for all couples?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O app foi pensado para casais em qualquer fase — dos que estão começando aos que querem reavivar a chama. Cada modo tem intensidades ajustáveis.</span><span class="en">Yes. The app was designed for couples at any stage — from those just starting out to long-term partners looking to rekindle the spark. Each mode has adjustable intensity levels.</span></div></details>
-    <details class="reveal"><summary><span class="pt">O Mines do Casal é como o jogo de casino?</span><span class="en">Is Couple Mines like the casino game?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">A mecânica é inspirada, mas totalmente ressignificada para casais. Em vez de perder dinheiro, quem encontra a bomba faz um desafio especial — que aproxima e diverte o casal.</span><span class="en">The mechanic is inspired by it, but fully reimagined for couples. Instead of losing money, whoever finds the bomb does a special challenge — one that brings you closer and makes you laugh.</span></div></details>
-    <details class="reveal"><summary><span class="pt">O app tem versão gratuita?</span><span class="en">Is there a free version?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O plano gratuito inclui acesso a jogos e desafios essenciais. O Premium desbloqueia o catálogo completo, histórico detalhado, modos exclusivos e atualizações semanais.</span><span class="en">Yes. The free plan includes access to essential games and challenges. Premium unlocks the full catalog, detailed history, exclusive modes, and weekly content updates.</span></div></details>
-    <details class="reveal"><summary><span class="pt">Nossos dados são privados?</span><span class="en">Is our data private?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Absolutamente. Todo o conteúdo dentro do app é privado entre o casal. Nunca compartilhamos dados pessoais ou de jogo com terceiros ou anunciantes.</span><span class="en">Absolutely. All in-app content is private between the couple. We never share personal or gameplay data with third parties or advertisers.</span></div></details>
-    <details class="reveal"><summary><span class="pt">O conteúdo é adequado para adultos?</span><span class="en">Is the content adult-appropriate?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">O Sintonia é voltado para adultos maiores de 18 anos em relacionamentos consensuais. Todos os modos têm configurações de intensidade — vocês controlam até onde querem ir.</span><span class="en">Sintonia is designed for adults 18+ in consensual relationships. All modes have intensity settings — you control how far you want to go.</span></div></details>
+    <details><summary><span class="pt">O Sintonia é para qualquer tipo de casal?</span><span class="en">Is Sintonia for all couples?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O app foi pensado para casais em qualquer fase — dos que estão começando aos que querem reavivar a chama. Cada modo tem intensidades ajustáveis.</span><span class="en">Yes. The app was designed for couples at any stage — from those just starting out to long-term partners looking to rekindle the spark. Each mode has adjustable intensity levels.</span></div></details>
+    <details><summary><span class="pt">O Mines do Casal é como o jogo de casino?</span><span class="en">Is Couple Mines like the casino game?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">A mecânica é inspirada, mas totalmente ressignificada para casais. Em vez de perder dinheiro, quem encontra a bomba faz um desafio especial — que aproxima e diverte o casal.</span><span class="en">The mechanic is inspired by it, but fully reimagined for couples. Instead of losing money, whoever finds the bomb does a special challenge — one that brings you closer and makes you laugh.</span></div></details>
+    <details><summary><span class="pt">O app tem versão gratuita?</span><span class="en">Is there a free version?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O plano gratuito inclui acesso a jogos e desafios essenciais. O Premium desbloqueia o catálogo completo, histórico detalhado, modos exclusivos e atualizações semanais.</span><span class="en">Yes. The free plan includes access to essential games and challenges. Premium unlocks the full catalog, detailed history, exclusive modes, and weekly content updates.</span></div></details>
+    <details><summary><span class="pt">Nossos dados são privados?</span><span class="en">Is our data private?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Absolutamente. Todo o conteúdo dentro do app é privado entre o casal. Nunca compartilhamos dados pessoais ou de jogo com terceiros ou anunciantes.</span><span class="en">Absolutely. All in-app content is private between the couple. We never share personal or gameplay data with third parties or advertisers.</span></div></details>
+    <details><summary><span class="pt">O conteúdo é adequado para adultos?</span><span class="en">Is the content adult-appropriate?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">O Sintonia é voltado para adultos maiores de 18 anos em relacionamentos consensuais. Todos os modos têm configurações de intensidade — vocês controlam até onde querem ir.</span><span class="en">Sintonia is designed for adults 18+ in consensual relationships. All modes have intensity settings — you control how far you want to go.</span></div></details>
   </div>
 </section>
 
@@ -1044,49 +1012,17 @@ window.addEventListener('scroll', () =>
   nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
 
 /* ══════════════════════════════════════════════════════
-   FLOATING PARTICLES
-══════════════════════════════════════════════════════ */
-(function () {
-  const container = document.getElementById('particles');
-  const COUNT = 18;
-  for (let i = 0; i < COUNT; i++) {
-    const p = document.createElement('div');
-    p.className = 'p';
-    const size = 3 + Math.random() * 5;
-    p.style.cssText = [
-      `width:${size}px`, `height:${size}px`,
-      `left:${Math.random() * 100}%`,
-      `bottom:${-size}px`,
-      `--d:${7 + Math.random() * 9}s`,
-      `--del:${Math.random() * 8}s`,
-      `--op:${0.06 + Math.random() * 0.1}`,
-    ].join(';');
-    container.appendChild(p);
-  }
-})();
-
-/* ══════════════════════════════════════════════════════
    SCROLL REVEAL
 ══════════════════════════════════════════════════════ */
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
-    const siblings = e.target.parentElement
-      ? [...e.target.parentElement.querySelectorAll(
-          '.reveal,.reveal-scale,.reveal-left,.reveal-right')]
-      : [];
-    const idx = siblings.indexOf(e.target);
-    const gridParent = e.target.closest(
-      '.feat-grid,.how-steps');
-    const delay = gridParent ? idx * 90 : 0;
-    setTimeout(() => e.target.classList.add('on'), delay);
+    e.target.classList.add('on');
     revealObs.unobserve(e.target);
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(
-  '.reveal,.reveal-scale,.reveal-left,.reveal-right'
-).forEach(el => revealObs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 /* ══════════════════════════════════════════════════════
    MAGNETIC BUTTON
