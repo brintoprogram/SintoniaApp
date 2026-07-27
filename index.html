@@ -100,37 +100,6 @@ nav.scrolled{padding:.75rem 2.5rem}
 }
 .nav-dl:hover{box-shadow:0 0 32px rgba(193,59,255,.6);transform:translateY(-1px)}
 
-/* ── AGE GATE ───────────────────────────────────────── */
-#siteContent{display:none}
-.age-gate{
-  position:fixed;inset:0;z-index:99999;
-  background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(166,0,255,.25) 0%,transparent 60%),var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;
-}
-.age-gate-lang{position:absolute;top:1.5rem;right:1.5rem;display:flex;border:1px solid var(--border);border-radius:100px;overflow:hidden}
-.age-gate-card{
-  background:linear-gradient(160deg,#1A0026 0%,#0A0010 100%);
-  border:1.5px solid var(--primary);border-radius:24px;
-  padding:2.5rem 2rem;max-width:440px;width:100%;text-align:center;
-  box-shadow:0 0 60px rgba(166,0,255,.35);
-}
-.age-gate-logo{width:64px;height:64px;margin:0 auto 1.25rem;filter:drop-shadow(0 0 14px rgba(166,0,255,.5))}
-.age-gate-title{font-family:var(--font-s);font-size:1.5rem;font-weight:800;margin-bottom:1rem}
-.age-gate-text{font-size:.9375rem;color:var(--muted);line-height:1.7;margin-bottom:1.75rem}
-.age-gate-btns{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem}
-.age-gate-yes{
-  background:linear-gradient(135deg,var(--primary-glow),var(--primary-mid));
-  color:#fff;font-family:var(--font-b);font-weight:800;font-size:.9375rem;
-  padding:.9375rem;border:none;border-radius:100px;cursor:pointer;
-}
-.age-gate-no{
-  background:transparent;color:var(--muted);font-family:var(--font-b);font-weight:700;font-size:.9375rem;
-  padding:.9375rem;border:1px solid var(--border);border-radius:100px;cursor:pointer;
-}
-.age-gate-foot{font-size:.75rem;color:var(--muted)}
-.age-gate-foot a{color:var(--primary-glow)}
-
 /* ── HERO ───────────────────────────────────────────── */
 .hero{
   min-height:100vh;
@@ -550,41 +519,6 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
 </head>
 <body>
 
-<!-- Age Gate -->
-<div class="age-gate" id="ageGate" role="dialog" aria-modal="true">
-  <div class="age-gate-lang" role="group" aria-label="Idioma">
-    <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-  </div>
-  <div class="age-gate-card">
-    <img class="age-gate-logo" src="assets/kiss-logo.png" alt="Sintonia"/>
-    <h1 class="age-gate-title">
-      <span class="pt">Conteúdo para adultos</span>
-      <span class="en">Adult content</span>
-    </h1>
-    <p class="age-gate-text">
-      <span class="pt">O Sintonia é um app para casais com desafios de intimidade e conteúdo sexual explícito. Você confirma que tem 18 anos ou mais?</span>
-      <span class="en">Sintonia is a couples' app with intimacy challenges and explicit sexual content. Do you confirm you are 18 or older?</span>
-    </p>
-    <div class="age-gate-btns">
-      <button class="age-gate-yes" id="ageYes">
-        <span class="pt">Sim, tenho 18 anos ou mais</span>
-        <span class="en">Yes, I'm 18 or older</span>
-      </button>
-      <button class="age-gate-no" id="ageNo">
-        <span class="pt">Não, sair</span>
-        <span class="en">No, leave</span>
-      </button>
-    </div>
-    <p class="age-gate-foot">
-      <span class="pt">Ao continuar, você concorda com nossos <a href="termos.html">Termos de Uso</a>.</span>
-      <span class="en">By continuing, you agree to our <a href="termos.html">Terms of Use</a>.</span>
-    </p>
-  </div>
-</div>
-
-<div id="siteContent">
-
 <!-- Progress bar -->
 <div id="progress-bar"></div>
 
@@ -956,30 +890,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
   </p>
 </footer>
 
-</div>
-
 <script>
-/* ══════════════════════════════════════════════════════
-   AGE GATE
-══════════════════════════════════════════════════════ */
-(function () {
-  const KEY = 'sintonia-age-verified';
-  const gate = document.getElementById('ageGate');
-  const content = document.getElementById('siteContent');
-  function unlock() {
-    content.style.display = 'block';
-    gate.style.display = 'none';
-  }
-  if (localStorage.getItem(KEY) === 'yes') unlock();
-  document.getElementById('ageYes').addEventListener('click', () => {
-    localStorage.setItem(KEY, 'yes');
-    unlock();
-  });
-  document.getElementById('ageNo').addEventListener('click', () => {
-    window.location.href = 'https://www.google.com';
-  });
-})();
-
 /* ══════════════════════════════════════════════════════
    LANGUAGE
 ══════════════════════════════════════════════════════ */
