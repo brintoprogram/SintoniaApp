@@ -6,6 +6,7 @@
 <title>Política de Idade — Sintonia</title>
 <meta name="description" content="Política de idade do app Sintonia: uso exclusivo para maiores de 18 anos e disponibilidade por país."/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.sintonia.app.br/age-policy"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -87,6 +88,10 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   body > nav{padding:1rem 1.25rem}
   header.page-head{padding:8rem 0 2.5rem}
 }
+
+:focus-visible{outline:3px solid #e0adff;outline-offset:4px}
+.email-card a{overflow-wrap:anywhere}
+@media(max-width:380px){nav{padding:.75rem}.logo-text{font-size:1rem}.nav-r{gap:.5rem}}
 </style>
 </head>
 <body>
@@ -98,8 +103,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   </a>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
-      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <a href="index.html" class="back-link">
       <span class="pt">← Voltar</span>
@@ -164,14 +169,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
 
 <script>
 function setLang(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('sintonia-lang', lang);
+    {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  try { localStorage.setItem('sintonia-lang', lang); } catch (_) { /* Storage may be blocked. */ }
 }
-const _lang = localStorage.getItem('sintonia-lang');
-if (_lang && _lang !== 'pt') setLang(_lang);
+try {
+  const savedLang = localStorage.getItem('sintonia-lang');
+  if (savedLang === 'en') setLang(savedLang);
+} catch (_) { /* Keep Portuguese when storage is unavailable. */ }
 </script>
 </body>
 </html>

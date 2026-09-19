@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sintoniaapp.com/sitemap.xml
+Sitemap: https://www.sintonia.app.br/sitemap.xml

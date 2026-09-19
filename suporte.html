@@ -6,6 +6,7 @@
 <title>Suporte — Sintonia</title>
 <meta name="description" content="Central de suporte do app Sintonia: soluções para problemas comuns e como falar com a gente."/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.sintonia.app.br/suporte"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -103,6 +104,11 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   nav{padding:1rem 1.25rem}
   header.page-head{padding:8rem 0 2.5rem}
 }
+
+:focus-visible{outline:3px solid #e0adff;outline-offset:4px}
+.email-card a{overflow-wrap:anywhere}
+@media(max-width:380px){nav{padding:.75rem}.logo-text{font-size:1rem}.nav-r{gap:.5rem}}
+main a{color:var(--primary-glow)}
 </style>
 </head>
 <body>
@@ -114,8 +120,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   </a>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
-      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <a href="index.html" class="back-link">
       <span class="pt">← Voltar</span>
@@ -128,7 +134,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   <span class="eyebrow pt">Central de Ajuda</span>
   <span class="eyebrow en">Help Center</span>
   <h1><span class="pt">Suporte</span><span class="en">Support</span></h1>
-  <p class="updated"><span class="pt">Última atualização: 12 de julho de 2026</span><span class="en">Last updated: July 12, 2026</span></p>
+  <p class="updated"><span class="pt">Última atualização: 15 de setembro de 2026</span><span class="en">Last updated: September 15, 2026</span></p>
 </header>
 
 <main class="container">
@@ -149,27 +155,37 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
     <h3><span class="pt">Jogos e desafios</span><span class="en">Games and challenges</span></h3>
     <ul>
       <li><span class="pt"><strong>Desempenho ruim ou travamentos:</strong> feche outros apps em segundo plano ou reinicie o dispositivo.</span><span class="en"><strong>Poor performance or crashes:</strong> close other background apps or restart your device.</span></li>
-      <li><span class="pt"><strong>Conteúdo não carrega:</strong> verifique se sua conexão está estável; alguns modos exigem internet mesmo com o modo offline ativado para outras telas.</span><span class="en"><strong>Content won't load:</strong> check that your connection is stable; some modes require internet even with offline mode enabled for other screens.</span></li>
+      <li><span class="pt"><strong>Conteúdo não carrega:</strong> verifique a conexão com a internet e tente abrir o aplicativo novamente. Se continuar, informe ao suporte a tela e a mensagem de erro.</span><span class="en"><strong>Content won't load:</strong> check your internet connection and reopen the app. If the problem continues, tell support which screen and error message you see.</span></li>
     </ul>
 
     <h3><span class="pt">Assinatura Premium</span><span class="en">Premium subscription</span></h3>
     <ul>
-      <li><span class="pt"><strong>Comprei o Premium e não desbloqueou:</strong> saia e entre novamente na conta; a compra é validada pela App Store/Google Play e pode levar alguns minutos para sincronizar.</span><span class="en"><strong>I bought Premium and it didn't unlock:</strong> sign out and back in; the purchase is validated by the App Store/Google Play and may take a few minutes to sync.</span></li>
-      <li><span class="pt"><strong>Quero cancelar a renovação automática:</strong> isso é feito direto nas configurações da sua conta da App Store ou Google Play, não dentro do Sintonia. Veja detalhes nos <a href="termos.html" style="color:var(--primary-glow)">Termos de Uso</a>.</span><span class="en"><strong>I want to cancel auto-renewal:</strong> this is done directly in your App Store or Google Play account settings, not inside Sintonia. See details in the <a href="termos.html" style="color:var(--primary-glow)">Terms of Use</a>.</span></li>
+      <li><span class="pt"><strong>Comprei o Premium e não desbloqueou:</strong> no iPhone, confira se está usando a mesma Conta Apple da compra. Abra a tela Premium e toque em <strong>Restaurar compras</strong>. Se o acesso não voltar, fale com o suporte antes de comprar novamente.</span><span class="en"><strong>I bought Premium and it didn't unlock:</strong> on iPhone, check that you are using the Apple Account used for the purchase. Open the Premium screen and tap <strong>Restaurar compras</strong> (Restore purchases). If access is not restored, contact support before buying again.</span></li>
+      <li><span class="pt"><strong>Quero cancelar a renovação automática:</strong> no iPhone, abra Ajustes → seu nome → Assinaturas → Sintonia. Cancelar a renovação e excluir a conta são ações diferentes. Veja os <a href="termos.html" style="color:var(--primary-glow)">Termos de Uso</a>.</span><span class="en"><strong>I want to cancel auto-renewal:</strong> on iPhone, open Settings → your name → Subscriptions → Sintonia. Canceling renewal and deleting your account are separate actions. See the <a href="termos.html" style="color:var(--primary-glow)">Terms of Use</a>.</span></li>
     </ul>
+  </section>
+
+  <section class="sec">
+    <h2><span class="pt">Ajuda com cobranças na Apple</span><span class="en">Apple billing help</span></h2>
+    <ul>
+      <li><a href="https://support.apple.com/pt-br/118428"><span class="pt">Como cancelar uma assinatura</span><span class="en">How to cancel a subscription</span></a></li>
+      <li><a href="https://support.apple.com/pt-br/118223"><span class="pt">Como solicitar reembolso à Apple</span><span class="en">How to request a refund from Apple</span></a></li>
+    </ul>
+    <p class="pt">O plano mensal custa R$ 19,90. O anual custa R$ 118,90, cobrados de uma vez por ano (aproximadamente R$ 9,91/mês). Preços para o Brasil; confira o valor na confirmação da App Store. As assinaturas renovam automaticamente até o cancelamento.</p>
+    <p class="en">In Brazil, the monthly plan costs R$ 19.90. The annual plan costs R$ 118.90, billed once per year (approximately R$ 9.91/month). Check the price in the App Store confirmation. Subscriptions renew automatically until canceled.</p>
   </section>
 
   <section class="sec">
     <h2><span class="pt">Perguntas rápidas</span><span class="en">Quick questions</span></h2>
     <details><summary><span class="pt">Como excluo minha conta?</span><span class="en">How do I delete my account?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Siga as instruções na página de <a href="exclusao-de-conta.html" style="color:var(--primary-glow)">Exclusão de Conta</a>.</span><span class="en">Follow the instructions on the <a href="exclusao-de-conta.html" style="color:var(--primary-glow)">Account Deletion</a> page.</span></div></details>
-    <details><summary><span class="pt">Meus dados são compartilhados com terceiros?</span><span class="en">Is my data shared with third parties?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Não. Veja o detalhamento completo na <a href="privacidade.html" style="color:var(--primary-glow)">Política de Privacidade</a>.</span><span class="en">No. See the full details in our <a href="privacidade.html" style="color:var(--primary-glow)">Privacy Policy</a>.</span></div></details>
+    <details><summary><span class="pt">Meus dados são compartilhados com terceiros?</span><span class="en">Is my data shared with third parties?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Usamos prestadores como Firebase e RevenueCat para oferecer o serviço. Veja o detalhamento na <a href="privacidade.html" style="color:var(--primary-glow)">Política de Privacidade</a>.</span><span class="en">We use providers such as Firebase and RevenueCat to deliver the service. See our <a href="privacidade.html" style="color:var(--primary-glow)">Privacy Policy</a>.</span></div></details>
     <details><summary><span class="pt">Em quanto tempo recebo resposta do suporte?</span><span class="en">How long until I get a support reply?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Respondemos e-mails de suporte em até 3 dias úteis.</span><span class="en">We reply to support emails within 3 business days.</span></div></details>
   </section>
 
   <section class="sec">
     <h2><span class="pt">Fale com a gente</span><span class="en">Contact us</span></h2>
-    <p class="pt">Não encontrou o que precisava? Manda um e-mail contando o que aconteceu (e, se puder, o modelo do seu celular e a versão do app):</p>
-    <p class="en">Didn't find what you needed? Send us an email describing what happened (and, if you can, your phone model and app version):</p>
+    <p class="pt">Envie o modelo do celular, a versão do app, a tela afetada e os passos para reproduzir o problema. Não envie senhas, códigos de login, dados de cartão ou conteúdo íntimo:</p>
+    <p class="en">Send your phone model, app version, affected screen and the steps to reproduce the problem. Do not send passwords, login codes, card details or intimate content:</p>
     <div class="email-card">
       <a href="mailto:contato@sintoniaapp.com?subject=Suporte%20Sintonia">contato@sintoniaapp.com</a>
     </div>
@@ -195,14 +211,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
 
 <script>
 function setLang(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('sintonia-lang', lang);
+    {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  try { localStorage.setItem('sintonia-lang', lang); } catch (_) { /* Storage may be blocked. */ }
 }
-const _lang = localStorage.getItem('sintonia-lang');
-if (_lang && _lang !== 'pt') setLang(_lang);
+try {
+  const savedLang = localStorage.getItem('sintonia-lang');
+  if (savedLang === 'en') setLang(savedLang);
+} catch (_) { /* Keep Portuguese when storage is unavailable. */ }
 </script>
 </body>
 </html>

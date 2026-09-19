@@ -6,6 +6,7 @@
 <title>Política de Privacidade — Sintonia</title>
 <meta name="description" content="Política de Privacidade do app Sintonia: quais dados coletamos, como usamos, com quem compartilhamos e como exercer seus direitos."/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.sintonia.app.br/privacidade"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -100,6 +101,10 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   nav{padding:1rem 1.25rem}
   header.page-head{padding:8rem 0 2.5rem}
 }
+
+:focus-visible{outline:3px solid #e0adff;outline-offset:4px}
+.email-card a{overflow-wrap:anywhere}
+@media(max-width:380px){nav{padding:.75rem}.logo-text{font-size:1rem}.nav-r{gap:.5rem}}
 </style>
 </head>
 <body>
@@ -111,8 +116,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   </a>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
-      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <a href="index.html" class="back-link">
       <span class="pt">← Voltar</span>
@@ -125,7 +130,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   <span class="eyebrow pt">Legal</span>
   <span class="eyebrow en">Legal</span>
   <h1><span class="pt">Política de Privacidade</span><span class="en">Privacy Policy</span></h1>
-  <p class="updated"><span class="pt">Última atualização: 12 de julho de 2026</span><span class="en">Last updated: July 12, 2026</span></p>
+  <p class="updated"><span class="pt">Última atualização: 19 de setembro de 2026</span><span class="en">Last updated: September 19, 2026</span></p>
 </header>
 
 <main class="container">
@@ -200,6 +205,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
     <p class="en">We do not sell, rent or share your data with advertisers. We use the following service providers (data processors under LGPD) strictly to operate the app:</p>
     <ul>
       <li><span class="pt"><strong>Firebase / Google Cloud</strong> (Google LLC) — autenticação, banco de dados e monitoramento de desempenho;</span><span class="en"><strong>Firebase / Google Cloud</strong> (Google LLC) — authentication, database and performance monitoring;</span></li>
+      <li><span class="pt"><strong>RevenueCat</strong> — gestão e validação das assinaturas, usando identificadores de usuário e informações de compras para verificar o acesso Premium;</span><span class="en"><strong>RevenueCat</strong> — subscription management and validation, using user identifiers and purchase information to check Premium access;</span></li>
       <li><span class="pt"><strong>Supabase</strong> — infraestrutura de backend, autenticação e armazenamento;</span><span class="en"><strong>Supabase</strong> — backend infrastructure, authentication and storage;</span></li>
       <li><span class="pt"><strong>Google Sign-In e Sign in with Apple</strong> — login social, apenas se você optar por usá-los;</span><span class="en"><strong>Google Sign-In and Sign in with Apple</strong> — social login, only if you choose to use them;</span></li>
       <li><span class="pt"><strong>Apple App Store / Google Play</strong> — processamento de pagamento das assinaturas Premium.</span><span class="en"><strong>Apple App Store / Google Play</strong> — Premium subscription payment processing.</span></li>
@@ -210,8 +216,10 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
 
   <section class="legal-sec" id="seguranca">
     <h2><span class="num">6.</span><span class="pt">Armazenamento, segurança e retenção</span><span class="en">Storage, security and retention</span></h2>
-    <p class="pt">Seus dados são armazenados de forma criptografada em trânsito e em repouso, em infraestrutura da Firebase/Google Cloud e Supabase. O histórico de jogo é acessível exclusivamente pelo casal vinculado à conta. Mantemos seus dados enquanto sua conta estiver ativa; após a exclusão da conta, os dados pessoais são apagados ou anonimizados em até 30 dias, exceto quando a lei exigir prazo maior de retenção (por exemplo, registros fiscais).</p>
-    <p class="en">Your data is encrypted in transit and at rest, on Firebase/Google Cloud and Supabase infrastructure. Gameplay history is accessible exclusively by the couple linked to the account. We retain your data while your account is active; after account deletion, personal data is erased or anonymized within 30 days, except where the law requires a longer retention period (e.g. tax records).</p>
+    <p class="pt">Usamos a infraestrutura dos prestadores indicados acima para armazenar e processar os dados necessários ao app. Ao vincular um parceiro, informações do perfil e do histórico do casal são compartilhadas entre as contas vinculadas. Mantemos os dados necessários enquanto a conta estiver ativa. A exclusão da conta inclui a remoção do perfil, do vínculo e do histórico compartilhado; ela não exclui a conta do parceiro.</p>
+    <p class="en">We use the providers listed above to store and process the data needed to operate the app. Linking a partner shares profile information and couple history between the linked accounts. We retain necessary data while the account is active. Account deletion includes removal of the profile, relationship link and shared history; it does not delete the partner's account.</p>
+    <p class="pt">Registros técnicos de segurança, validação de assinaturas e processamento da exclusão podem permanecer separados do perfil, inclusive para repetir uma operação que falhou. A limpeza de dados pode ocorrer em etapas. Para solicitar a exclusão ou consultar seu andamento, use os contatos abaixo. Dados sujeitos a obrigações legais seguem os prazos aplicáveis.</p>
+    <p class="en">Technical records for security, subscription validation and deletion processing may remain separate from the profile, including to retry an operation that failed. Data cleanup may happen in stages. To request deletion or check its progress, use the contacts below. Data subject to legal obligations follows the applicable retention periods.</p>
   </section>
 
   <section class="legal-sec" id="direitos">
@@ -227,8 +235,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
       <li><span class="pt">Revogar seu consentimento e obter informações sobre com quem compartilhamos seus dados;</span><span class="en">Withdraw your consent and get information on who we share your data with;</span></li>
       <li><span class="pt">Peticionar perante a Autoridade Nacional de Proteção de Dados (ANPD).</span><span class="en">Lodge a complaint with Brazil's data protection authority (ANPD).</span></li>
     </ul>
-    <p class="pt">Respondemos a todas as solicitações em até 15 dias úteis, pelo e-mail <strong>privacidade@sintoniaapp.com</strong>.</p>
-    <p class="en">We respond to all requests within 15 business days, at <strong>privacy@sintoniaapp.com</strong>.</p>
+    <p class="pt">Envie sua solicitação e acompanhe seu andamento pelo e-mail <strong>privacidade@sintoniaapp.com</strong>. Não envie senhas ou códigos de acesso.</p>
+    <p class="en">Submit your request and follow up at <strong>privacy@sintoniaapp.com</strong>. Do not send passwords or access codes.</p>
   </section>
 
   <section class="legal-sec" id="menores">
@@ -282,14 +290,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
 
 <script>
 function setLang(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('sintonia-lang', lang);
+    {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  try { localStorage.setItem('sintonia-lang', lang); } catch (_) { /* Storage may be blocked. */ }
 }
-const _lang = localStorage.getItem('sintonia-lang');
-if (_lang && _lang !== 'pt') setLang(_lang);
+try {
+  const savedLang = localStorage.getItem('sintonia-lang');
+  if (savedLang === 'en') setLang(savedLang);
+} catch (_) { /* Keep Portuguese when storage is unavailable. */ }
 </script>
 </body>
 </html>

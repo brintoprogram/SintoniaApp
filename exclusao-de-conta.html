@@ -6,6 +6,7 @@
 <title>Exclusão de Conta — Sintonia</title>
 <meta name="description" content="Como solicitar a exclusão da sua conta e dados no app Sintonia."/>
 <meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://www.sintonia.app.br/exclusao-de-conta"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -92,6 +93,10 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   nav{padding:1rem 1.25rem}
   header.page-head{padding:8rem 0 2.5rem}
 }
+
+:focus-visible{outline:3px solid #e0adff;outline-offset:4px}
+.email-card a{overflow-wrap:anywhere}
+@media(max-width:380px){nav{padding:.75rem}.logo-text{font-size:1rem}.nav-r{gap:.5rem}}
 </style>
 </head>
 <body>
@@ -103,8 +108,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   </a>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
-      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <a href="index.html" class="back-link">
       <span class="pt">← Voltar</span>
@@ -117,7 +122,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   <span class="eyebrow pt">Sua Conta</span>
   <span class="eyebrow en">Your Account</span>
   <h1><span class="pt">Exclusão de Conta</span><span class="en">Account Deletion</span></h1>
-  <p class="updated"><span class="pt">Última atualização: 12 de julho de 2026</span><span class="en">Last updated: July 12, 2026</span></p>
+  <p class="updated"><span class="pt">Última atualização: 19 de setembro de 2026</span><span class="en">Last updated: September 19, 2026</span></p>
 </header>
 
 <main class="container">
@@ -148,10 +153,17 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
   <section class="sec">
     <h2><span class="pt">O que acontece depois</span><span class="en">What happens next</span></h2>
     <ul>
-      <li><span class="pt">Você recebe uma confirmação de recebimento do pedido em até <strong>15 dias úteis</strong>;</span><span class="en">You'll receive confirmation of receipt within <strong>15 business days</strong>;</span></li>
-      <li><span class="pt">Sua conta, perfil do casal (na parte referente a você) e histórico de jogo são apagados ou anonimizados dos nossos sistemas;</span><span class="en">Your account, couple profile (your portion of it) and gameplay history are deleted or anonymized from our systems;</span></li>
+      <li><span class="pt">Podemos precisar confirmar que o pedido foi enviado pelo titular da conta. Acompanhe o andamento pelo mesmo e-mail;</span><span class="en">We may need to confirm that the request came from the account holder. Follow up using the same email;</span></li>
+      <li><span class="pt">A exclusão remove seu perfil, desfaz o vínculo e remove o histórico compartilhado do casal. A conta do parceiro permanece, mas o histórico compartilhado deixa de estar disponível para ambos;</span><span class="en">Deletion removes your profile, unlinks the couple and removes shared couple history. Your partner's account remains, but the shared history is no longer available to either partner;</span></li>
+      <li><span class="pt">A limpeza pode ocorrer em etapas. Registros técnicos de segurança, assinatura e processamento da exclusão podem ser mantidos separadamente do perfil, conforme a Política de Privacidade;</span><span class="en">Cleanup may happen in stages. Technical security, subscription and deletion-processing records may be retained separately from the profile, as described in the Privacy Policy;</span></li>
       <li><span class="pt">Dados que a lei exige manter por período determinado (ex.: registros fiscais de assinatura) são retidos apenas pelo prazo legal, conforme nossa <a href="privacidade.html" style="color:var(--primary-glow)">Política de Privacidade</a>.</span><span class="en">Data the law requires us to retain for a set period (e.g. subscription tax records) is kept only for that legal period, per our <a href="privacidade.html" style="color:var(--primary-glow)">Privacy Policy</a>.</span></li>
     </ul>
+  </section>
+
+  <section class="sec">
+    <h2><span class="pt">Assinatura e exclusão de conta</span><span class="en">Subscription and account deletion</span></h2>
+    <p class="pt">Excluir sua conta não cancela automaticamente a assinatura da App Store. Para interromper a renovação, siga as <a href="https://support.apple.com/pt-br/118428">instruções de cancelamento da Apple</a>. Não envie sua senha ou códigos de login na solicitação de exclusão.</p>
+    <p class="en">Deleting your account does not automatically cancel an App Store subscription. To stop renewal, follow <a href="https://support.apple.com/118428">Apple's cancellation instructions</a>. Do not include passwords or login codes in your deletion request.</p>
   </section>
 
   <section class="sec">
@@ -186,14 +198,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:2.5rem 1.5rem;text-align
 
 <script>
 function setLang(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('sintonia-lang', lang);
+    {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  try { localStorage.setItem('sintonia-lang', lang); } catch (_) { /* Storage may be blocked. */ }
 }
-const _lang = localStorage.getItem('sintonia-lang');
-if (_lang && _lang !== 'pt') setLang(_lang);
+try {
+  const savedLang = localStorage.getItem('sintonia-lang');
+  if (savedLang === 'en') setLang(savedLang);
+} catch (_) { /* Keep Portuguese when storage is unavailable. */ }
 </script>
 </body>
 </html>

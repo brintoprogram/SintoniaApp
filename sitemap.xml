@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sintoniaapp.com/</loc>
+    <loc>https://www.sintonia.app.br/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/suporte</loc>
+    <loc>https://www.sintonia.app.br/suporte</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/privacidade</loc>
+    <loc>https://www.sintonia.app.br/privacidade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/termos</loc>
+    <loc>https://www.sintonia.app.br/termos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/exclusao-de-conta</loc>
+    <loc>https://www.sintonia.app.br/exclusao-de-conta</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://sintoniaapp.com/age-policy</loc>
+    <loc>https://www.sintonia.app.br/age-policy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

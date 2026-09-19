@@ -7,6 +7,7 @@
 <meta name="description" content="Jogos, desafios e métricas que transformam a conexão do casal em uma aventura diária."/>
 <meta property="og:title" content="Sintonia — Onde a Intimidade se Conecta"/>
 <meta property="og:description" content="Jogos, desafios e métricas que transformam a conexão do casal."/>
+<link rel="canonical" href="https://www.sintonia.app.br/"/>
 <meta property="og:image" content="assets/kiss-logo.png"/>
 <link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
@@ -515,6 +516,11 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
   .reveal{opacity:1!important;transform:none!important}
   .hero-logo,.dl-logo{animation:none}
 }
+
+:focus-visible{outline:3px solid #e0adff;outline-offset:4px}
+.email-card a{overflow-wrap:anywhere}
+@media(max-width:380px){nav{padding:.75rem}.logo-text{font-size:1rem}.nav-r{gap:.5rem}}
+.dl-status{padding:1rem 1.5rem;color:var(--muted);border:1px solid var(--border);border-radius:16px;margin:0}
 </style>
 </head>
 <body>
@@ -544,7 +550,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
 
 <!-- ─── NAV ─────────────────────────────────────────── -->
 <nav id="mainNav">
-  <a href="#" class="logo">
+  <a href="#hero" class="logo">
     <img src="assets/kiss-logo.png" class="logo-img" alt="Sintonia logo"/>
     <span class="logo-text">SINTONIA</span>
   </a>
@@ -555,12 +561,12 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
   </div>
   <div class="nav-r">
     <div class="lang-toggle" role="group" aria-label="Idioma">
-      <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn"        data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="pt" aria-pressed="true" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn"        data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
     </div>
     <a href="#download" class="nav-dl">
-      <span class="pt">Baixar Agora</span>
-      <span class="en">Download Now</span>
+      <span class="pt">Lançamento</span>
+      <span class="en">Launch status</span>
     </a>
   </div>
 </nav>
@@ -591,8 +597,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <div class="magnetic">
       <a href="#download" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16.5 5.5 10l1.4-1.4 4.1 4.1V3h2v9.7l4.1-4.1L18.5 10 12 16.5zM5 19v-2h14v2H5z"/></svg>
-        <span class="pt">Baixar Grátis</span>
-        <span class="en">Free Download</span>
+        <span class="pt">Ver disponibilidade</span>
+        <span class="en">Check availability</span>
       </a>
     </div>
     <a href="#features" class="btn-outline">
@@ -665,20 +671,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     <span class="ticker-item en">Couple Mines <span class="ticker-sep">◆</span></span>
     <span class="ticker-item pt">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
     <span class="ticker-item en">Sintonia Roulette <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Tension Game ∞ <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Air Hockey <span class="ticker-sep">◆</span></span>
     <span class="ticker-item pt">Score de Sintonia <span class="ticker-sep">◆</span></span>
     <span class="ticker-item en">Sintonia Score <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item pt">Modo offline <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item en">Offline mode <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Jogos para dois <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Games for two <span class="ticker-sep">◆</span></span>
     <span class="ticker-item pt">Mines do Casal <span class="ticker-sep">◆</span></span>
     <span class="ticker-item en">Couple Mines <span class="ticker-sep">◆</span></span>
     <span class="ticker-item pt">Roleta da Sintonia <span class="ticker-sep">◆</span></span>
     <span class="ticker-item en">Sintonia Roulette <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Tension Game ∞ <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Air Hockey <span class="ticker-sep">◆</span></span>
     <span class="ticker-item pt">Score de Sintonia <span class="ticker-sep">◆</span></span>
     <span class="ticker-item en">Sintonia Score <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item pt">Modo offline <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item en">Offline mode <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item pt">Jogos para dois <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item en">Games for two <span class="ticker-sep">◆</span></span>
   </div>
 </div>
 
@@ -708,14 +714,14 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
         <div class="feat-icon">🎡</div>
         <div class="feat-name pt">Roleta da Sintonia</div>
         <div class="feat-name en">Sintonia Roulette</div>
-        <p class="feat-desc pt">Gire a roleta 3D e deixe o acaso decidir. Categorias pensadas pra acender a chama — do suave ao intenso.</p>
-        <p class="feat-desc en">Spin the 3D wheel and let chance decide. Categories from sweet to spicy, designed to ignite the spark.</p>
+        <p class="feat-desc pt">Gire a roleta e deixe o acaso decidir. Categorias pensadas pra acender a chama — do suave ao intenso.</p>
+        <p class="feat-desc en">Spin the wheel and let chance decide. Categories from sweet to spicy, designed to ignite the spark.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon">∞</div>
-        <div class="feat-name">Tension Game</div>
-        <p class="feat-desc pt">O jogo da tensão crescente. Desafios progressivos que constroem a antecipação, rodada após rodada, sem parar.</p>
-        <p class="feat-desc en">The escalating tension game. Progressive challenges that build anticipation, round after round, endlessly.</p>
+        <div class="feat-icon">🏒</div>
+        <div class="feat-name">Air Hockey</div>
+        <p class="feat-desc pt">Uma disputa de reflexos para jogar a dois e transformar a próxima rodada em um novo desafio.</p>
+        <p class="feat-desc en">A game of reflexes for two, turning the next round into a new challenge.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon">📊</div>
@@ -746,15 +752,15 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
       <div class="how-num">1</div>
       <div class="how-step-title pt">Criem o perfil</div>
       <div class="how-step-title en">Create your profile</div>
-      <p class="how-step-desc pt">Cadastrem o casal juntos em menos de um minuto.</p>
-      <p class="how-step-desc en">Set up your couple profile together in under a minute.</p>
+      <p class="how-step-desc pt">Criem suas contas e conectem os perfis pelo aplicativo.</p>
+      <p class="how-step-desc en">Create your accounts and connect your profiles in the app.</p>
     </div>
     <div class="how-step">
       <div class="how-num">2</div>
       <div class="how-step-title pt">Escolham o modo</div>
       <div class="how-step-title en">Pick a mode</div>
-      <p class="how-step-desc pt">Mines, roleta, tension — o que a noite pede.</p>
-      <p class="how-step-desc en">Mines, roulette, tension — whatever the night calls for.</p>
+      <p class="how-step-desc pt">Campo minado, roleta, Air Hockey — escolham o próximo jogo.</p>
+      <p class="how-step-desc en">Mines, roulette, Air Hockey — choose your next game.</p>
     </div>
     <div class="how-step">
       <div class="how-num">3</div>
@@ -767,8 +773,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
       <div class="how-num">4</div>
       <div class="how-step-title pt">Vejam o Score crescer</div>
       <div class="how-step-title en">Watch your score grow</div>
-      <p class="how-step-desc pt">Métricas, conquistas e novos desafios a cada semana.</p>
-      <p class="how-step-desc en">Metrics, achievements, and new challenges every week.</p>
+      <p class="how-step-desc pt">Acompanhem o progresso e as conquistas do casal.</p>
+      <p class="how-step-desc en">Follow your progress and achievements as a couple.</p>
     </div>
   </div>
 </section>
@@ -778,32 +784,16 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
 <section class="download" id="download">
   <img src="assets/kiss-logo.png" class="dl-logo" alt=""/>
   <h2 class="dl-title reveal">
-    <span class="pt">Sua próxima noite<br>começa <em>agora</em></span>
-    <span class="en">Your next night<br>starts <em>right now</em></span>
+    <span class="pt">A próxima rodada<br>está <em>chegando</em></span>
+    <span class="en">Your next round<br>is <em>coming soon</em></span>
   </h2>
   <p class="dl-sub">
-    <span class="pt">Grátis no plano básico. Sem cartão de crédito. Só vocês dois.</span>
-    <span class="en">Free on the basic plan. No credit card. Just the two of you.</span>
+    <span class="pt">Estamos preparando o lançamento para iPhone. O link para baixar estará aqui quando o app estiver disponível.</span>
+    <span class="en">We are preparing the iPhone launch. The download link will appear here when the app is available.</span>
   </p>
   <div class="dl-btns">
-    <a href="#" class="dl-btn">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-      </svg>
-      <div>
-        <span class="dl-sup pt">Baixar na</span><span class="dl-sup en">Download on the</span>
-        <span class="dl-name">App Store</span>
-      </div>
-    </a>
-    <a href="#" class="dl-btn">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3.18 23.76c.3.17.65.19.98.08l.06-.04L15.42 12 4.22.2l-.06-.04c-.33-.11-.68-.09-.98.08C2.87.42 2.68.75 2.68 1.1v21.78c0 .36.19.69.5.87zm16.2-9.37-2.67-1.55-2.44 2.44 2.73 2.73 2.38-1.38c.5-.29.5-.97 0-1.26l-.3-.17.3-.81zM3.04.44l11.96 11.55-2.35 2.35L3.04.44zm0 23.12 9.56-9.26-2.35-2.35L3.04 23.56z"/>
-      </svg>
-      <div>
-        <span class="dl-sup pt">Disponível no</span><span class="dl-sup en">Get it on</span>
-        <span class="dl-name">Google Play</span>
-      </div>
-    </a>
+    <p class="dl-status"><span class="pt">App Store · Em breve</span><span class="en">App Store · Coming soon</span></p>
+    <a href="suporte.html" class="dl-btn"><span class="pt">Falar com o suporte</span><span class="en">Contact support</span></a>
   </div>
 </section>
 
@@ -821,8 +811,8 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
     </div>
     <details><summary><span class="pt">O Sintonia é para qualquer tipo de casal?</span><span class="en">Is Sintonia for all couples?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O app foi pensado para casais em qualquer fase — dos que estão começando aos que querem reavivar a chama. Cada modo tem intensidades ajustáveis.</span><span class="en">Yes. The app was designed for couples at any stage — from those just starting out to long-term partners looking to rekindle the spark. Each mode has adjustable intensity levels.</span></div></details>
     <details><summary><span class="pt">O Mines do Casal é como o jogo de casino?</span><span class="en">Is Couple Mines like the casino game?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">A mecânica é inspirada, mas totalmente ressignificada para casais. Em vez de perder dinheiro, quem encontra a bomba faz um desafio especial — que aproxima e diverte o casal.</span><span class="en">The mechanic is inspired by it, but fully reimagined for couples. Instead of losing money, whoever finds the bomb does a special challenge — one that brings you closer and makes you laugh.</span></div></details>
-    <details><summary><span class="pt">O app tem versão gratuita?</span><span class="en">Is there a free version?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Sim. O plano gratuito inclui acesso a jogos e desafios essenciais. O Premium desbloqueia o catálogo completo, histórico detalhado, modos exclusivos e atualizações semanais.</span><span class="en">Yes. The free plan includes access to essential games and challenges. Premium unlocks the full catalog, detailed history, exclusive modes, and weekly content updates.</span></div></details>
-    <details><summary><span class="pt">Nossos dados são privados?</span><span class="en">Is our data private?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Absolutamente. Todo o conteúdo dentro do app é privado entre o casal. Nunca compartilhamos dados pessoais ou de jogo com terceiros ou anunciantes.</span><span class="en">Absolutely. All in-app content is private between the couple. We never share personal or gameplay data with third parties or advertisers.</span></div></details>
+    <details><summary><span class="pt">O app tem versão gratuita?</span><span class="en">Is there a free version?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">O app terá acesso gratuito e assinatura Premium opcional. Consulte os recursos e preços na tela Premium antes de assinar.</span><span class="en">The app will offer free access and an optional Premium subscription. Check features and prices on the Premium screen before subscribing.</span></div></details>
+    <details><summary><span class="pt">Nossos dados são privados?</span><span class="en">Is our data private?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">Usamos serviços como Firebase e RevenueCat para operar o app e as assinaturas. Veja quais dados são tratados, os prestadores e seus direitos na Política de Privacidade.</span><span class="en">We use services such as Firebase and RevenueCat to operate the app and subscriptions. See our Privacy Policy for data use, providers and your rights.</span></div></details>
     <details><summary><span class="pt">O conteúdo é adequado para adultos?</span><span class="en">Is the content adult-appropriate?</span><div class="faq-plus">+</div></summary><div class="faq-body"><span class="pt">O Sintonia é voltado para adultos maiores de 18 anos em relacionamentos consensuais. Todos os modos têm configurações de intensidade — vocês controlam até onde querem ir.</span><span class="en">Sintonia is designed for adults 18+ in consensual relationships. All modes have intensity settings — you control how far you want to go.</span></div></details>
   </div>
 </section>
@@ -838,9 +828,6 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
         <span class="en">Games, challenges and metrics that bring couples closer. Made with ♥ in Brazil.</span>
       </p>
       <div class="social-row">
-        <a href="#" class="soc" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-        <a href="#" class="soc" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.88a8.17 8.17 0 004.78 1.52V7a4.85 4.85 0 01-1.01-.31z"/></svg></a>
-        <a href="#" class="soc" aria-label="YouTube"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
     </div>
     <div>
@@ -848,7 +835,7 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
       <ul class="foot-links">
         <li><a href="#features"><span class="pt">Recursos</span><span class="en">Features</span></a></li>
         <li><a href="#como"><span class="pt">Como Funciona</span><span class="en">How It Works</span></a></li>
-        <li><a href="#download">Download</a></li>
+        <li><a href="#download"><span class="pt">Disponibilidade</span><span class="en">Availability</span></a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
@@ -895,14 +882,20 @@ footer{border-top:1px solid rgba(166,0,255,.12);padding:3.5rem 2.25rem 2rem}
    LANGUAGE
 ══════════════════════════════════════════════════════ */
 function setLang(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
   document.documentElement.setAttribute('data-lang', lang);
   document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
   document.querySelectorAll('.lang-btn').forEach(b =>
-    b.classList.toggle('active', b.dataset.lang === lang));
-  localStorage.setItem('sintonia-lang', lang);
+    {
+      b.classList.toggle('active', b.dataset.lang === lang);
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+  try { localStorage.setItem('sintonia-lang', lang); } catch (_) { /* Storage may be blocked. */ }
 }
-const _lang = localStorage.getItem('sintonia-lang');
-if (_lang && _lang !== 'pt') setLang(_lang);
+try {
+  const savedLang = localStorage.getItem('sintonia-lang');
+  if (savedLang === 'en') setLang(savedLang);
+} catch (_) { /* Keep Portuguese when storage is unavailable. */ }
 
 /* ══════════════════════════════════════════════════════
    SCROLL PROGRESS BAR
