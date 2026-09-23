@@ -16,12 +16,17 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/home.css">
   <script src="assets/home.js" defer></script>
+  <link rel="stylesheet" href="assets/experience.css">
+  <script src="assets/experience.js" defer></script>
+  <script src="assets/demo-core.js" defer></script>
+  <script src="assets/demos.js" defer></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
   <header class="header wrap">
     <a class="brand" href="/" aria-label="Sintonia — início"><img src="assets/app-icon.webp" width="42" height="42" alt=""><span>sintonia<span class="brand-dot">.</span></span></a>
-    <nav aria-label="Principal"><a href="#jogos" data-i18n="navGames">Os jogos</a><a href="#duvidas" data-i18n="navFaq">Dúvidas</a><a href="/suporte" data-i18n="support">Suporte</a></nav>
+    <nav aria-label="Principal"><a href="#jogos" data-i18n="navGames">Os jogos</a><a href="#experimentar" data-i18n="navPlay">Jogue agora</a><a href="/suporte" data-i18n="support">Suporte</a></nav>
     <div class="header-actions"><button class="language" type="button" aria-label="Switch to English">EN</button><a class="button button-small" href="#download" data-i18n="navApp">Quero conhecer ↗</a></div>
   </header>
   <main id="main">
@@ -30,7 +35,7 @@
         <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">O APP PARA JOGAR A DOIS</span><span class="age">18+</span></p>
         <h1 id="hero-title"><span data-i18n="hero1">Um celular.</span><span data-i18n="hero2">Dois jogadores.</span><span class="purple" data-i18n="hero3">Zero rotina.</span></h1>
         <p class="hero-description" data-i18n="heroDescription">Um pouquinho de competição. Uma boa dose de conexão. Minijogos e desafios para transformar qualquer noite na noite de vocês.</p>
-        <a href="#jogos" class="button hero-button"><span data-i18n="heroCta">Encontrem seu próximo jogo</span><span aria-hidden="true">↗</span></a>
+        <a href="#experimentar" class="button hero-button"><span data-i18n="heroCta">Experimentem uma partida</span><span aria-hidden="true">↗</span></a>
         <p class="availability"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6.5" y="2" width="11" height="20" rx="3"/><path d="M10 18h4"/></svg><span data-i18n="coming">Em breve para iPhone e Android</span></p>
       </div>
       <div class="hero-art">
@@ -38,36 +43,45 @@
         <img class="floating floating-roulette" src="assets/game-roulette.webp" alt="" width="230" height="230" fetchpriority="high">
         <img class="floating floating-mines" src="assets/game-mines.webp" alt="" width="160" height="160">
         <div class="art-note" aria-hidden="true"><span>♡</span><span data-i18n="artNote">o date ganhou<br>uma nova fase.</span></div>
-        <div class="phone" aria-label="Prévia ilustrativa do app Sintonia">
-          <div class="phone-camera" aria-hidden="true"></div>
-          <div class="phone-status" aria-hidden="true"><span>9:41</span><span>▮▮▮ ▰</span></div>
-          <div class="phone-content">
-            <div class="phone-brand"><img src="assets/app-icon.webp" width="30" height="30" alt=""><strong>SINTONIA</strong><span>♡</span></div>
-            <p class="phone-kicker" data-i18n="phoneKicker">HOJE É DIA DE VOCÊS</p><p class="phone-title" data-i18n="phoneTitle">Bora jogar?</p>
-            <p class="phone-subtitle" data-i18n="phoneSubtitle">Escolham o jogo. O resto é química.</p>
-            <div class="phone-games" aria-hidden="true">
-              <div class="phone-game"><img src="assets/game-roulette.webp" width="130" height="130" alt=""><strong data-i18n="roulette">Roleta</strong><span data-i18n="phoneRoulette">Deixem a sorte decidir</span></div>
-              <div class="phone-game"><img src="assets/game-hockey.webp" width="130" height="130" alt=""><strong>Air Hockey</strong><span data-i18n="phoneHockey">Vale a revanche</span></div>
-              <div class="phone-game"><img src="assets/game-mines.webp" width="130" height="130" alt=""><strong data-i18n="mines">Campo Minado</strong><span data-i18n="phoneMines">Quem vai arriscar?</span></div>
-              <div class="phone-game"><img src="assets/game-sequence.webp" width="130" height="130" alt=""><strong data-i18n="sequence">Sequência</strong><span data-i18n="phoneSequence">Entrem no mesmo ritmo</span></div>
-            </div>
-            <div class="phone-nav" aria-hidden="true"><span class="active">✦ <span data-i18n="gamesLabel">Jogos</span></span><span>♡ <span data-i18n="coupleLabel">Casal</span></span><span>☰ <span data-i18n="profileLabel">Perfil</span></span></div>
-          </div><div class="phone-home" aria-hidden="true"></div>
+        <div class="phone real-phone" aria-label="Tela real do aplicativo Sintonia">
+          <img class="real-screen" src="assets/app-screen-home.png" width="356" height="677" alt="Tela real do Sintonia, com painel do casal, personagem roxo e jogo Roulette" fetchpriority="high">
         </div>
-        <p class="art-caption" data-i18n="illustration">Prévia ilustrativa do app</p>
+        <p class="art-caption" data-i18n="illustration">Tela real do aplicativo</p>
       </div>
     </section>
     <div class="intro-strip"><div class="wrap"><span data-i18n="strip1">Mais risadas.</span><span aria-hidden="true">✳</span><span data-i18n="strip2">Mais frio na barriga.</span><span aria-hidden="true">✳</span><span data-i18n="strip3">Mais vocês.</span></div></div>
+    <section class="scroll-story" aria-labelledby="story-title">
+      <div class="story-sticky">
+        <div class="story-glow" aria-hidden="true"></div>
+        <div class="story-top wrap"><p class="eyebrow" data-i18n="storyEyebrow">É ASSIM QUE A ROTINA FICA PRA TRÁS</p><button class="motion-toggle" type="button" aria-pressed="true">Animações ligadas</button></div>
+        <div class="story-layout wrap">
+          <div class="story-copy"><span class="story-count" aria-hidden="true">01 — 03</span><h2 id="story-title" data-i18n="storyTitle">Abriu o app.<br>Mudou o clima.</h2><p data-i18n="storyDescription">Sete jogos. Uma companhia favorita.<br>E um universo inteiro para descobrir a dois.</p><div class="story-steps"><p class="is-current"><span>01</span><span data-i18n="story1">Encontrem seu jogo.</span></p><p><span>02</span><span data-i18n="story2">Escolham a intensidade.</span></p><p><span>03</span><span data-i18n="story3">Deixem a partida acontecer.</span></p></div><a href="#experimentar" class="story-link" data-i18n="storyCta">Já quero jogar ↓</a></div>
+          <div class="story-device-area"><div class="story-ring ring-a" aria-hidden="true"></div><div class="story-ring ring-b" aria-hidden="true"></div><img class="story-float sf-one" src="assets/game-penalty.webp" alt="" width="180" height="180" loading="lazy"><img class="story-float sf-two" src="assets/game-tug.webp" alt="" width="160" height="160" loading="lazy"><img class="story-float sf-three" src="assets/game-words.webp" alt="" width="145" height="145" loading="lazy"><div class="story-phone"><div class="story-screen-track"><img src="assets/app-screen-games.png" width="324" height="690" alt="Jogos reais do Sintonia: Air Hockey, Pênalti, Sequência, Cabo de Guerra e Campo Minado" loading="lazy"><img src="assets/app-screen-words.png" width="362" height="175" alt="Caça-Palavras no aplicativo Sintonia" loading="lazy"></div></div><p class="story-caption" data-i18n="realScreens">Capturas reais do aplicativo</p></div>
+        </div><div class="story-bottom wrap"><span data-i18n="scrollHint">CONTINUE ROLANDO PARA EXPLORAR</span><div class="story-meter" aria-hidden="true"><i></i></div><span aria-hidden="true">↓</span></div>
+      </div>
+    </section>
     <section class="games-section" id="jogos" aria-labelledby="games-title">
       <div class="wrap">
         <div class="section-heading"><div><p class="eyebrow" data-i18n="gamesEyebrow">O PRÓXIMO DATE COMEÇA AQUI</p><h2 id="games-title" data-i18n="gamesTitle">Um jogo puxa o outro.</h2></div><p data-i18n="gamesDescription">Disputem a partida.<br>Compartilhem o momento.</p></div>
-        <div class="game-tabs" role="tablist" aria-label="Conheça os jogos">
-          <button class="game-card selected" type="button" role="tab" aria-selected="true" aria-controls="game-description" id="tab-roulette" data-game="roulette"><span class="card-number">01 /</span><img src="assets/game-roulette.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="roulette">Roleta</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
-          <button class="game-card" type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-hockey" data-game="hockey" tabindex="-1"><span class="card-number">02 /</span><img src="assets/game-hockey.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title">Air Hockey<span class="card-arrow" aria-hidden="true">↗</span></span></button>
-          <button class="game-card" type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-mines" data-game="mines" tabindex="-1"><span class="card-number">03 /</span><img src="assets/game-mines.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="mines">Campo Minado</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
-          <button class="game-card" type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-sequence" data-game="sequence" tabindex="-1"><span class="card-number">04 /</span><img src="assets/game-sequence.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="sequence">Sequência</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+        <div class="game-tabs" role="tablist" aria-label="Os sete jogos do Sintonia">
+<button class="game-card selected" type="button" role="tab" aria-selected="true" aria-controls="game-description" id="tab-roulette" data-game="roulette" tabindex="0"><span class="card-number">01 /</span><img src="assets/game-roulette.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="roulette">Roulette</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-hockey" data-game="hockey" tabindex="-1"><span class="card-number">02 /</span><img src="assets/game-hockey.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title">Air Hockey<span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-penalty" data-game="penalty" tabindex="-1"><span class="card-number">03 /</span><img src="assets/game-penalty.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="penalty">Pênalti</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-sequence" data-game="sequence" tabindex="-1"><span class="card-number">04 /</span><img src="assets/game-sequence.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="sequence">Sequência</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-tug" data-game="tug" tabindex="-1"><span class="card-number">05 /</span><img src="assets/game-tug.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="tug">Cabo de Guerra</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-mines" data-game="mines" tabindex="-1"><span class="card-number">06 /</span><img src="assets/game-mines.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="mines">Campo Minado</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
+<button class="game-card " type="button" role="tab" aria-selected="false" aria-controls="game-description" id="tab-words" data-game="words" tabindex="-1"><span class="card-number">07 /</span><img src="assets/game-words.webp" width="260" height="260" alt="" loading="lazy"><span class="card-title"><span data-i18n="words">Caça-Palavras</span><span class="card-arrow" aria-hidden="true">↗</span></span></button>
         </div>
-        <div class="game-description" id="game-description" role="tabpanel" aria-labelledby="tab-roulette" tabindex="0"><span class="small-spark" aria-hidden="true">✦</span><p id="game-copy">Girem a roleta e deixem o acaso escolher o próximo desafio. A surpresa faz parte da brincadeira.</p><span class="more-games" data-i18n="moreGames">E tem mais no app.</span></div>
+        <div class="game-description" id="game-description" role="tabpanel" aria-labelledby="tab-roulette" tabindex="0"><span class="small-spark" aria-hidden="true">✦</span><p id="game-copy">Girem a roleta e deixem o acaso escolher o próximo desafio. A surpresa faz parte da brincadeira.</p><span class="more-games" data-i18n="moreGames">7 jogos. O match é de vocês.</span></div>
+      </div>
+    </section>
+    <section class="demo-section wrap" id="experimentar" aria-labelledby="demo-title">
+      <div class="demo-heading"><div><p class="eyebrow" data-i18n="demoEyebrow">PODE TOCAR. É DE VERDADE.</p><h2 id="demo-title" data-i18n="demoTitle">Só uma partidinha?<br>A gente sabe como termina.</h2></div><p data-i18n="demoDescription">Três versões rápidas para sentir o clima.<br>Sem baixar. Sem cadastro. Só jogar.</p></div>
+      <div class="demo-shell"><div class="demo-toolbar"><div class="demo-tabs" role="tablist" aria-label="Demos jogáveis"><button role="tab" id="demo-tab-roulette" aria-selected="true" aria-controls="demo-roulette" data-demo="roulette">Roulette</button><button role="tab" id="demo-tab-mines" aria-selected="false" aria-controls="demo-mines" data-demo="mines" tabindex="-1" data-i18n="mines">Campo Minado</button><button role="tab" id="demo-tab-sequence" aria-selected="false" aria-controls="demo-sequence" data-demo="sequence" tabindex="-1" data-i18n="sequence">Sequência</button></div><span class="demo-label" data-i18n="demoBadge">DEMO WEB · DESAFIOS LEVES</span></div>
+        <div class="demo-panel" id="demo-roulette" role="tabpanel" aria-labelledby="demo-tab-roulette"><div class="roulette-scene"><div class="wheel-pointer" aria-hidden="true"></div><div class="demo-wheel" aria-hidden="true"><span style="--n:0">♡</span><span style="--n:1">✦</span><span style="--n:2">☀</span><span style="--n:3">♡</span><span style="--n:4">✦</span><span style="--n:5">☀</span></div><div class="wheel-hub" aria-hidden="true"><img src="assets/app-icon.webp" width="62" height="62" alt=""></div></div><div class="demo-instructions"><p class="eyebrow" data-i18n="rouletteTag">DEIXEM A SORTE ESCOLHER</p><h3 data-i18n="rouletteTitle">Uma volta.<br>Uma boa surpresa.</h3><p data-i18n="rouletteHint">Girem a roleta para descobrir um desafio leve para fazerem juntos.</p><div class="demo-result" id="roulette-result" role="status" aria-live="polite">O próximo momento de vocês começa com um giro.</div><button class="button demo-primary" id="spin-button" type="button" data-i18n="spin">Girar a roleta ↗</button></div></div>
+        <div class="demo-panel" id="demo-mines" role="tabpanel" aria-labelledby="demo-tab-mines" hidden><div class="mines-scene"><div class="mines-score"><span id="mines-turn">Vez do jogador 1</span><span id="mines-count">0 / 15</span></div><div class="demo-mines-grid" aria-label="Campo Minado: 16 casas"></div></div><div class="demo-instructions"><p class="eyebrow" data-i18n="minesTag">UM TOQUE. UM FRIO NA BARRIGA.</p><h3 data-i18n="minesTitle">Quem vai<br>arriscar primeiro?</h3><p data-i18n="minesHint">Alternem os toques no mesmo celular. Tem uma bomba escondida. Quem encontrar recebe um desafio.</p><div class="demo-result" id="mines-result" role="status" aria-live="polite">Jogador 1, escolha uma casa.</div><button class="button demo-primary" id="reset-mines" type="button" data-i18n="newRound">Nova partida ↻</button></div></div>
+        <div class="demo-panel" id="demo-sequence" role="tabpanel" aria-labelledby="demo-tab-sequence" hidden><div class="sequence-scene"><div class="sequence-score"><span id="sequence-round">RODADA 1</span><span id="sequence-best">RECORDE 0</span></div><div class="sequence-pads" aria-label="Botões da sequência"><button type="button" data-pad="0" aria-label="Botão 1" disabled><span>1</span><i>✦</i></button><button type="button" data-pad="1" aria-label="Botão 2" disabled><span>2</span><i>♡</i></button><button type="button" data-pad="2" aria-label="Botão 3" disabled><span>3</span><i>☀</i></button><button type="button" data-pad="3" aria-label="Botão 4" disabled><span>4</span><i>✳</i></button></div></div><div class="demo-instructions"><p class="eyebrow" data-i18n="sequenceTag">CONECTEM A MEMÓRIA</p><h3 data-i18n="sequenceTitle">Olhou.<br>Lembrou. Tocou.</h3><p data-i18n="sequenceHint">Memorizem a ordem dos botões e repitam. A cada acerto, a sequência cresce. Passem o celular a cada rodada.</p><div class="demo-result" id="sequence-result" role="status" aria-live="polite">Prontos para testar essa sintonia?</div><button class="button demo-primary" id="start-sequence" type="button" data-i18n="startSequence">Começar sequência ↗</button></div></div>
+        <div class="demo-footer"><span data-i18n="demoDisclaimer">Demonstrações simplificadas. A experiência completa está no aplicativo.</span><a href="#download" data-i18n="demoApp">Conheça o app ↗</a></div>
       </div>
     </section>
     <section class="mood-section wrap" aria-labelledby="mood-title">
