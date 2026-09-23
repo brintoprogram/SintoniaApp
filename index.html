@@ -18,6 +18,7 @@
   <link rel="preload" href="assets/fonts/Montserrat-800.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/home.css">
+  <link rel="stylesheet" href="assets/showcase.css">
   <script src="assets/home.js" defer></script>
   <script src="assets/experience.js" defer></script>
 </head>
@@ -42,12 +43,34 @@
         <img class="hero-mascots" src="assets/couple.webp" width="800" height="446" alt="Os dois polvos roxos do Sintonia tocando os tentáculos" data-alt="couple" fetchpriority="high">
       </div>
     </section>
-    <section class="screens-section wrap" id="telas" aria-labelledby="screens-title">
-      <div class="section-heading"><h2 id="screens-title" data-i18n="screensTitle">Dentro do app</h2><p data-i18n="screensNote">Telas reais do Sintonia.</p></div>
-      <div class="screens-gallery" tabindex="0" role="region" aria-label="Capturas reais do aplicativo" data-alt="gallery">
-        <figure class="screen-item"><img src="assets/app-screen-home.png" width="356" height="677" alt="Tela inicial real do Sintonia, com painel do casal, polvo e Roulette" data-alt="screenHome" loading="lazy"><figcaption data-i18n="screenHomeCaption">Início</figcaption></figure>
-        <figure class="screen-item"><img src="assets/app-screen-games.png" width="324" height="690" alt="Tela real com Air Hockey, Pênalti, Sequência, Cabo de Guerra e Campo Minado" data-alt="screenGames" loading="lazy"><figcaption data-i18n="screenGamesCaption">Jogos</figcaption></figure>
-        <div class="screen-side"><figure class="screen-item"><img src="assets/app-screen-words.png" width="362" height="175" alt="Caça-Palavras na tela real do aplicativo" data-alt="screenWords" loading="lazy"><figcaption data-i18n="words">Caça-Palavras</figcaption></figure><img class="side-mascot" src="assets/mascot-octopus.webp" width="520" height="520" alt="Polvo roxo do Sintonia" data-alt="mascot" loading="lazy"></div>
+    <section class="phone-showcase" id="telas" aria-labelledby="screens-title">
+      <div class="showcase-sticky">
+        <div class="showcase-heading wrap"><h2 id="screens-title" data-i18n="screensTitle">Dentro do app</h2><p data-i18n="screensNote">Telas reais do Sintonia.</p></div>
+        <div class="phone-stage">
+          <div class="phone-aura" aria-hidden="true"></div>
+          <div class="phone-orbit orbit-a" aria-hidden="true"></div><div class="phone-orbit orbit-b" aria-hidden="true"></div>
+          <div class="device device-home">
+            <div class="device-button button-left" aria-hidden="true"></div><div class="device-button button-right" aria-hidden="true"></div>
+            <div class="device-glass">
+              <div class="device-status" aria-hidden="true"><span>9:41</span><i class="device-camera"></i><span class="device-signal">▮▮▮ <b></b></span></div>
+              <div class="device-screen home-screen"><img src="assets/app-screen-home.png" width="356" height="677" alt="Tela inicial real do Sintonia, com painel do casal, polvo e Roulette" data-alt="screenHome" loading="lazy"></div>
+              <div class="device-chin" aria-hidden="true"><i></i></div>
+            </div>
+          </div>
+          <div class="device device-games">
+            <div class="device-button button-left" aria-hidden="true"></div><div class="device-button button-right" aria-hidden="true"></div>
+            <div class="device-glass">
+              <div class="device-status" aria-hidden="true"><span>9:41</span><i class="device-camera"></i><span class="device-signal">▮▮▮ <b></b></span></div>
+              <div class="device-screen games-screen" tabindex="0" role="region" aria-label="Capturas reais do aplicativo" data-alt="gallery"><div class="games-screen-track"><img src="assets/app-screen-games.png" width="324" height="690" alt="Tela real com Air Hockey, Pênalti, Sequência, Cabo de Guerra e Campo Minado" data-alt="screenGames" loading="lazy"><img src="assets/app-screen-words.png" width="362" height="175" alt="Caça-Palavras na tela real do aplicativo" data-alt="screenWords" loading="lazy"></div></div>
+              <div class="device-chin" aria-hidden="true"><i></i></div>
+            </div>
+          </div>
+          <img class="stage-piece stage-bomb" src="assets/game-mines.webp" width="240" height="240" alt="" aria-hidden="true" loading="lazy">
+          <img class="stage-piece stage-roulette" src="assets/game-roulette.webp" width="240" height="240" alt="" aria-hidden="true" loading="lazy">
+          <img class="stage-piece stage-hockey" src="assets/game-hockey.webp" width="150" height="150" alt="" aria-hidden="true" loading="lazy">
+          <span class="stage-spark spark-a" aria-hidden="true">✦</span><span class="stage-spark spark-b" aria-hidden="true">✦</span>
+        </div>
+        <div class="showcase-footer wrap"><span data-i18n="scrollExplore">Role para explorar</span><span class="showcase-progress" aria-hidden="true"><i></i></span><span aria-hidden="true">↓</span></div>
       </div>
     </section>
     <section class="games-section" id="jogos" aria-labelledby="games-title">
