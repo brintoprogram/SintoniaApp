@@ -14,19 +14,19 @@
   <meta property="og:image" content="https://www.sintonia.app.br/assets/app-icon.webp">
   <link rel="icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Montserrat-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Montserrat-800.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/home.css">
   <script src="assets/home.js" defer></script>
-  <link rel="stylesheet" href="assets/experience.css">
   <script src="assets/experience.js" defer></script>
-  <script src="assets/demo-core.js" defer></script>
-  <script src="assets/demos.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
   <header class="header wrap">
     <a class="brand" href="/" aria-label="Sintonia — início"><img src="assets/app-icon.webp" width="42" height="42" alt=""><span>sintonia</span></a>
     <nav aria-label="Principal"><a href="#jogos" data-i18n="navGames">Os jogos</a><a href="#duvidas" data-i18n="navFaq">Dúvidas</a><a href="/suporte" data-i18n="support">Suporte</a></nav>
-    <div class="header-actions"><button class="language" type="button" aria-label="Switch to English">EN</button><a class="button button-small" href="#experimentar" data-i18n="navApp">Experimentar</a></div>
+    <div class="header-actions"><button class="language" type="button" aria-label="Switch to English">EN</button><a class="button button-small" href="#telas" data-i18n="navApp">Ver o app</a></div>
   </header>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -34,15 +34,20 @@
         <p class="hero-label"><span data-i18n="eyebrow">APP PARA CASAIS</span><span class="age">18+</span></p>
         <h1 id="hero-title" data-i18n="heroTitle">Jogos e desafios<br><span>para casais.</span></h1>
         <p class="hero-description" data-i18n="heroDescription">Escolham um jogo, ajustem a intensidade e joguem no mesmo celular.</p>
-        <a href="#experimentar" class="button hero-button" data-i18n="heroCta">Jogar uma demo <span aria-hidden="true">→</span></a>
+        <a href="#telas" class="button hero-button" data-i18n="heroCta">Conheça o app <span aria-hidden="true">→</span></a>
         <p class="availability" data-i18n="coming">Em breve para iOS e Android.</p>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-orbit"></div>
-        <img class="hero-piece piece-roulette" src="assets/game-roulette.webp" width="480" height="480" alt="" fetchpriority="high">
-        <img class="hero-piece piece-hockey" src="assets/game-hockey.webp" width="240" height="240" alt="">
-        <img class="hero-piece piece-mines" src="assets/game-mines.webp" width="190" height="190" alt="">
-        <span class="art-plus plus-one">+</span><span class="art-plus plus-two">+</span>
+      <div class="hero-art">
+        <div class="mascot-glow" aria-hidden="true"></div>
+        <img class="hero-mascots" src="assets/couple.webp" width="800" height="446" alt="Os dois polvos roxos do Sintonia tocando os tentáculos" data-alt="couple" fetchpriority="high">
+      </div>
+    </section>
+    <section class="screens-section wrap" id="telas" aria-labelledby="screens-title">
+      <div class="section-heading"><h2 id="screens-title" data-i18n="screensTitle">Dentro do app</h2><p data-i18n="screensNote">Telas reais do Sintonia.</p></div>
+      <div class="screens-gallery" tabindex="0" role="region" aria-label="Capturas reais do aplicativo" data-alt="gallery">
+        <figure class="screen-item"><img src="assets/app-screen-home.png" width="356" height="677" alt="Tela inicial real do Sintonia, com painel do casal, polvo e Roulette" data-alt="screenHome" loading="lazy"><figcaption data-i18n="screenHomeCaption">Início</figcaption></figure>
+        <figure class="screen-item"><img src="assets/app-screen-games.png" width="324" height="690" alt="Tela real com Air Hockey, Pênalti, Sequência, Cabo de Guerra e Campo Minado" data-alt="screenGames" loading="lazy"><figcaption data-i18n="screenGamesCaption">Jogos</figcaption></figure>
+        <div class="screen-side"><figure class="screen-item"><img src="assets/app-screen-words.png" width="362" height="175" alt="Caça-Palavras na tela real do aplicativo" data-alt="screenWords" loading="lazy"><figcaption data-i18n="words">Caça-Palavras</figcaption></figure><img class="side-mascot" src="assets/mascot-octopus.webp" width="520" height="520" alt="Polvo roxo do Sintonia" data-alt="mascot" loading="lazy"></div>
       </div>
     </section>
     <section class="games-section" id="jogos" aria-labelledby="games-title">
@@ -60,16 +65,7 @@
         <div class="game-description" id="game-description" role="tabpanel" aria-labelledby="tab-roulette" tabindex="0"><p id="game-copy">Gire a roleta e descubra o desafio da vez.</p></div>
       </div>
     </section>
-    <section class="demo-section wrap" id="experimentar" aria-labelledby="demo-title">
-      <div class="demo-heading"><h2 id="demo-title" data-i18n="demoTitle">Teste um jogo</h2><p data-i18n="demoDescription">Versões rápidas para jogar aqui mesmo.</p></div>
-      <div class="demo-shell"><div class="demo-toolbar"><div class="demo-tabs" role="tablist" aria-label="Demos jogáveis"><button role="tab" id="demo-tab-roulette" aria-selected="true" aria-controls="demo-roulette" data-demo="roulette">Roulette</button><button role="tab" id="demo-tab-mines" aria-selected="false" aria-controls="demo-mines" data-demo="mines" tabindex="-1" data-i18n="mines">Campo Minado</button><button role="tab" id="demo-tab-sequence" aria-selected="false" aria-controls="demo-sequence" data-demo="sequence" tabindex="-1" data-i18n="sequence">Sequência</button></div></div>
-        <div class="demo-panel" id="demo-roulette" role="tabpanel" aria-labelledby="demo-tab-roulette"><div class="roulette-scene"><div class="wheel-pointer" aria-hidden="true"></div><div class="demo-wheel" aria-hidden="true"><span style="--n:0">♡</span><span style="--n:1">✦</span><span style="--n:2">☀</span><span style="--n:3">♡</span><span style="--n:4">✦</span><span style="--n:5">☀</span></div><div class="wheel-hub" aria-hidden="true"><img src="assets/app-icon.webp" width="62" height="62" alt=""></div></div><div class="demo-instructions"><h3 data-i18n="rouletteTitle">Roulette</h3><p data-i18n="rouletteHint">Gire para sortear um desafio para vocês dois.</p><div class="demo-result" id="roulette-result" role="status" aria-live="polite">O próximo momento de vocês começa com um giro.</div><button class="button demo-primary" id="spin-button" type="button" data-i18n="spin">Girar a roleta</button></div></div>
-        <div class="demo-panel" id="demo-mines" role="tabpanel" aria-labelledby="demo-tab-mines" hidden><div class="mines-scene"><div class="mines-score"><span id="mines-turn">Vez do jogador 1</span><span id="mines-count">0 / 15</span></div><div class="demo-mines-grid" aria-label="Campo Minado: 16 casas"></div></div><div class="demo-instructions"><h3 data-i18n="minesTitle">Campo Minado</h3><p data-i18n="minesHint">Toquem uma casa por vez. Quem encontrar a bomba recebe um desafio.</p><div class="demo-result" id="mines-result" role="status" aria-live="polite">Jogador 1, escolha uma casa.</div><button class="button demo-primary" id="reset-mines" type="button" data-i18n="newRound">Nova partida</button></div></div>
-        <div class="demo-panel" id="demo-sequence" role="tabpanel" aria-labelledby="demo-tab-sequence" hidden><div class="sequence-scene"><div class="sequence-score"><span id="sequence-round">RODADA 1</span><span id="sequence-best">RECORDE 0</span></div><div class="sequence-pads" aria-label="Botões da sequência"><button type="button" data-pad="0" aria-label="Botão 1" disabled><span>1</span><i>✦</i></button><button type="button" data-pad="1" aria-label="Botão 2" disabled><span>2</span><i>♡</i></button><button type="button" data-pad="2" aria-label="Botão 3" disabled><span>3</span><i>☀</i></button><button type="button" data-pad="3" aria-label="Botão 4" disabled><span>4</span><i>✳</i></button></div></div><div class="demo-instructions"><h3 data-i18n="sequenceTitle">Sequência</h3><p data-i18n="sequenceHint">Repitam a ordem dos botões. A sequência aumenta a cada rodada.</p><div class="demo-result" id="sequence-result" role="status" aria-live="polite">Prontos para testar essa sintonia?</div><button class="button demo-primary" id="start-sequence" type="button" data-i18n="startSequence">Começar</button></div></div>
-        <div class="demo-footer"><span data-i18n="demoDisclaimer">Demos simplificadas. Mais opções no app.</span><a href="#download" data-i18n="demoApp">Sobre o app →</a></div>
-      </div>
-    </section>
-    <section class="download-section wrap" id="download" aria-labelledby="download-title"><div class="download-inner"><h2 id="download-title" data-i18n="downloadTitle">No seu celular, em breve.</h2><p data-i18n="downloadDescription">Sintonia para iOS e Android.</p><div class="store-badges"><div class="store-badge" aria-label="App Store — em breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 12.8c0-2.4 2-3.6 2.1-3.7-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.2 1-4 1-.8 0-2.1-1-3.4-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.2 10.2.9 1.2 1.8 2.5 3.1 2.4 1.2 0 1.7-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.2-1.2 3-2.4 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1.1-2.7-4.2zM15.2 5.5c.7-.9 1.3-2.2 1.1-3.5-1.1.1-2.5.8-3.3 1.7-.7.8-1.3 2.1-1.1 3.4 1.2.1 2.5-.6 3.3-1.6z"/></svg><span><small data-i18n="soon">Em breve na</small><strong>App Store</strong></span></div><div class="store-badge" aria-label="Google Play — em breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2 14 12 3 22V2zm12 9 3-3L5 1l10 10zm0 2L5 23l13-7-3-3zm1-1 3 3 3-2c1-.5 1-1.5 0-2l-3-2-3 3z"/></svg><span><small data-i18n="soon">Em breve na</small><strong>Google Play</strong></span></div></div><p class="download-footnote" data-i18n="downloadFootnote">18+ · Alguns conteúdos exigem assinatura.</p></div></section>
+<section class="download-section wrap" id="download" aria-labelledby="download-title"><div class="download-inner"><h2 id="download-title" data-i18n="downloadTitle">No seu celular, em breve.</h2><p data-i18n="downloadDescription">Sintonia para iOS e Android.</p><div class="store-badges"><div class="store-badge" aria-label="App Store — em breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 12.8c0-2.4 2-3.6 2.1-3.7-1.2-1.8-3.1-2-3.8-2-1.6-.2-3.2 1-4 1-.8 0-2.1-1-3.4-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.2 10.2.9 1.2 1.8 2.5 3.1 2.4 1.2 0 1.7-.8 3.3-.8s2 .8 3.4.8c1.4 0 2.2-1.2 3-2.4 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1.1-2.7-4.2zM15.2 5.5c.7-.9 1.3-2.2 1.1-3.5-1.1.1-2.5.8-3.3 1.7-.7.8-1.3 2.1-1.1 3.4 1.2.1 2.5-.6 3.3-1.6z"/></svg><span><small data-i18n="soon">Em breve na</small><strong>App Store</strong></span></div><div class="store-badge" aria-label="Google Play — em breve"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2 14 12 3 22V2zm12 9 3-3L5 1l10 10zm0 2L5 23l13-7-3-3zm1-1 3 3 3-2c1-.5 1-1.5 0-2l-3-2-3 3z"/></svg><span><small data-i18n="soon">Em breve na</small><strong>Google Play</strong></span></div></div><p class="download-footnote" data-i18n="downloadFootnote">18+ · Alguns conteúdos exigem assinatura.</p></div></section>
     <section class="faq-section wrap" id="duvidas" aria-labelledby="faq-title"><h2 id="faq-title" data-i18n="faqTitle">Dúvidas</h2><div class="faq-list"><details><summary data-i18n="faq1">Como jogamos juntos?</summary><p data-i18n="answer1">Os jogos são para duas pessoas no mesmo celular. O painel do casal permite conectar as contas com um código de convite.</p></details><details><summary data-i18n="faq2">Vai ser gratuito?</summary><p data-i18n="answer2">Haverá jogos gratuitos e conteúdo Premium por assinatura. Os preços serão informados no app antes da compra.</p></details><details><summary data-i18n="faq3">Qual é a idade mínima?</summary><p data-i18n="answer3">18 anos. Os dois escolhem a intensidade e quais desafios querem fazer.</p></details><details><summary data-i18n="faq4">Preciso de ajuda.</summary><p><span data-i18n="answer4">Acesse nossa </span><a href="/suporte" data-i18n="supportPage">página de suporte</a><span data-i18n="answer4b"> ou escreva para </span><a href="mailto:contato@sintoniaapp.com">contato@sintoniaapp.com</a>.</p></details></div></section>
   </main>
   <footer class="footer wrap"><div class="footer-top"><a class="brand" href="/" aria-label="Sintonia — início"><img src="assets/app-icon.webp" width="36" height="36" alt=""><span>sintonia</span></a><a href="#main" class="back-top" aria-label="Voltar ao topo">↑</a></div><nav aria-label="Informações e suporte"><a href="/suporte" data-i18n="support">Suporte</a><a href="/privacidade" data-i18n="privacy">Privacidade</a><a href="/termos" data-i18n="terms">Termos de uso</a><a href="/exclusao-de-conta" data-i18n="deleteAccount">Excluir conta</a><a href="/age-policy" data-i18n="agePolicy">Política de idade</a></nav><div class="footer-bottom"><span>© 2026 Sintonia.</span><span data-i18n="footerAge">Para maiores de 18 anos.</span></div></footer>

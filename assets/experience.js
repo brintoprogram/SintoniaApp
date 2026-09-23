@@ -17,7 +17,7 @@
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
     }), {threshold:.05});
-    document.querySelectorAll('.game-card,.demo-shell').forEach((el,i) => {
+    document.querySelectorAll('.game-card').forEach((el,i) => {
       el.classList.add('reveal-ready');
       el.style.setProperty('--reveal-delay', `${(i % 4) * 45}ms`);
       observer.observe(el);
