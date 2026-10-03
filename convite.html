@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Convite pro Sintonia</title>
+<meta name="description" content="Seu par te chamou pra jogar Sintonia. Toque pra abrir o app e conectar."/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta property="og:title" content="Seu par te chamou pro Sintonia 💜"/>
+<meta property="og:description" content="Toque pra abrir o app. A conexão do casal acontece sozinha."/>
+<meta property="og:image" content="https://www.sintonia.app.br/assets/couple.webp"/>
+<meta property="og:type" content="website"/>
+<meta name="theme-color" content="#000000"/>
+<link rel="icon" type="image/png" href="/assets/favicon.png"/>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+:root{
+  --bg:#000000;
+  --ink:#F7F3FA;
+  --muted:#B4A9BE;
+  --violet:#A600FF;
+  --violet-hi:#C44DFF;
+  --gold:#F6DE9A;
+  --card-border:rgba(214,150,255,.55);
+  --botao-borda:#8B8585;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  background-image:radial-gradient(ellipse 90% 45% at 50% 0%,rgba(140,0,220,.28) 0%,transparent 60%);
+  color:var(--ink);
+  font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:500;
+  -webkit-font-smoothing:antialiased;
+}
+main{
+  min-height:100%;
+  max-width:440px;
+  margin:0 auto;
+  padding:max(20px,env(safe-area-inset-top)) 18px max(28px,env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;gap:18px;
+}
+.selo{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.16em;color:#D18EFF;text-transform:uppercase}
+.selo img{width:22px;height:22px;border-radius:6px}
+h1{font-size:clamp(28px,8vw,34px);font-weight:900;line-height:1.05;text-wrap:balance;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.sub{color:var(--muted);font-size:14.5px;line-height:1.45}
+.polvos{position:relative;height:190px;margin:4px -8px 0}
+.polvos img{position:absolute;bottom:0;height:180px;width:auto;max-width:56%;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,.6))}
+.polvos .l{left:0;transform:rotate(-4deg);animation:balanca 5s ease-in-out infinite}
+.polvos .r{right:0;transform:rotate(4deg);animation:balanca 5s ease-in-out infinite reverse}
+.polvos .brilho{position:absolute;left:50%;top:44%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:#fff;box-shadow:0 0 22px 8px rgba(214,150,255,.9);animation:pulso 1.6s ease-in-out infinite}
+@keyframes balanca{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes pulso{0%,100%{opacity:.55;scale:.8}50%{opacity:1;scale:1.15}}
+.card{
+  position:relative;overflow:hidden;
+  border-radius:26px;border:1.2px solid var(--card-border);
+  background:linear-gradient(180deg,#9D05FF 0%,#7400C8 28%,#3A0063 70%,#1A002C 100%);
+  box-shadow:0 12px 30px rgba(166,0,255,.25),0 10px 20px rgba(0,0,0,.6);
+  padding:20px 18px;display:flex;flex-direction:column;gap:14px;
+}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:64px;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0));pointer-events:none}
+.rotulo{font-size:10.5px;font-weight:800;letter-spacing:.15em;color:rgba(255,255,255,.82)}
+.card h2{font-size:21px;font-weight:900;line-height:1.15}
+.card p{font-size:13px;line-height:1.45;color:rgba(255,255,255,.86)}
+.botao{
+  position:relative;display:flex;align-items:center;justify-content:center;gap:10px;
+  height:58px;border-radius:16px;background:#fff;color:#000;
+  font-weight:900;font-size:17px;text-decoration:none;
+  box-shadow:0 4px 0 var(--botao-borda);
+  transition:transform .09s ease,box-shadow .09s ease;
+  -webkit-tap-highlight-color:transparent;border:0;cursor:pointer;font-family:inherit;width:100%;
+}
+.botao:active{transform:translateY(3px);box-shadow:0 1px 0 var(--botao-borda)}
+.botao svg{width:20px;height:20px}
+.lojas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.loja{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:8px 12px;
+  border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.28);
+  color:#fff;text-decoration:none;font-weight:800;font-size:13px;line-height:1.2;text-align:center;
+}
+.loja[hidden]{display:none}
+.lojas.uma{grid-template-columns:1fr}
+.painel{
+  border-radius:22px;border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#281F31,#17121C);padding:18px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.painel .rotulo{color:var(--muted)}
+.passos{list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:p}
+.passos li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.4;color:var(--ink)}
+.passos li::before{
+  counter-increment:p;content:counter(p);flex:none;width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;font-weight:900;font-size:13px;
+  background:linear-gradient(135deg,var(--violet-hi),var(--violet));
+}
+.codigo{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border-radius:14px;background:#0F0B14;border:1px solid rgba(255,255,255,.14);padding:10px 10px 10px 14px;
+}
+.codigo b{font-size:19px;font-weight:900;letter-spacing:.12em;font-variant-numeric:tabular-nums;user-select:all}
+.copiar{
+  border:0;border-radius:10px;background:rgba(209,142,255,.16);color:#D18EFF;
+  font:800 12.5px 'Montserrat',sans-serif;padding:9px 12px;cursor:pointer;
+}
+.erro{color:#FF8FA6;font-weight:700;font-size:14px;line-height:1.45}
+.rodape{text-align:center;font-size:11.5px;color:#6E6577}
+.rodape a{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.polvos img,.polvos .brilho{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="selo"><img src="/assets/app-icon.webp" alt="" width="22" height="22">Sintonia · Jogos pra casais</div>
+  <h1 id="titulo">Seu par te chamou pro Sintonia</h1>
+  <p class="sub" id="sub">Toque no botão abaixo: o app abre e vocês se conectam na hora, sem digitar código.</p>
+
+  <div class="polvos" aria-hidden="true">
+    <img class="l" src="/assets/img/couple-l.webp" alt="">
+    <span class="brilho"></span>
+    <img class="r" src="/assets/img/couple-r.webp" alt="">
+  </div>
+
+  <section class="card" id="cardAbrir">
+    <span class="rotulo">CONVITE DO CASAL</span>
+    <h2>Já tem o Sintonia?</h2>
+    <p>Abre direto na Conexão do casal. Se você ainda não entrou na sua conta, entre e a conexão termina sozinha.</p>
+    <a class="botao" id="abrir" href="#">
+      <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M178 32c-20.7 0-38.8 8.9-50 23.9C116.8 40.9 98.7 32 78 32a62.1 62.1 0 0 0-62 62c0 70 103.8 126.7 108.2 129a8 8 0 0 0 7.6 0C136.2 220.7 240 164 240 94a62.1 62.1 0 0 0-62-62Z"/></svg>
+      Abrir no Sintonia e conectar
+    </a>
+  </section>
+
+  <section class="painel" id="painelBaixar">
+    <span class="rotulo">AINDA NÃO TEM O APP?</span>
+    <ol class="passos">
+      <li>Baixe o Sintonia e crie sua conta (leva um minuto).</li>
+      <li>Volte pra conversa e toque neste link de novo.</li>
+      <li>Pronto: vocês ficam conectados.</li>
+    </ol>
+    <div class="lojas" id="lojas">
+      <a class="loja" id="ios" href="#" hidden>App Store</a>
+      <a class="loja" id="android" href="https://play.google.com/store/apps/details?id=com.sintoniaforcouples.app">Google Play</a>
+    </div>
+    <div class="codigo" id="codigoBox" hidden>
+      <span>Ou digite no app:<br><b id="codigo"></b></span>
+      <button class="copiar" id="copiar" type="button">Copiar</button>
+    </div>
+  </section>
+
+  <p class="rodape">Convite vale por 24 horas · <a href="/">sintonia.app.br</a></p>
+</main>
+<script>
+(function () {
+  // Preencha quando o app estiver publicado na App Store (link da página do app).
+  var APP_STORE = '';
+  var PACOTE = 'com.sintoniaforcouples.app';
+
+  var m = location.pathname.match(/\/c\/([A-Fa-f0-9]{12})\/?$/);
+  var codigo = (m ? m[1] : (new URLSearchParams(location.search).get('c') || '')).toUpperCase();
+  var valido = /^[A-F0-9]{12}$/.test(codigo);
+  var ua = navigator.userAgent || '';
+  var android = /Android/i.test(ua);
+  var ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  var abrir = document.getElementById('abrir');
+  var ios$ = document.getElementById('ios');
+  var android$ = document.getElementById('android');
+  var lojas = document.getElementById('lojas');
+
+  if (APP_STORE) { ios$.href = APP_STORE; ios$.hidden = false; }
+  if (ios && APP_STORE) android$.hidden = true;
+  if (android) ios$.hidden = true;
+  if (ios$.hidden || android$.hidden) lojas.classList.add('uma');
+
+  if (!valido) {
+    document.getElementById('titulo').textContent = 'Esse convite não está completo';
+    document.getElementById('sub').innerHTML = '<span class="erro">Peça pro seu par mandar o link de novo pelo app (Conexão do casal → Enviar convite).</span>';
+    document.getElementById('cardAbrir').hidden = true;
+    return;
+  }
+
+  var grupos = codigo.replace(/(.{4})(?=.)/g, '$1 ');
+  document.getElementById('codigo').textContent = grupos;
+  document.getElementById('codigoBox').hidden = false;
+
+  var esquema = 'sintonia://sintonia.com/conexodeParceiro?codigo=' + codigo;
+  var semApp = location.href.split('#')[0] + '#instalar';
+  var intent = 'intent://sintonia.com/conexodeParceiro?codigo=' + codigo +
+    '#Intent;scheme=sintonia;package=' + PACOTE +
+    ';S.browser_fallback_url=' + encodeURIComponent(semApp) + ';end';
+  abrir.href = android ? intent : esquema;
+
+  // Android: tenta abrir o app na hora (sem app instalado, volta pra cá).
+  if (android && location.hash !== '#instalar') {
+    setTimeout(function () { location.href = intent; }, 250);
+  }
+  if (location.hash === '#instalar') {
+    document.getElementById('painelBaixar').scrollIntoView({ block: 'start' });
+  }
+
+  document.getElementById('copiar').addEventListener('click', function () {
+    var botao = this;
+    function ok() { botao.textContent = 'Copiado!'; setTimeout(function () { botao.textContent = 'Copiar'; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(codigo).then(ok, function () {});
+    }
+  });
+})();
+</script>
+</body>
+</html>
